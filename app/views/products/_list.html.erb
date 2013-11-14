@@ -6,8 +6,7 @@
             <div class="imageholder" style="width:100px;height:100px"><%= link_to image_tag(product.img_url(:thumb), height: 100, width: 100), product %></div>
             <div class="spacer"></div>
             <h2><%= link_to product.name, product %></h2>
-            p       <em class="strapline"><%= product.strapline %></em>
-
+               <em class="strapline"><%= product.strapline %></em>
             <div class="minprice"><%= product.variants.first.try(:price) %></div>
           </div>
         </div>
