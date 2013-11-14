@@ -49,13 +49,14 @@ ShopRoR 基于 Rails4.0 开发, 覆盖电子商务常用功能，支持大数据
 ### 安装
 
 *要求*
+
 1. [MongoDB](http://www.mongodb.org/downloads)
 2. [ImageMagick](http://www.imagemagick.org/script/binary-releases.php)
 
 *安装*
 
-   $ bundle install
-   $ bundle exec rake db:setup
+    $ bundle install
+    $ bundle exec rake db:setup
 
 
 ### 使用
