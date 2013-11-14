@@ -39,7 +39,7 @@
         <h5><span><%= t("shopror.views.product.products") %></span></h5>
 
         <div class="products products_normal">
-          <% @category.products.each do |product| %>
+          <% @category_products.each do |product| %>
               <div class="product">
                 <div class="box">
                   <div class="pad">
@@ -70,6 +70,9 @@
               </div>
           <% end %>
         </div>
+        <div class="spacer"></div>
+        <td class="paginate" colspan="9"><%= paginate @category_products %></td>
     <% end %>
+
   </div>
 </div>
