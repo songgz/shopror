@@ -49,7 +49,7 @@
                         <% unless product.img.blank? %>
                             <td class="imagecell">
                               <div class="imageholder" style="width:100px;height:100px">
-                                <%= link_to image_tag(product.img_url(:thumb), height:100, width:100), product,  'data-no-turbolink' => true %>
+                                <%= link_to image_tag(product.img_url(:thumb), height:100, width:100), product %>
                               </div>
                             </td>
                         <% end %>
@@ -59,7 +59,7 @@
                           <p><%= product.desc.html_safe %></p>
                           <div class="minprice"><%= product.variants.first.try(:price) %></div>
                           <div class="extrainfolinks">
-                            <div class="moreinfo"><%= link_to t("shopror.views.product.more"), product, 'data-no-turbolink' => true %></div>
+                            <div class="moreinfo"><%= link_to t("shopror.views.product.more"), product %></div>
                           </div>
                         </td>
                       </tr>

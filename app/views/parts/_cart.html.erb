@@ -1,12 +1,12 @@
 <div id="minibasket">
   <div id="minibasket_header">
-    <h2><a data-no-turbolink='true' href="/carts/<%= session_cart.id%>"><span><%= t("mongoid.models.cart") %></span> <em>(<%= session_cart.cart_items.count %>)</em></a></h2>
+    <h2><a href="/carts/<%= session_cart.id%>"><span><%= t("mongoid.models.cart") %></span> <em>(<%= session_cart.cart_items.count %>)</em></a></h2>
   </div>
   <div id="minibasket_main">
 
     <ul id="basketlines">
       <% session_cart.cart_items.each do |item| %>
-      <li class="alt"><div><%= link_to "#{item.qty} x #{item.product.try(:name)}(#{item.sku})", item.product, 'data-no-turbolink' => true %></div></li>
+      <li class="alt"><div><%= link_to "#{item.qty} x #{item.product.try(:name)}(#{item.sku})", item.product %></div></li>
       <% end %>
     </ul>
 
@@ -14,7 +14,7 @@
       <p><%= t("shopror.views.cart.total") %>:<em><%= session_cart.total %></em></p>
     </div>
     <ul id="basketlinks">
-      <li><div><%= link_to image_tag('skin/iFullBasket.gif') +  t("shopror.views.cart.show"), session_cart, 'data-no-turbolink' => true %></div></li>
+      <li><div><%= link_to image_tag('skin/iFullBasket.gif') +  t("shopror.views.cart.show"), session_cart %></div></li>
       <% if session_cart.cart_items.count > 0 %>
           <li><div><%= link_to image_tag('skin/iCheckoutBasket.gif') +  t("shopror.views.cart.checkout"), new_checkout_path %></div></li>
           <li><div><%= link_to image_tag('skin/iSaveRecoverBasket.gif') +  t("shopror.views.cart.store"), store_carts_path %></div></li>

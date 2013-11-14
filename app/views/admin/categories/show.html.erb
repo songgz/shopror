@@ -6,7 +6,7 @@
   <tr>
     <td class="pagetoplinks">
       <%= link_to "#{t('shopror.views.category.add')}#{image_tag('admin/b_category.gif', title:t('shopror.views.category.add'))}".html_safe, new_admin_category_path %>
-      <%= link_to "#{t('shopror.views.product.add')}#{image_tag('admin/b_product.gif', title:t('shopror.views.product.add'))}".html_safe, new_admin_category_product_path(@category), 'data-no-turbolink' => true %>
+      <%= link_to "#{t('shopror.views.product.add')}#{image_tag('admin/b_product.gif', title:t('shopror.views.product.add'))}".html_safe, new_admin_category_product_path(@category) %>
       <%= link_to "#{t('shopror.views.category.edit')}#{image_tag('admin/b_category.gif', title:t('shopror.views.category.edit'))}".html_safe, edit_admin_category_path(@category) %>
     </td>
   </tr>
@@ -56,7 +56,7 @@
                     <%= link_to image_tag('admin/b_attributes.gif'), "#" %>
                     <%= link_to image_tag('admin/b_reviews.gif'), "#" %>
                     <%= link_to image_tag('admin/b_related.gif'), "#" %>
-                    <%= link_to image_tag('admin/b_product.gif', title:t('shopror.views.product.edit')), edit_admin_product_path(product), 'data-no-turbolink' => true %>
+                    <%= link_to image_tag('admin/b_product.gif', title:t('shopror.views.product.edit')), edit_admin_product_path(product) %>
                   </td>
                 </tr>
               </table>

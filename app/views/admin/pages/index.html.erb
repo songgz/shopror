@@ -2,7 +2,7 @@
   <tbody>
   <tr>
     <td><h1><%= t('mongoid.models.page') %></h1></td>
-    <td align="right"><%= link_to t('shopror.views.page.add'), new_admin_page_path, 'data-no-turbolink' => true %></td>
+    <td align="right"><%= link_to t('shopror.views.page.add'), new_admin_page_path %></td>
   </tr>
   </tbody>
 </table>
@@ -21,7 +21,7 @@
     <td><%= page.title %></td>
     <td><%= page.actived == 1 ? image_tag('admin/tick.gif') : image_tag('admin/tick_empty.gif') %></td>
     <td align="right">
-      <%= link_to image_tag('admin/modify.gif'), edit_admin_page_path(page), 'data-no-turbolink' => true %>
+      <%= link_to image_tag('admin/modify.gif'), edit_admin_page_path(page) %>
     </td>
   </tr>
   <% end %>
