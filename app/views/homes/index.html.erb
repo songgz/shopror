@@ -6,7 +6,7 @@
   <div class="products specials ">
     <h5><span><%= t('shopror.views.product.featured') %></span></h5>
 
-    <%= render :partial => "/products/list", :locals => {:products => Product.featured.limit(3)}  %>
+    <%= render :partial => "/products/list", :locals => {:products => Product.featured.limit(3).cache}  %>
 
     <div class="spacer"></div>
   </div>

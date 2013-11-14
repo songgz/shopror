@@ -44,6 +44,28 @@ class Order
     })
   end
 
+  def self.sell
+    map = %Q{
+      function() {
+        this.order_items.forEach(function(item){
+          emit(item.product_id, { count: item.qty });
+        });
+      }
+    }
+
+    reduce = %Q{
+      function(key, values) {
+        var result = { count: 0 };
+        values.forEach(function(value) {
+          result.count += value.count;
+        });
+        return result;
+      }
+    }
+
+    Order.map_reduce(map, reduce).out(inline: true)
+  end
+
 
 
 end
