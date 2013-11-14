@@ -1,0 +1,115 @@
+<%= form_for([:admin, @order]) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <table class="displaytable">
+      <tbody>
+      <tr>
+        <td colspan="2" class="pagetoplinks">
+          <%= link_to (t('mongoid.models.order') + image_tag('admin/b_customer.gif')).html_safe, edit_admin_customer_path(@order.customer) %>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="180"><%= f.label :order_no %></td>
+        <td><%= @order.order_no %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :created_at %></td>
+        <td><%= @order.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :updated_at %></td>
+        <td><%= @order.updated_at.strftime("%Y-%m-%d %H:%M:%S")  %></td>
+      </tr>
+      <tr>
+        <td class="bold"><%= f.label :total %></td>
+        <td><%= @order.total %></td>
+      </tr>
+      <tr>
+        <td class="bold" colspan="2" valign="top"><hr/><%= t('shopror.views.cart.shipping_info') %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :ship_name %></td>
+        <td><%= f.text_field :ship_name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :ship_company %></td>
+        <td><%= f.text_field :ship_company %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :ship_province %></td>
+        <td><%= f.collection_select(:ship_province, CityArea.roots, :code, :name, prompt: "请选择") %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :ship_city %></td>
+        <td><%= f.collection_select(:ship_city, CityArea.children(@order.ship_province), :code, :name, prompt: "请选择") %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :ship_district %></td>
+        <td><%= f.collection_select(:ship_district, CityArea.children(@order.ship_city), :code, :name, prompt: "请选择") %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :ship_address %></td>
+        <td><%= f.text_field :ship_address %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :ship_postcode %></td>
+        <td><%= f.text_field :ship_postcode %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><hr></td>
+      </tr>
+      <tr>
+        <td class="bold" valign="top"><%= t('shopror.views.order.status') %></td>
+        <td>
+          <table class="formatted">
+          <tbody>
+          <tr class="main_line_2">
+            <td width="30px"><%= f.check_box :sent %></td>
+            <td><%= f. label :sent %></td>
+          </tr>
+          <tr class="main_line_1">
+            <td><%= f.check_box :paid %></td>
+            <td><%= f.label :paid %></td>
+          </tr>
+          <tr class="main_line_2">
+            <td><%= f.check_box :invoiced %></td>
+            <td><%= f.label :invoiced %></td>
+          </tr>
+          <tr class="main_line_1">
+            <td><%= f.check_box :shipped %></td>
+            <td><%= f.label :shipped %></td>
+          </tr>
+          </tbody>
+        </table>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="bold"></td>
+      </tr>
+      <tr>
+        <td><%= f.label :desc  %></td>
+        <td><%= f.text_area :desc, rows: 5, cols: 60 %></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <%= f.submit class:'submit' %>
+
+<% end %>
+
+<script type="text/javascript">
+    cities_select(['order_ship_province', 'order_ship_city', 'order_ship_district']);
+</script>
+

@@ -1,0 +1,16 @@
+<table class="formatted">
+  <tbody>
+  <tr class="header">
+    <td width="5%">ID</td>
+    <td width="90%">&nbsp;</td>
+    <td width="5%" align="right">&nbsp;</td>
+  </tr>
+  <% shipping_zones.each_with_index do |shipping_zone, index| %>
+      <tr bgcolor="<%= index % 2 == 0 ? '#eeeeee' : '#dddddd' %>">
+        <td><%= shipping_zone.code  %></td>
+        <td><%= shipping_zone.name %></td>
+        <td align="right"><%= link_to image_tag('admin/modify.gif'), edit_admin_shipping_zone_path(shipping_zone) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

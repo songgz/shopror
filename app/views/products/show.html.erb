@@ -1,0 +1,106 @@
+<h1><%= @product.name %></h1>
+<div class="product">
+  <div class="pad">
+    <div class="main">
+      <table class="displaytable">
+        <tr>
+          <td class="textcell">
+            <em class="strapline"><%= @product.strapline %></em>
+
+            <p><%= @product.desc.html_safe %></p>
+
+            <div class="extrainfolinks">
+              <div class="compare"></div>
+            </div>
+          </td>
+          <td class="imagecell">
+            <% if @product.img? %>
+                <div class="imageholder" style="width:200px;height:230px">
+                  <div class="thumbnail">
+                    <!--+ content_tag(:a, t("shopror.views.product.large_view"), class: "imagelegend",rel:"lightbox")-->
+                    <%= link_to image_tag(@product.img_url(:thumb), height: 200, width: 200, alt: @product.name) + content_tag(:br)+ content_tag(:a, t("shopror.views.product.large_view"), href: @product.img_url, class: "imagelegend", rel: "lightbox"), @product.img_url, class: "productImages", rel: "lightbox" %>
+
+                  </div>
+                </div>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <% unless @product.variants.blank? %>
+        <div class="variants">
+          <div class="variantstable">
+            <table summary="Table of variants for this product.">
+              <colgroup class="col_name"></colgroup>
+              <colgroup class="col_info" span="1"></colgroup>
+              <colgroup class="col_price" span="1"></colgroup>
+              <colgroup class="col_addtobasket"></colgroup>
+              <thead>
+              <tr class="header">
+                <th class="name"></th>
+                <th class="RRP"><%= t("mongoid.attributes.variant.weight") %></th>
+                <th class="price" colspan="2"><%= t("mongoid.attributes.variant.price") %></th>
+                <th class="addtobasket"></th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @product.variants.each do |variant| %>
+                  <tr class="alt">
+                    <td class="name"><strong><%= variant.name %></strong><span><%= variant.sku %></span></td>
+                    <td class="rrp"><%= variant.weight %></td>
+                    <td class="price" colspan="2"><%= variant.price %></td>
+                    <td class="addtobasket">
+                      <%= form_for([session_cart, @cart_item]) do |f| %>
+                          <div>
+                            <%= f.hidden_field :product_id, :value => @product.id %>
+                            <%= f.hidden_field :sku, :value => variant.sku %>
+                            <%= f.hidden_field :name, :value => variant.name %>
+                            <%= f.hidden_field :weight, :value => variant.weight %>
+                            <%= f.hidden_field :price, :value => variant.price %>
+                            <%= f.select :qty, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] %>
+                            <%= f.submit t("shopror.views.cart.buy"), class: "submit" %>
+                          </div>
+                      <% end %>
+                    </td>
+                  </tr>
+                  <% if variant.img? %>
+                      <tr class="alt">
+                        <td colspan="5" class="imagecell">
+                          <div class="imageholder" style="width:50px;height:50px">
+                            <%= link_to image_tag(variant.img_url(:thumb), height: 50, width: 50), variant.img_url, class: "productImages", rel: "lightbox" %>
+                          </div>
+                        </td>
+                      </tr>
+                  <% end %>
+              <% end %>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+    <% end %>
+    <ul class="tabs">
+      <li id="tab1_link" class="" style="display: none;"><a href="#tab1">Product Details</a></li>
+      <li id="tab2_link" class="active"><a href="#tab2"><%= t('mongoid.attributes.product.spec') %></a></li>
+      <li id="tab3_link" class="" style="display: none;"><a href="#tab3">Quantity Discounts</a></li>
+      <li id="tab4_link" class="" style="display: none;"><a href="#tab4">Customer Reviews</a></li>
+    </ul>
+    <div class="tab_container">
+      <div id="tab2" class="tab_content">
+        <pre><%= @product.spec %></pre>
+      </div>
+
+      <div id="tab4" class="tab_content" style="display: none;">
+        <div class="reviews">
+          <div class="pad">
+
+            <p>There are currently no reviews of this product.</p>
+
+            <div class="writeyourown"><strong><a href="/v7/review?P_ID=408">Be the first to add a review!</a></strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<%= form_for([:admin,@page]) do |f| %>
+  <% if @page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this admin_page from being saved:</h2>
+      <ul>
+      <% @page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <table class="displaytable">
+      <tbody>
+      <tr>
+        <td width="180" class="bold" ><%= f.label :actived %></td>
+        <td><%= f.check_box :actived %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :code %></td>
+        <td><%= f.text_field :code %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><hr></td>
+      </tr>
+      <tr>
+        <td><%= f.label :title %></td>
+        <td><%= f.text_field :title, size: 30 %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :meta_desc %></td>
+        <td><%= f.text_field :meta_desc, size: 50 %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :meta_key %></td>
+        <td><%= f.text_field :meta_key, size: 50 %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :content %></td>
+        <td><%= f.kindeditor :content %></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <%= f.submit %>
+
+<% end %>

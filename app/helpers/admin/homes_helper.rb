@@ -1,0 +1,2 @@
+module Admin::HomesHelper
+end

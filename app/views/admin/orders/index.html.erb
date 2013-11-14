@@ -1,0 +1,44 @@
+  <table class="displaytable">
+    <tbody><tr>
+      <td><h1><%= t('mongoid.models.order')  %>&nbsp;- <%= @customer.try(:email) || t('shopror.views.order.recent') %></h1></td>
+    </tr>
+    <tr>
+      <td>
+        <form action="" method="get">
+          <span><%= t('shopror.views.order.key') %></span>
+          <input type="text" name="datValue1">
+          <input type="submit" name="btnSearch" id="search" value="搜 索">
+        </form>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table class="formatted">
+    <tbody>
+    <tr class="header">
+      <td width="5%"><%= t('shopror.views.order.order_number') %></td>
+      <td width="18%"><%= t('shopror.views.order.order_date') %></td>
+      <td width="25%" align="right"><%= t('shopror.views.order.total') %></td>
+      <td width="25%"><%= t('shopror.views.order.customer_name') %></td>
+      <td width="27%">&nbsp;</td>
+    </tr>
+    <% @orders.each_with_index do |order, index| %>
+    <tr bgcolor="<%= index % 2 == 0 ? '#eeeeee' : '#dddddd' %>">
+      <td><%= order.order_no %></td>
+      <td><%= order.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+      <td align="right"><%= order.total  %></td>
+      <td><% order.customer.try(:name) %></td>
+      <td align="right">
+        <%= link_to image_tag('admin/b_customer.gif'), edit_admin_customer_path(order.customer) %> &nbsp;
+        <%= link_to image_tag('admin/b_order.gif'), edit_admin_order_path(order) %>
+      </td>
+    </tr>
+    <% end %>
+
+    <tr>
+      <td colspan="5">
+        绿色代表已经收到订单款；红色代表订单已过期未付款；深灰色代表订单已完成（已付款且已配送；
+    </tr>
+    </tbody>
+  </table>

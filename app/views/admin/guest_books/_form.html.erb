@@ -1,0 +1,33 @@
+<%= form_for([:admin, @guest_book]) do |f| %>
+    <% if @guest_book.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@guest_book.errors.count, "error") %> prohibited this guest_book from being saved:</h2>
+
+          <ul>
+            <% @guest_book.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <table class="displaytable">
+      <tbody>
+      <tr>
+        <td><%= f.label :name %></td>
+        <td><%= f.text_field :name, size: 20 %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :email %></td>
+        <td><%= f.text_field :email, size: 20 %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :message %></td>
+        <td><%= f.text_area :message, cols: 60, rows: 10 %></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <%= f.submit class: "submit" %>
+
+<% end %>

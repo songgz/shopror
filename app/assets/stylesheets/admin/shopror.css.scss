@@ -1,0 +1,621 @@
+/* 
+========================================================================
+BACKEND CSS
+This stylesheet applies to the back end pages.
+========================================================================
+*/
+
+body, td, span, p, select, input {
+	font-family: Tahoma,Verdana,Arial,Helvetica;
+	font-size: 8pt;
+	font-weight: normal;
+	color: #000;
+}
+
+h1 {
+    font-size: 180%;
+    font-weight: bold;
+    color: #f50;
+    margin: 20px 0 0 0;
+    padding: 1px 10px 10px 0;
+    width: auto;
+    display: block;
+    line-height: 25px;
+    letter-spacing: -1px;
+}
+h2
+{
+	font-family: Verdana,Arial,Helvetica,Sans-Serif;
+	font-size: larger;
+	color: #000;
+	margin: 3px 0 8px 0;
+	padding: 5px 0 5px 0;
+}
+
+a {
+	text-decoration: none;
+	color: #04d;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+hr
+{
+	height: 2px;
+	border: none;
+	background-color: #ddd;
+	color: #ddd;
+}
+
+.subheader
+{
+	font-weight: bold;
+}
+
+.error
+{
+	background-color: #f00;
+	color: #fff;
+	font-weight: bold;
+	border-radius: 2px;
+	padding: 1px 3px;
+}
+
+.updated
+{
+	background-color: #8e8;
+	color: #080;
+	font-weight: normal;
+	border-radius: 2px;
+	padding: 3px 5px;
+	display: block;
+	margin: 3px 0;
+}
+
+a.buttonstyle {
+    border-radius: 3px;
+    background-color: #eee;
+    border: solid 1px #333;
+    color: #000;
+    padding: 1px 5px 1px 5px;
+    font-weight: normal;
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    margin: 1px 0px 1px 2px;
+    width: auto;
+    font-family: Tahoma,Verdana,Arial,Helvetica;
+    display: inline-block;
+}
+/*
+------------------------------------------------------------------------
+FORM ELEMENTS
+------------------------------------------------------------------------
+*/
+input[type=submit],input[type=button] {
+	border-radius: 3px;
+	background-color: #eee;
+	border: solid 1px #333;
+	color: #000;
+	padding: 1px 8px 1px 8px;
+	font-weight: normal;
+	font-size: smaller;
+	text-transform: uppercase;
+	margin: 3px 0 0 2px;
+	width: auto;
+	font-family: Tahoma,Verdana,Arial,Helvetica;
+	display: inline-block;
+}
+
+input[type=text], input[type=password] {
+	font-weight: normal;
+	font-size: inherit;
+	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+	color: #000;
+	background-color: #eee;
+	border: inset 1px #fff;
+	margin: 0 0 3px 0;
+}
+
+select, textarea {
+	font-weight: normal;
+	font-size: inherit;
+	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+	color: #000;
+	background-color: #eee;
+	border: inset 1px #fff;
+	margin: 0 0 3px 0;
+}
+
+textarea {
+	width: 300px;
+}
+
+select:focus, input:focus, textarea:focus {
+	font-weight: normal;
+	color: #000;
+	background-color: #fff;
+	border: solid 1px #f50;
+}
+
+form {
+	margin: 0
+}
+
+span.expl {
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	cursor: hand;
+}
+
+.paging {
+	text-align: center;
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+div.autocomplete {
+	background: #fff;
+}
+
+div.autocomplete ul {
+	border:1px solid #888;
+	margin:0;
+	padding:0;
+	width:100%;
+	list-style-type:none;
+}
+
+div.autocomplete ul li {
+	margin:0;
+	padding:3px;
+	font-size: 8pt;
+}
+
+div.autocomplete .productname {
+	font-weight: bold;
+}
+
+div.autocomplete ul li.selected {
+	background-color: #ffb;
+}
+
+/*
+------------------------------------------------------------------------
+TABLES
+------------------------------------------------------------------------
+*/
+#middlecolumn table.formatted
+{
+	width: 100%;
+	font-size: inherit;
+	border-collapse: collapse;
+	margin: 10px 0 10px 0;
+}
+
+#middlecolumn table.formatted tr
+{
+	vertical-align: top;
+	overflow: hidden;
+	border-bottom: solid 1px #fff;
+}
+
+#middlecolumn table.formatted tr:hover
+{
+	background-image: image-url("admin/row_highlight_back.png");
+	background-position: left -1px;
+	background-repeat: repeat-x;
+}
+
+#middlecolumn table.formatted td
+{
+	padding: 2px 5px 2px 5px;
+	background-color: none;
+}
+
+#middlecolumn table.formatted tr th,
+#middlecolumn table.formatted tr.header td
+{
+	border-top: solid 2px #f50;
+	font-family: Tahoma,Verdana,Arial,Helvetica;
+	font-size: smaller;
+	text-transform: uppercase;
+	background-color: #fff;
+	border-bottom: solid 1px #f80;
+	color: #f50;
+	font-weight: normal;
+	white-space: nowrap;
+	padding: 2px 5px 2px 5px;
+	min-height: 0;
+}
+
+#middlecolumn table.displaytable
+{
+	width: 100%;
+	border: none;
+	border-collapse: collapse;
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+}
+
+#middlecolumn table.displaytable td.celllabel
+{
+	width: 160px;
+	font-weight: bold;
+}
+
+#middlecolumn td.bold
+{
+	font-weight: bold;
+}
+
+#middlecolumn #prodtypeback table.formatted
+{
+	border-top: solid 1px #f80;
+}
+
+/*
+------------------------------------------------------------------------
+VARIOUS THINGS
+------------------------------------------------------------------------
+*/
+.pagetoplinks {
+	border-bottom: solid 1px #666;
+	background-color: #eee;
+	height: 25px;
+	padding: 1px 2px 1px 5px;
+}
+
+.pagetoplinks a {
+	padding: 0px 13px 2px 0;
+	font-weight: normal;
+}
+
+.pagetoplinks img {
+	padding: 0 0 0 3px;
+}
+
+.producttabs {
+	border-bottom: solid 1px #666;
+	background-color: #eee;
+	margin: 0 0 10px 0;
+	height: 27px;
+}
+
+.producttabs a
+{
+	margin: 4px 0 0 0;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 2px;
+	background-color: #eee;
+	border-top: solid 1px #eee;
+	border-right: solid 1px #eee;
+	font-weight: normal;
+	display: inline-block;
+	height: 19px;
+}
+
+.producttabs a.tablive
+{
+	margin-top: 5px;
+	background-color: #fff;
+	border-top: solid 1px #666;
+	border-left: solid 1px #666;
+	border-right: solid 1px #666;
+	font-weight: bold;
+	color: #000;
+	height: 20px;
+}
+
+/*
+------------------------------------------------------------------------
+LOGIN PAGE
+------------------------------------------------------------------------
+*/
+#loginbox
+{
+	margin: 100px auto 0px auto;
+	width: 400px;
+	height: 300px;
+	background-image: image-url("admin/login_back.png");
+	background-position: left top;
+	background-repeat: no-repeat;
+	padding: 28px 30px 30px 30px;
+}
+
+#loginbox img
+{
+	margin: 0 0 10px 0;
+}
+
+/*
+------------------------------------------------------------------------
+MENUS
+------------------------------------------------------------------------
+*/
+#menucats {
+	margin: 10px 0px 0px 10px;
+}
+
+#menucats a {
+	padding: 2px 3px 2px 15px;
+	border-bottom: solid 1px white;
+}
+
+#menucats a:hover {
+	background-color: #f70;
+	color: #fff;
+}
+
+/* ------------ Category menu --------------------------------- */
+
+#menucats ul {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#menucats ul li {
+	list-style: none;
+	float: none;
+	clear: both;
+	padding: 0;
+}
+
+#menucats ul li div a {
+	display: inline-block;
+	font-weight: bold;
+	background-image: image-url("admin/expand.gif");
+	background-position: 1px 2px;
+	background-repeat: no-repeat;
+	border-radius: 3px;
+}
+
+#menucats ul ul li div a {
+	font-weight: normal;
+	margin-left: 10px;
+	background-image: image-url("admin/product-tree.gif");
+	background-position: 1px 2px;
+	background-repeat: no-repeat;
+}
+
+#menucats ul ul ul li div a {
+	margin-left: 20px;
+}
+
+#menucats ul ul ul ul li div a {
+	margin-left: 30px;
+}
+
+
+/*
+========================================================================
+HORIZONTAL BACK END DROPDOWN MENU SYSTEM
+========================================================================
+*/
+#backendmenu
+{
+	position: fixed;
+	top: 0px;
+	left: 68px;
+	display: block;
+	z-index: 100;
+	height: 22px;
+	padding: 0 0 0 0;
+	margin: 0;
+	width: auto;
+	font-size: 8pt;
+	letter-spacing: 0px;
+}
+
+.dropdownmenu
+{
+	display: block;
+	float: none;
+}
+
+.dropdownmenu,
+.dropdownmenu a
+{
+	color: #111;
+	font-weight: normal;
+	z-index: 11;
+}
+
+.dropdownmenu ul.CactuShopMenu
+{
+	position: relative;
+	z-index: 9;
+}
+
+.dropdownmenu ul
+{
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+.dropdownmenu ul.CactuShopMenu,
+.dropdownmenu ul.CactuShopMenu ul
+{
+	top: 1px;
+}
+
+.dropdownmenu ul.CactuShopMenu ul
+{
+	position: absolute;
+	visibility: hidden;
+	border: solid 1px #f00;
+	margin-left: -1px;
+	box-shadow: 2px 3px 4px #999;
+}
+
+.dropdownmenu ul.CactuShopMenu li
+{
+	position: relative;
+	list-style: none;
+	float: left;
+	margin: 0;
+	border-top: solid 1px transparent;
+	border-left: solid 1px transparent;
+	border-right: solid 1px transparent;
+}
+
+.dropdownmenu ul.CactuShopMenu li a,
+.dropdownmenu ul.CactuShopMenu li span
+{
+	display: block;
+	text-decoration: none;
+	padding: 2px 6px 1px 6px;
+}
+
+.dropdownmenu ul.CactuShopMenu li:hover,
+.dropdownmenu ul.CactuShopMenu li.CactuShopMenu-Hover
+{
+	border-top: solid 1px #f00;
+	border-left: solid 1px #f00;
+	border-right: solid 1px #f00;
+	color: #333;
+	z-index: 11;
+}
+
+.dropdownmenu ul.CactuShopMenu .CactuShopSubMenu
+{
+	z-index: -9;
+	margin-top: -1px;
+}
+
+.dropdownmenu ul.CactuShopMenu li:hover a
+{
+	display: block;
+	color: #000;
+	background-color: #fff988;
+	padding: 2px 6px 3px 6px;
+}
+
+/* Add more rules here if your menus have more than three (3) tiers */
+.dropdownmenu ul.CactuShopMenu li:hover ul ul,
+.dropdownmenu ul.CactuShopMenu li.CactuShopMenu-Hover ul ul
+{
+	visibility: hidden;
+	color: #fff;
+}
+
+.dropdownmenu ul.CactuShopMenu ul li
+{
+	border: none;
+	background: none;
+}
+
+.dropdownmenu ul.CactuShopMenu ul li:hover,
+.dropdownmenu ul.CactuShopMenu ul li.CactuShopMenu-Hover
+{
+	border: none;
+}
+
+.dropdownmenu ul.CactuShopMenu li:hover ul li a,
+.dropdownmenu ul.CactuShopMenu li:hover ul li div
+{
+	display: block;
+	text-decoration: none;
+	color: #333;
+	padding: 3px 11px 3px 6px;
+	background-color: #fff988;
+}
+
+.dropdownmenu ul.CactuShopMenu li:hover ul li div
+{
+	color: #000;
+	padding: 10px 11px 2px 6px;
+	font-weight: bold;
+}
+
+.dropdownmenu ul.CactuShopMenu li:hover ul li:hover a
+{
+	color: #fff;
+	background-color: #f50;
+}
+
+
+
+/* Add more rules here if your menus have more than three (3) tiers */
+.dropdownmenu ul.CactuShopMenu li:hover ul,
+.dropdownmenu ul.CactuShopMenu li li:hover ul,
+.dropdownmenu ul.CactuShopMenu li li li:hover ul,
+.dropdownmenu ul.CactuShopMenu li.CactuShopMenu-Hover ul,
+.dropdownmenu ul.CactuShopMenu li li.CactuShopMenu-Hover ul,
+.dropdownmenu ul.CactuShopMenu li li li.CactuShopMenu-Hover ul
+{
+	visibility: visible;
+}
+
+.dropdownmenu .CactuShopMenu-Vertical ul.CactuShopMenu li
+{
+	width: 100%;
+}
+
+.dropdownmenu .CactuShopMenu-Horizontal
+{
+
+}
+
+.dropdownmenu .CactuShopMenu-Horizontal ul.CactuShopMenu
+{
+	width: 800px;
+}
+
+.dropdownmenu .CactuShopMenu-Horizontal ul.CactuShopMenu ul
+{
+	left: 0;
+	top: 100%;
+}
+
+.dropdownmenu .CactuShopMenu-Horizontal ul.CactuShopMenu ul ul
+{
+	top: 0;
+}
+
+.dropdownmenu .CactuShopMenu-Horizontal ul.CactuShopMenu ul ul
+{
+
+}
+
+.dropdownmenu .CactuShopMenu-Horizontal ul.CactuShopMenu li
+{
+	text-align: left;
+}
+
+.dropdownmenu .CactuShopMenu-Horizontal ul.CactuShopMenu ul li
+{
+	text-align: left;
+	width: 180px;
+}
+
+.dropdownmenu .CactuShopMenu-Horizontal ul.CactuShopMenu ul ul li
+{
+	width: 180px;
+}
+
+.dropdownmenu .CactuShopMenu-Horizontal ul.CactuShopMenu li ul li ul
+{
+	margin: -1px 0 0 180px;
+}
+
+.dropdownmenu .CactuShopMenu-Horizontal ul.CactuShopMenu li:hover ul li:hover ul li a,
+.dropdownmenu .CactuShopMenu-Horizontal ul.CactuShopMenu li:hover ul li:hover ul span
+{
+	display: block;
+	text-decoration: none;
+	color: #333;
+	padding: 3px 11px 3px 6px;
+	background-color: #fff988;
+}
+
+.dropdownmenu .CactuShopMenu-Horizontal ul.CactuShopMenu li:hover ul li:hover ul li:hover a
+{
+	color: #fff;
+	background-color: #f50;
+}

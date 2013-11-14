@@ -1,0 +1,8 @@
+<div id="newestproducts_container">
+  <% products.each do |product|  %>
+    <div class="smallimageholder" style="width:50px;height:50px">
+      <%= link_to image_tag(product.img_url(:thumb), height: 50, width: 50), product, title:product.name, alt: product.name, 'data-no-turbolink' => true %>
+    </div>
+  <% end %>
+  <div class="spacer"></div>
+</div>

@@ -1,0 +1,38 @@
+<table class="displaytable">
+  <tbody>
+  <tr>
+    <td><h1><%= t("mongoid.models.shipping_method")  %> - <%= @shipping_method.try(:name) %></h1></td>
+  </tr>
+  <tr>
+    <td><%= link_to t("shopror.views.shipping.back"), admin_shipping_methods_path %> </td>
+  </tr>
+  <tr><td align="right"><%= link_to t("shopror.views.shipping_rate.add"), new_admin_shipping_rate_path %></td></tr>
+  </tbody>
+</table>
+
+<table class="formatted">
+<tbody>
+<% @shipping_method.zones.each do |zone| %>
+<tr class="header">
+  <td colspan="4" class="bold"><%= zone.name %></td>
+</tr>
+<% zone.rates(@shipping_method.id).each_with_index do |rate, index| %>
+<tr bgcolor="<%= index % 2 == 0 ? '#eeeeee' : '#dddddd' %>">
+  <td width="25%"><%= rate.name %></td>
+  <td width="25%"><%= rate.upto %> </td>
+  <td width="25%"><%= rate.rate %></td>
+  <td align="right" width="10%">
+    <%= link_to image_tag('admin/modify.gif'), edit_admin_shipping_rate_path(rate) %>
+    <%= link_to image_tag('admin/delete.gif'), admin_shipping_rate_path(rate), method: :delete, data: { confirm: t("shopror.views.shipping_rate.confirm") } %>
+  </td>
+</tr>
+<% end %>
+<tr>
+  <td  colspan="4" align="right"><%= link_to t("shopror.views.shipping_rate.add"), new_admin_shipping_rate_path(shipping_method_id: @shipping_method.id) %></td>
+</tr>
+<tr>
+  <td colspan="3">&nbsp;</td>
+</tr>
+<% end %>
+</tbody>
+</table>

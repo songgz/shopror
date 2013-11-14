@@ -1,0 +1,30 @@
+<table class="displaytable">
+  <tbody>
+  <tr>
+    <td><h1><%= t('mongoid.models.guest_book') %></h1></td>
+    <td align="right"><%= link_to t('shopror.views.guest_book.new'), new_admin_guest_book_path %></td>
+  </tr>
+  </tbody>
+</table>
+
+<table class="formatted">
+  <tbody>
+  <tr class="header">
+    <td width="10%"><%= t('mongoid.attributes.guest_book.name') %></td>
+    <td width="10%"><%= t('mongoid.attributes.guest_book.email') %></td>
+    <td width="75%"><%= t('mongoid.attributes.guest_book.message') %></td>
+    <td width="5%">&nbsp;</td>
+  </tr>
+  <% @guest_books.each_with_index do |guest_book, index| %>
+      <tr bgcolor="<%= index % 2 == 0 ? '#eeeeee' : '#dddddd' %>">
+        <td><%= guest_book.name %></td>
+        <td><%= guest_book.email %></td>
+        <td><%= guest_book.message %></td>
+        <td align="right">
+          <%= link_to image_tag('admin/modify.gif'), edit_admin_guest_book_path(guest_book) %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+

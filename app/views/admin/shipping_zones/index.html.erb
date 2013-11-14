@@ -1,0 +1,6 @@
+<h1>Listing admin_shipping_zones</h1>
+<%= render :partial => "/admin/shipping_zones/list", :locals => {:shipping_zones => @shipping_zones}  %>
+
+<br>
+
+<%= link_to 'New Shipping zone', new_admin_shipping_zone_path %>

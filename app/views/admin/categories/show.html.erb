@@ -1,0 +1,68 @@
+<table class="displaytable" id="prodtypeback">
+  <tr>
+    <td><h1><%= @category.name %></h1></td>
+  </tr>
+
+  <tr>
+    <td class="pagetoplinks">
+      <%= link_to "#{t('shopror.views.category.add')}#{image_tag('admin/b_category.gif', title:t('shopror.views.category.add'))}".html_safe, new_admin_category_path %>
+      <%= link_to "#{t('shopror.views.product.add')}#{image_tag('admin/b_product.gif', title:t('shopror.views.product.add'))}".html_safe, new_admin_category_product_path(@category), 'data-no-turbolink' => true %>
+      <%= link_to "#{t('shopror.views.category.edit')}#{image_tag('admin/b_category.gif', title:t('shopror.views.category.edit'))}".html_safe, edit_admin_category_path(@category) %>
+    </td>
+  </tr>
+
+  <tr>
+    <td><h2><%= t('shopror.views.category.sub_categories') %></h2></td>
+  </tr>
+
+  <% if @category.leaf? %>
+      <tr>
+        <td><%= t("shopror.views.category.no_sub_categories") %></td>
+      </tr>
+  <% else %>
+      <tr>
+        <td>
+          <table class="formatted">
+            <% @category.children.each_with_index do |category, index| %>
+                <tr bgcolor="<%= index % 2 == 0 ? '#eeeeee' : '#dddddd' %>">
+                  <td width="400"><%= category.name %></td>
+                  <td align="right">
+                    <%= link_to image_tag('admin/b_category.gif', title:t('shopror.views.category.sub_categories')), admin_category_path(category) %>
+                  </td>
+                </tr>
+            <% end %>
+          </table>
+        </td>
+      </tr>
+  <% end %>
+
+
+  <tr>
+    <td><h2><%= t("shopror.views.product.products") %></h2></td>
+  </tr>
+  <% if @category.products.empty? %>
+      <tr>
+        <td>
+          <%= t("shopror.views.product.no_products") %></td>
+      </tr>
+  <% else %>
+      <% @category.products.each do |product| %>
+          <tr>
+            <td>
+              <table class="displaytable">
+                <tr>
+                  <td width="300" class="subheader"><%= product.name %></td>
+                  <td align="right">
+                    <%= link_to image_tag('admin/b_attributes.gif'), "#" %>
+                    <%= link_to image_tag('admin/b_reviews.gif'), "#" %>
+                    <%= link_to image_tag('admin/b_related.gif'), "#" %>
+                    <%= link_to image_tag('admin/b_product.gif', title:t('shopror.views.product.edit')), edit_admin_product_path(product), 'data-no-turbolink' => true %>
+                  </td>
+                </tr>
+              </table>
+              <%= render :partial => "/admin/variants/list", :locals => {:product => product}  %>
+            </td>
+          </tr>
+      <% end %>
+  <% end %>
+</table>

@@ -1,0 +1,29 @@
+<table class="displaytable">
+  <tbody>
+  <tr>
+    <td><h1><%= t('mongoid.models.article') %></h1></td>
+    <td align="right"><%= link_to t('shopror.views.article.add'), new_admin_article_path, 'data-no-turbolink' => true %></td>
+  </tr>
+  </tbody>
+</table>
+
+<table class="formatted">
+  <tbody>
+  <tr class="header">
+    <td width="10%"><%= t('mongoid.attributes.article.page') %></td>
+    <td width="80%"><%= t('mongoid.attributes.article.title') %></td>
+    <td width="5%"><%= t('mongoid.attributes.article.actived') %></td>
+    <td width="5%">&nbsp;</td>
+  </tr>
+  <% @articles.each_with_index do |article, index| %>
+      <tr bgcolor="<%= index % 2 == 0 ? '#eeeeee' : '#dddddd' %>">
+        <td><%= article.page.try(:title) %></td>
+        <td><%= article.title %></td>
+        <td><%= article.actived == 1 ? image_tag('admin/tick.gif') : image_tag('admin/tick_empty.gif') %></td>
+        <td align="right">
+          <%= link_to image_tag('admin/modify.gif'), edit_admin_article_path(article), 'data-no-turbolink' => true %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

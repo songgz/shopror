@@ -1,0 +1,117 @@
+<%= form_for([:admin, @customer], :html => {:multipart => true}) do |f| %>
+    <% if @customer.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+          <ul>
+            <% @customer.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
+    <table class="displaytable">
+      <tbody>
+      <tr>
+        <td colspan="2" class="pagetoplinks">
+          <%= link_to (t('mongoid.models.order') + image_tag('admin/b_order.gif')).html_safe, admin_orders_path(customer_id: @customer.id)  %>
+
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+        <%= f.hidden_field :password,value:'12345678' %>
+        <%= f.hidden_field :password_confirmation,value:'12345678' %>
+      </tr>
+      <tr>
+        <td width="180"><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :company %></td>
+        <td><%= f.text_field :company %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :province %></td>
+        <td><%= f.collection_select(:province, CityArea.roots, :code, :name, prompt: "请选择") %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :city %></td>
+        <td><%= f.collection_select(:city,  CityArea.children(@customer.province), :code, :name, prompt: "请选择") %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :district %></td>
+        <td><%= f.collection_select(:district,  CityArea.children(@customer.city), :code, :name, prompt: "请选择") %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :address %></td>
+        <td><%= f.text_field :address %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :postcode %></td>
+        <td><%= f.text_field :postcode %></td>
+      </tr>
+      <tr>
+        <td class="bold" colspan="2" valign="top">
+          <hr/><%= t('shopror.views.cart.shipping_info') %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :ship_name %></td>
+        <td><%= f.text_field :ship_name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :ship_company %></td>
+        <td><%= f.text_field :ship_company %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :ship_province %></td>
+        <td><%= f.collection_select(:ship_province, CityArea.roots, :code, :name, prompt: "请选择") %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :ship_city %></td>
+        <td><%= f.collection_select(:ship_city, CityArea.children(@customer.ship_province), :code, :name, prompt: "请选择") %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :ship_district %></td>
+        <td><%= f.collection_select(:ship_district, CityArea.children(@customer.ship_city), :code, :name, prompt: "请选择") %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :ship_address %></td>
+        <td><%= f.text_field :ship_address %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :ship_postcode %></td>
+        <td><%= f.text_field :ship_postcode %></td>
+      </tr>
+      <tr>
+        <td class="bold" colspan="2" valign="top"><hr><%= t('shopror.views.customer.contact_info') %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :email %></td>
+        <td><%= f.text_field :email %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :telephone %></td>
+        <td><%= f.text_field :telephone %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :discount %></td>
+        <td><%= f.text_field :discount %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :customer_group %></td>
+        <td><%= f.collection_select(:customer_group_id, CustomerGroup.all, :id, :name, prompt: "请选择") %> </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <br>
+    <%= f.submit class:'submit' %>
+<% end %>
+
+<script type="text/javascript">
+    cities_select(['customer_province', 'customer_city', 'customer_district']);
+    cities_select(['customer_ship_province', 'customer_ship_city', 'customer_ship_district']);
+</script>

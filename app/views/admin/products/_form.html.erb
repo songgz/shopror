@@ -1,0 +1,87 @@
+<%= form_for([:admin, @product], :html => {:multipart => true}) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this admin_product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <table class="displaytable">
+      <tr>
+        <td class="bold"><%= f.label :actived %></td>
+        <td><%= f.check_box :actived %></td>
+      </tr>
+      <tr>
+        <td valign="top" class="bold"><%= f.label :categories %></td>
+        <td valign="top"><%= f.select :category_ids, nested_set_options(Category.all), {:prompt => true}, :multiple => true %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :featured %></td>
+        <td><%= f.select :featured, [0,1,2,3,4,5], {:prompt => true} %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :customer_group  %></td>
+        <td><%= f.collection_select(:customer_group_id, CustomerGroup.all, :id, :name, prompt: "请选择") %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :supplier  %></td>
+        <td><%= f.collection_select(:supplier_id, Supplier.all, :id, :name, prompt: "请选择") %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><hr /></td>
+      </tr>
+
+      <tr>
+        <td valign="top" class="bold"><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :strapline %></td>
+        <td><%= f.text_field :strapline, size: 60 %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :desc %></td>
+        <td><%= f.kindeditor :desc %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :spu %></td>
+        <td><%= f.text_field :spu %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :url %></td>
+        <td><%= f.text_field :url, size: 60 %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><hr /></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :seq  %></td>
+        <td><%= f.number_field :seq %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :reviewed %></td>
+        <td><%= f.check_box :reviewed %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><hr /></td>
+      </tr>
+      <tr>
+        <td><%= f.label :img %></td>
+        <td><%= image_tag(@product.img_url(:thumb)) %> <br/><%= f.file_field :img %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :spec %></td>
+        <td><%= f.text_area :spec, rows: 7, cols: 60 %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><hr /></td>
+      </tr>
+    </table>
+   <%= f.submit %>
+
+<% end %>

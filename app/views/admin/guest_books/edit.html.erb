@@ -1,0 +1,18 @@
+<table class="displaytable">
+  <tbody>
+  <tr>
+    <td colspan="2"><h1><%= t('shopror.views.guest_book.edit') %></h1></td>
+  </tr>
+  </tbody>
+</table>
+
+<%= render 'form' %>
+
+<hr>
+<table class="displaytable">
+  <tbody>
+  <tr bgcolor="#EEEEEE">
+    <td align="right"><%= link_to t('shopror.views.guest_book.delete'), admin_guest_book_path(@guest_book), method: :delete, data: { confirm: t('shopror.views.guest_book.confirm') }, class: 'buttonstyle'  %></td>
+  </tr>
+  </tbody>
+</table>

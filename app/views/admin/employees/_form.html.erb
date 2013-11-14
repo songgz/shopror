@@ -1,0 +1,70 @@
+<%= form_for([:admin, @employee], :html => {:multipart => true}) do |f| %>
+    <% if @employee.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being
+            saved:</h2>
+
+          <ul>
+            <% @employee.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <table class="displaytable">
+      <tbody>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+        <%= f.hidden_field :password,value:'12345678' %>
+        <%= f.hidden_field :password_confirmation,value:'12345678' %>
+      </tr>
+      <tr>
+        <td width="180"><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :company %></td>
+        <td><%= f.text_field :company %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :province %></td>
+        <td><%= f.collection_select(:province, CityArea.roots, :code, :name, prompt: "请选择") %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :city %></td>
+        <td><%= f.collection_select(:city, CityArea.children(@employee.province), :code, :name, prompt: "请选择") %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :district %></td>
+        <td><%= f.collection_select(:district, CityArea.children(@employee.city), :code, :name, prompt: "请选择") %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :address %></td>
+        <td><%= f.text_field :address %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :postcode %></td>
+        <td><%= f.text_field :postcode %></td>
+      </tr>
+      <tr>
+        <td class="bold" colspan="2" valign="top">
+          <hr><%= t('shopror.views.customer.contact_info') %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :email %></td>
+        <td><%= f.text_field :email %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :telephone %></td>
+        <td><%= f.text_field :telephone %></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <br>
+    <%= f.submit class: 'submit' %>
+<% end %>
+<script type="text/javascript">
+    cities_select(['employee_province', 'employee_city', 'employee_district']);
+</script>

@@ -1,0 +1,89 @@
+<h1><%= t('shopror.views.customer.account') %></h1>
+<div class="customer">
+  <div class="section orderhistory">
+    <h2><%= t('shopror.views.order.history') %></h2>
+
+    <p></p>
+
+    <div class="orderstable">
+      <table summary="A list of your orders.">
+        <thead>
+        <tr class="header">
+          <th class="number"><%= t('mongoid.attributes.order.order_no') %></th>
+          <th class="orderdate"><%= t('mongoid.attributes.order.created_at') %></th>
+          <th class="lastupdate"><%= t('mongoid.attributes.order.updated_at') %></th>
+          <th class="amount"><%= t('mongoid.attributes.order.total') %></th>
+          <th class="view"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% current_customer.orders.each do |order| %>
+            <tr>
+              <td class="number"><%= order.order_no %></td>
+              <td class="orderdate"><%= order.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+              <td class="lastupdate"><%= order.updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+              <td class="amount"><%= order.total %></td>
+              <td class="view"><%= link_to t('shopror.views.order.invoice'), invoice_path(order) %>&nbsp;&nbsp;&nbsp;<%= link_to t('shopror.views.order.show'), order %>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section savebaskets">
+    <h2><%= t('shopror.views.cart.stored') %></h2>
+
+    <p></p>
+
+    <div class="savebasketstable">
+      <table summary="Shopping baskets you've saved.">
+        <thead>
+        <tr class="header">
+          <th class="name"><%= t('mongoid.attributes.cart.name') %></th>
+          <th class="date"><%= t('mongoid.attributes.cart.created_at') %></th>
+          <th class="actions"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% current_customer.carts.each do |cart| %>
+            <tr>
+              <td class="name"><%= cart.name %></td>
+              <td class="date"><%= cart.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+              <td class="actions">
+                <%= link_to t('shopror.views.cart.delete'), cart_path(cart), method: :delete, data: {confirm: t('shopror.views.cart.confirm')} %>
+                &nbsp;&nbsp;&nbsp;
+                <%= link_to t('shopror.views.cart.restore'), restore_carts_path(id: cart.id) %>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <div class="section changecustomercode">
+    <h2><%= t('shopror.views.customer.change_detail') %></h2>
+
+    <p>&nbsp;<%= link_to t('shopror.views.customer.click_here'), edit_customer_path(current_customer) %></p>
+  </div>
+
+  <div class="section changecustomercode">
+    <h2><%= t('devise.views.passwords.edit.title') %></h2>
+
+    <p>&nbsp;<%= link_to t('devise.views.passwords.edit.submit'), edit_customer_registration_path %></p>
+  </div>
+
+
+  <div class="section">
+    <p>
+      <% if customer_signed_in? %>
+          <%= link_to t('devise.navigation.sign_out'), destroy_customer_session_path, :method => 'delete' %>
+      <% end %>
+    </p>
+  </div>
+
+</div>
+

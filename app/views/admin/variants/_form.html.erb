@@ -1,0 +1,81 @@
+<%= form_for([:admin, @product,@variant]) do |f| %>
+  <% if @variant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@variant.errors.count, "error") %> prohibited this admin_variant from being saved:</h2>
+
+      <ul>
+      <% @variant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <table class="displaytable">
+
+      <tr>
+        <td class="bold"><%= f.label :actived %></td>
+        <td><%= f.check_box :actived %></td>
+      </tr>
+      <tr>
+        <td class="bold"><%= f.label :sku %></td>
+        <td><%= f.text_field :sku %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :customer_group  %></td>
+        <td><%= f.collection_select(:customer_group_id, CustomerGroup.all, :id, :name, prompt: "请选择") %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><hr /></td>
+      </tr>
+
+      <tr>
+        <td class="bold"><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :desc %></td>
+        <td><%= f.text_area :desc %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><hr /></td>
+      </tr>
+      <tr>
+        <td><%= f.label :rrp %></td>
+        <td><%= f.number_field :rrp, step: 'any' %></td>
+      </tr>
+      <tr>
+        <td class="bold"><%= f.label :price %></td>
+        <td><%= f.number_field :price, step: 'any' %></td>
+      </tr>
+
+      <tr>
+        <td><%= f.label :weight %></td>
+        <td><%= f.number_field :weight, step: 'any' %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :qty %></td>
+        <td><%= f.number_field :qty %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :seq %></td>
+        <td><%= f.number_field :seq %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :free_shipping %></td>
+        <td><%= f.check_box :free_shipping %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><hr /></td>
+      </tr>
+      <tr>
+        <td><%= f.label :img %></td>
+        <td><%= image_tag(@variant.img_url) %> <br/><%= f.file_field :img %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><hr /></td>
+      </tr>
+    </table>
+    <%= f.submit %>
+
+<% end %>

@@ -1,0 +1,14 @@
+<h1><%= t('shopror.views.site.my_account') %></h1>
+<div class="customer">
+  <h2><%= t('shopror.views.cart.store_title')  %></h2>
+  <p></p>
+
+  <%= form_tag('/carts/store', html: { method: :post}) do %>
+      <div class="inputform">
+        <%= label_tag t('mongoid.attributes.cart.name') %>
+        <div><%= text_field_tag :name %></div><br>
+        <%= submit_tag t('shopror.views.cart.save'), class:'submit' %>
+      </div>
+  <% end %>
+
+</div>

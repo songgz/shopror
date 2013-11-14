@@ -1,0 +1,1 @@
+This file just ensures that this folder is not ignored when importing or zipping.

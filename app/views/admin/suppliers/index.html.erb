@@ -1,0 +1,37 @@
+<table class="displaytable">
+  <tbody>
+  <tr>
+    <td><h1>供应商列表</h1></td>
+    <td align="right"><%= link_to "新增供应商", new_admin_supplier_path %></td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <table class="formatted">
+        <tbody>
+        <tr class="header">
+          <td width="85%">供应商</td>
+          <td width="10%">激活?</td>
+          <td width="5%">&nbsp;</td>
+        </tr>
+        <% @suppliers.each_with_index do |supplier, index| %>
+            <tr bgcolor="<%= index % 2 == 0 ? '#eeeeee' : '#dddddd' %>">
+              <td><%= supplier.name %></td>
+              <td class="small">
+                <% if supplier.actived == 1 %>
+                    <img hspace="1" src="/assets/admin/tick.gif">
+                <% else %>
+                    <img hspace="1" src="/assets/admin/tick_empty.gif">
+                <% end %>
+              </td>
+              <td align="right">
+                <%= link_to image_tag('/assets/admin/modify.gif', title: "编辑供应商"), edit_admin_supplier_path(supplier) %>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  </tbody>
+</table>

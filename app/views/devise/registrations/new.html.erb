@@ -1,0 +1,21 @@
+<h1><%= t('shopror.views.site.my_account') %></h1>
+<div class="customer changepassword">
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="box inputform">
+
+      <%= f.label :email %>
+      <div><%= f.email_field :email, :autofocus => true %></div><br>
+
+      <%= f.label :password %>
+      <div><%= f.password_field :password %></div><br>
+
+      <%= f.label :password_confirmation %>
+      <div><%= f.password_field :password_confirmation %></div><br>
+
+      <%= f.submit t('devise.views.registrations.new.submit'), class:'submit' %>
+    </div>
+  <% end %>
+</div>
+
+

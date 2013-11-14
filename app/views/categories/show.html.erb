@@ -1,0 +1,75 @@
+<h1><%= @category.name %></h1>
+
+<div class="category">
+  <div class="pad">
+    <div class="maincategory">
+      <table class="displaytable">
+        <tr>
+          <% if @category.img? %>
+              <td class="imagecell">
+                <%= image_tag(@category.img_url(:thumb)) %>
+              </td>
+          <% end %>
+          <td class="textcell">
+            <%= @category.desc %>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <% unless @category.leaf? %>
+        <h5><span><%= t('shopror.views.category.sub_categories') %></span></h5>
+
+        <div class="subcategories subcategories_normal">
+          <% @category.children.each do |cat| %>
+              <div class="subcategory">
+                <div class="box">
+                  <div class="pad">
+                    <h2><%= link_to cat.name, cat %></h2>
+                    <p><%= cat.desc %></p>
+                  </div>
+                </div>
+              </div>
+          <% end %>
+        </div>
+        <div class="spacer"></div>
+    <% end %>
+
+    <% unless @category.products.blank? %>
+        <h5><span><%= t("shopror.views.product.products") %></span></h5>
+
+        <div class="products products_normal">
+          <% @category.products.each do |product| %>
+              <div class="product">
+                <div class="box">
+                  <div class="pad">
+                    <table class="displaytable">
+                      <tbody>
+                      <tr>
+                        <% unless product.img.blank? %>
+                            <td class="imagecell">
+                              <div class="imageholder" style="width:100px;height:100px">
+                                <%= link_to image_tag(product.img_url(:thumb), height:100, width:100), product,  'data-no-turbolink' => true %>
+                              </div>
+                            </td>
+                        <% end %>
+                        <td class="textcell">
+                          <h2><%= link_to product.name, product %></h2>
+                          <em class="strapline"><%= product.strapline %></em>
+                          <p><%= product.desc.html_safe %></p>
+                          <div class="minprice"><%= product.variants.first.try(:price) %></div>
+                          <div class="extrainfolinks">
+                            <div class="moreinfo"><%= link_to t("shopror.views.product.more"), product, 'data-no-turbolink' => true %></div>
+                          </div>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+          <% end %>
+        </div>
+    <% end %>
+  </div>
+</div>

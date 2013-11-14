@@ -1,0 +1,17 @@
+<%= form_for(@checkout) do |f| %>
+  <% if @checkout.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@checkout.errors.count, "error") %> prohibited this checkout from being saved:</h2>
+
+      <ul>
+      <% @checkout.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

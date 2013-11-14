@@ -1,0 +1,41 @@
+<%= form_for([:admin,@supplier], :html => {:multipart => true}) do |f| %>
+  <% if @supplier.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@supplier.errors.count, "error") %> prohibited this supplier from being saved:</h2>
+
+      <ul>
+      <% @supplier.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <table class="displaytable">
+      <tbody>
+      <!--<tr>-->
+        <!--<td colspan="2"><h1>Add / Edit Supplier</h1></td>-->
+      <!--</tr>-->
+      <tr>
+        <td colspan="2" class="bold">
+          输入供应商名称，如果激活状态没有被选中，那么供应商所提供的产品在本系统中将不可用
+          <!--Enter in the supplier name below to create/modify a new supplier record. If a supplier is not set 'live', all products linked to this supplier will be disabled form the site.</td>-->
+          <br />
+          <br />
+      </tr>
+
+      <tr>
+        <td valign="top" ><%= f.label "供应商名称" %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td ><%= f.label "激活？" %></td>
+        <td><%= f.check_box :actived %></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="right">
+          <%= f.submit %>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+<% end %>

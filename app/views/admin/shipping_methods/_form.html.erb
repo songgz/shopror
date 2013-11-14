@@ -1,0 +1,49 @@
+<%= form_for([:admin, @shipping_method]) do |f| %>
+  <% if @shipping_method.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shipping_method.errors.count, "error") %> prohibited this admin_shipping_method from being saved:</h2>
+
+      <ul>
+      <% @shipping_method.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <table class="displaytable">
+      <tbody>
+      <tr>
+        <td width="180"><%= f.label :actived %></td>
+        <td><%= f.check_box :actived %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><hr></td>
+      </tr>
+      <tr>
+        <td><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :desc %></td>
+        <td><%= f.text_area :desc %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :cod %></td>
+        <td><%= f.check_box :cod %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><hr></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :seq %></td>
+        <td><%= f.text_field :seq %></td>
+      </tr>
+
+      </tbody>
+    </table>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

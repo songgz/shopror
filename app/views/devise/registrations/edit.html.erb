@@ -1,0 +1,25 @@
+<h1><%= t('shopror.views.customer.account') %></h1>
+<div class="customer changepassword">
+<p></p>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <div class="box inputform">
+    <%= devise_error_messages! %>
+    <%= f.label :email %>
+    <div><strong><%= f.email_field :email, :autofocus => true %></strong></div><br>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <%= f.label :current_password %>
+    <div><%= f.password_field :current_password %></div><br>
+
+    <%= f.label :password %>
+    <div><%= f.password_field :password, :autocomplete => "off" %></div><br>
+
+    <%= f.label :password_confirmation %>
+    <div><%= f.password_field :password_confirmation %></div><br>
+
+    <%= f.submit t("devise.views.registrations.edit.submit"), class:'submit' %>
+  </div>
+<% end %>
+</div>

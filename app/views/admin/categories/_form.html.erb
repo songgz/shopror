@@ -1,0 +1,51 @@
+<%= form_for([:admin, @category], enctype: "multipart/form-data") do |f| %>
+    <% if @category.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@admin_category.errors.count, "error") %> prohibited this admin_category from being saved:</h2>
+          <ul>
+            <% @category.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <%= f.hidden_field :id %>
+    <table class="displaytable">
+      <tr>
+        <td class="bold"><%= f.label :actived %></td>
+        <td><%= f.check_box :actived %></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <hr/>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="bold" valign="top"><%= f.label :parent %></td>
+        <td><%= f.select :parent_id, nested_set_options(Category.all), {:prompt => true} %></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <hr/>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="bold"><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :desc %></td>
+        <td><%= f.text_area :desc %></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <hr/>
+        </td>
+      </tr>
+    </table>
+    <%= f.submit %>
+
+<% end %>

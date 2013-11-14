@@ -1,0 +1,18 @@
+<table class="displaytable">
+  <tbody>
+  <tr>
+    <td colspan="2"><h1><%= t('shopror.views.page.edit') %></h1></td>
+  </tr>
+  </tbody>
+</table>
+
+<%= render 'form' %>
+
+<hr>
+<table class="displaytable">
+  <tbody>
+  <tr bgcolor="#EEEEEE">
+    <td align="right"><%= link_to t('shopror.views.page.delete'), admin_page_path(@page), method: :delete, data: { confirm: t('shopror.views.page.confirm') }, class: 'buttonstyle'  %></td>
+  </tr>
+  </tbody>
+</table>

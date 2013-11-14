@@ -1,0 +1,116 @@
+<h1><%= t("shopror.views.cart.checkout")  %></h1>
+<div class="checkout step4">
+<div class="section"></div>
+<div class="basket">
+  <div class="baskettable"><table summary="">
+    <thead>
+    <tr class="header">
+      <th class="name" colspan="2"></th>
+
+      <th class="price" colspan="2"><%= t('mongoid.attributes.cart_item.price') %></th>
+      <th class="quantity"><%= t('mongoid.attributes.cart_item.qty') %></th>
+      <th class="total"><%= t('mongoid.attributes.cart_item.sum') %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- BASKET ROWS -->
+    <% session_cart.cart_items.each do |item| %>
+    <tr class="subheader">
+      <td class="name" colspan="6"><strong><%= link_to item.product.name, item.product, 'data-no-turbolink' => true %></strong>
+        <span class="codenumber"><%= item.sku %></span></td>
+    </tr>
+    <tr>
+      <td class="details" colspan="2"><%= item.name %></td>
+      <td class="price" colspan="2"><%= item.price %></td>
+      <td class="quantity"><%= item.qty %></td>
+      <td class="total"><%= item.sum %></td>
+    </tr>
+    <% end %>
+
+    <% if @shipping_method %>
+    <tr class="subheader separate">
+      <td colspan="6" class="name"><strong><%= @shipping_method.name %></strong></td>
+    </tr>
+    <tr class="discountdetails">
+      <td colspan="2" class="details"><%= @shipping_method.desc %></td>
+      <td class="price" colspan="2"><%= fee = @shipping_method.fee(current_customer,session_cart) %></td>
+      <td class="quantity">1</td>
+      <td class="total"><%= fee %></td>
+    </tr>
+    <% end %>
+
+    </tbody>
+  </table>
+  </div>
+
+  <div class="totals">
+    <span class="extax"><%= t("shopror.views.cart.total")  %> = <span class="amount"><%= session_cart.total + fee  %></span></span><br>
+  </div>
+
+
+  <%= form_tag(new_checkout_path, method: :get) do %>
+  <div class="shippingmethodline">
+    <strong><%= t('shopror.views.cart.shipping_method')  %>:</strong><%= select_tag :shipping_method_id, options_for_select(ShippingMethod.all.collect{ |m| [m.name, m.id] },:selected => @shipping_method.id) %>
+    <input type="submit" class="smallsubmit" name="submitforward" value="修改">
+  </div>
+  <% end %>
+
+</div>
+  <%= form_for(@order, url:checkouts_path) do |f| %>
+  <div class="box inputform">
+  <input type="hidden" name="s" value="k5yf4k12883">
+
+  <div class="section">
+    <h5><span><%= t("shopror.views.cart.shipping_info") %></span></h5>
+    <div class="shippingdetails" id="shippingdetails">
+      <strong><%= f.label :ship_name %></strong>
+      <div><%= f.text_field :ship_name, value: current_customer.ship_name %></div><br>
+
+      <%= f.label :ship_company %>
+      <div><%= current_customer.ship_company %></div><br>
+
+      <%= f.label :ship_province %>
+      <div><%= CityArea.get(current_customer.ship_province).try(:name) %> <%= link_to '修改配送信息', address_checkouts_path, class:'buttonstyle' %></div><br>
+
+      <%= f.label :ship_city %>
+      <div><%= CityArea.get(current_customer.ship_city).try(:name) %></div><br>
+
+      <%= f.label :ship_district %>
+      <div><%= CityArea.get(current_customer.ship_district).try(:name) %></div><br>
+
+      <strong><%= f.label :ship_address %></strong>
+      <div><%= f.text_field :ship_address, value: current_customer.ship_address %></div><br>
+
+      <%= f.label :ship_postcode %>
+      <div><%= current_customer.ship_postcode %></div><br>
+
+    </div>
+
+  </div>
+
+  <div class="section">
+    <h5><span><%= t("shopror.views.cart.purchaser_contact_info") %></span></h5>
+
+    <%= f.label :ship_email %>
+    <div>sgzhe@163.com</div><br>
+
+    <strong><%= f.label :ship_telephone  %></strong>
+    <div><%= f.text_field :ship_telephone, value: current_customer.ship_telephone %></div><br>
+  </div>
+
+  <div class="section">
+    <h5><%= f.label :remark  %></h5>
+    <%= f.text_area :remark, rows:5, cols:60  %><br>
+  </div>
+
+  <div class="section">
+    <div class="billtotal">此帐单需支付金额 <span><%= session_cart.total %></span></div><br>
+    <%= submit_tag '下单', class:"submit",name:'btn_make_order' %>
+    <p id="fieldsrequired">加*字段为必填项。</p>
+  </div>
+</div>
+<% end %>
+</div>
+<script type="text/javascript">
+    cities_select(['order_ship_province', 'order_ship_city', 'order_ship_district']);
+</script>

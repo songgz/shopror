@@ -1,0 +1,44 @@
+<h1>结帐</h1>
+
+<div class="checkout step2">
+
+<div class="section">
+  <h5><span>配送信息</span></h5>
+<%= form_for(current_customer, url: address_checkouts_path, method: :post) do |f| %>
+   <div class="box inputform">
+      <%= f.label :ship_name %>
+      <div><%= f.text_field :ship_name %></div><br>
+
+      <%= f.label :ship_company %>
+      <div><%= f.text_field :ship_company %></div><br>
+
+      <%= f.label :ship_province %>
+      <div><%= f.collection_select(:ship_province, CityArea.roots, :code, :name, prompt: "请选择") %></div><br>
+
+      <%= f.label :ship_city %>
+      <div><%= f.collection_select(:ship_city, CityArea.children(current_customer.ship_province), :code, :name, prompt: "请选择") %></div><br>
+
+      <%= f.label :ship_district %>
+      <div><%= f.collection_select(:ship_district, CityArea.children(current_customer.ship_city), :code, :name, prompt: "请选择") %></div><br>
+
+      <%= f.label :ship_address %>
+      <div><%= f.text_field :ship_address %></div><br>
+
+      <%= f.label :ship_postcode %>
+      <div><%= f.text_field :ship_postcode %></div><br>
+
+      <%= f.label :email %>
+      <div><%= f.text_field :email %></div><br>
+
+      <%= f.label :telephone %>
+      <div><%= f.text_field :telephone %></div><br>
+
+     <input class="submit" type="submit" name="submitforward" value="继续">
+</div>
+<% end %>
+</div>
+</div>
+
+<script type="text/javascript">
+    cities_select(['customer_ship_province', 'customer_ship_city', 'customer_ship_district']);
+</script>

@@ -1,0 +1,582 @@
+/* 
+========================================================================
+TEMPLATE.CSS
+========================================================================
+*/
+
+/*
+------------------------------------------------------------------------
+MAIN ELEMENTS
+------------------------------------------------------------------------
+*/
+html 
+{
+	height: 100%;
+	overflow: scroll;
+	overflow: -moz-scrollbars-vertical;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+body {
+	background-color: #fff;
+	height: 100%;
+}
+
+#container 
+{
+	display: block;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -142px; /* the bottom margin is the negative value of the footer's height */
+}
+
+/* Contains rest of HTML */
+#centrecontainer {
+	width: 850px;
+	text-align: left;
+	margin: 0 auto;
+	padding: 0 0 50px 0;
+}
+
+/*
+------------------------------------------------------------------------
+TOP BAR
+------------------------------------------------------------------------
+*/
+#topbar
+{
+	padding: 0 0 5px 0;
+	border-bottom: solid 2px #fff;
+	font-size: 99%;
+}
+
+#topbar #logindetails
+{
+	float: left;
+	border: solid 1px black;
+}
+
+#topbar #topleft
+{
+	width: 630px;
+	float: left;
+	padding: 0 0 5px 0;
+}
+
+#topbar #topleft a
+{
+	padding: 5px 5px 1px 10px;
+	display: inline-block;
+	border-left: dotted 1px black;
+}
+
+#topbar #loginlinks
+{
+	float: right;
+	width: 250px;
+	text-align: right;
+}
+
+#topbar #loginbar
+{
+	float: left;
+	width: 350px;
+}
+
+#topbar #loginbar a
+{
+	padding: 5px 5px 1px 10px;
+	display: inline-block;
+	border-left: dotted 1px black;
+}
+
+#topbar #loginbar strong
+{
+	padding: 2px 5px 1px 0;
+	color: #000;
+}
+
+#topbar a
+{
+
+}
+
+/*
+------------------------------------------------------------------------
+HEADER
+------------------------------------------------------------------------
+*/
+#header {
+	height: 100px;
+}
+
+#header #logo {
+	margin: 15px 0 0 0;
+}
+
+#header #title {
+	height: 40px;
+}
+
+#header #mainbar {
+	margin: 30px 0 0 0;
+}
+
+#header .links 
+{
+	float: left;
+	margin: 0 0 0 0;
+	width: 830px;
+	background-color: #aaa;
+	border-radius: 4px;
+	border-bottom: solid 1px #666;
+}
+
+#header .links li {
+	list-style: none;
+	display: inline;
+	margin: 0;
+	padding: 0;
+	text-align: right;
+}
+
+#header .links a 
+{
+	color: #fff;
+	display: inline-block;
+	padding: 2px 10px 2px 8px;
+	border-right: dotted 1px #fff;
+	font-weight: bold;
+}
+
+#header .links a:hover {
+	color: #000;
+}
+
+/*
+------------------------------------------------------------------------
+PAGE SECTIONS
+------------------------------------------------------------------------
+*/
+#pagebody {
+	padding: 0px 10px 0px 10px;
+	margin: 0px 0px 0px 0px;
+}
+
+/* Dynamic page content section of page body */
+#pagecontent {
+	width: 635px;
+	float: left;
+	padding: 0 10px 20px 0;
+}
+
+#pagecontent_pad {
+	padding: 0px 5px 25px 0px;
+}
+
+/* Right hand section of page body */
+#right {
+	width: 180px;
+	margin: 0px;
+	float: right;
+	margin-top: 0px;
+	padding: 0 0 20px 0;
+}
+
+/*
+------------------------------------------------------------------------
+SEARCH BOX
+------------------------------------------------------------------------
+*/
+#searchbox
+{
+	margin: 10px 3px 20px 0;
+	width: 175px;
+	text-align: right;
+	float: right;
+}
+
+#searchbox a
+{
+	margin-top: 5px;
+	display: block;
+}
+
+#searchbox #skinsearchboxback {
+	width: 100%;
+	height: 20px;
+	margin: 0;
+	background-color: #eee;
+	border: solid 1px #f50;
+	text-align: left;
+	border-radius: 2px;
+}
+
+#searchbox input#skinsearchbox {
+	width: 106px;
+	margin: 0;
+	border-color: transparent;
+	background-color: transparent;
+}
+
+#searchbox #searchbutton 
+{
+	position: relative;
+	z-index: 3;
+	margin: 0;
+	border: none;
+	padding: 1px;
+	text-transform: uppercase;
+	background-color: transparent;
+	float: right;
+}
+
+#mailinglist label#email {
+	display: block;
+	margin: 0px 0px 2px 0px;
+}
+
+#mailinglist label#htmlemail {
+	display: block;
+	margin: 2px 0px 2px 0px;
+}
+
+/*
+------------------------------------------------------------------------
+TOPSELLERS, NEWEST ITEMS, CURRENCY, LANGUAGE, ETC.
+------------------------------------------------------------------------
+*/
+#topsellers,
+#newestproducts,
+#languagemenu,
+#currencymenu,
+#prodtypemenuform
+{
+	display: block;
+	padding: 1px 0 1px 5px;
+	margin: 1px 0 10px 0;
+	font-weight: bold;
+	background-color: #eee;
+	color: #000;
+}
+
+#topsellers h4,
+#newestproducts h4,
+#prodtypemenuform h4
+{
+	padding: 0 0 5px 0;
+}
+
+#topsellers ,
+#newestproducts
+{
+	padding: 10px;
+}
+
+#languagemenu form select,
+#currencymenu form select,
+#prodtypemenuform select 
+{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background-color: #eee;
+	height: auto;
+}
+
+#topsellers div.smallimageholder,
+#newestproducts div.smallimageholder
+{
+	display: block;
+	margin: 0 2px 2px 0;
+	vertical-align: middle;
+	float: left;
+}
+
+
+/*
+------------------------------------------------------------------------
+MINI BASKET
+------------------------------------------------------------------------
+*/
+#minibasket_holder
+{
+	float: right;
+	border: none;
+	width: 190px;
+	margin: 3px 0 0 0;
+	text-align: right;
+	border-right: dotted 1px black;
+}
+
+#minibasket_holder h2
+{
+	padding: 1px 9px 2px 5px;
+	margin: 0;
+	font-weight: normal;
+}
+
+#minibasket_holder h2 a span
+{
+
+}
+
+#minibasket_holder h2 a em
+{
+	font-style: normal;
+	font-weight: normal;
+}
+
+
+#minibasket
+{
+	width: 190px;
+	border: solid 0px transparent;
+}
+
+#minibasket_main
+{
+	visibility: hidden;
+	z-index: 11;
+	height: 0px;
+	text-align: left;
+	position: absolute;
+	width: 100%;
+}
+
+#minibasket:hover
+{
+	visibility: visible;
+	height: auto;
+	position: absolute;
+	background-color: #fff;
+}
+
+#minibasket_holder:hover h2
+{
+	color: #fff;
+	background-color: #ffaa55;
+}
+
+#minibasket_holder:hover h2 a em,
+#minibasket_holder:hover h2 a span
+{
+	color: #fff;
+	font-weight: bold;
+}
+
+#minibasket:hover #minibasket_main
+{
+	visibility: visible;
+	height: auto;
+	background-color: #ffaa55;
+	border-bottom: solid 1px #777;
+}
+
+#basketlines {
+	padding: 0;
+	border-top: dotted 1px #888;
+}
+
+#basketlines li {
+	border-bottom: dotted 1px #888;
+	list-style: none;
+	clear: both;
+}
+
+#basketlines li.alt {
+
+}
+
+#basketlines em {
+	font-style: normal;
+}
+
+#basketlines a {
+	display: block;
+	text-decoration: none;  
+	color: #000;
+	padding: 1px 2px 2px 3px;
+}
+
+#basketlines a:hover {
+	color: #fff;
+	background-color: #f50;
+}
+
+#baskettotals 
+{
+	text-align: right;
+}
+
+#baskettotals p {
+	color: #f00;
+	margin: 1px 0px 1px 5px;
+	padding: 1px 10px;
+}
+
+#baskettotals p em {
+	margin: 1px 0 1px 5px;
+	font-weight: bold;
+	padding: 1px 10px;
+}
+
+#baskettotals em {
+	font-style: normal;
+}
+
+#baskettotals #taxexception {
+	font-weight: normal;
+}
+
+#basketlinks 
+{
+	margin: 0;
+	padding: 0;
+}
+
+#basketlinks li {
+	list-style: none;
+}
+
+#basketlinks img {
+	border: 0;
+	vertical-align: middle;
+	margin: 0px 5px 0px 0px;
+}
+
+#basketlinks a {
+	display: block;
+	color: #000;
+	padding: 1px 1px 1px 3px;
+}
+
+#basketlinks a:hover {
+	color: #fff;
+	background-color: #f50;
+}
+
+#basketempty, #baskethidden 
+{
+	font-style: italic;
+	display: block;
+	text-decoration: none;  
+	color: #000;
+	background-color: #fff;
+	padding: 5px 2px 5px 3px;
+	border-top: solid 1px #000;
+	border-bottom: solid 1px #000;
+}
+
+/*
+------------------------------------------------------------------------
+CATEGORY MENU
+------------------------------------------------------------------------
+*/
+
+#categorymenu {
+	margin: 0 0 15px 0;
+	padding: 0 0 1px 0;
+	border-bottom: dotted 1px #000;
+}
+
+#categorymenu ul {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#categorymenu ul li {
+	list-style: none;
+	float: none;
+	clear: both;
+	padding: 0;
+}
+
+#categorymenu ul li div {
+	background-color: transparent; 		
+}
+
+#categorymenu ul li div a {
+	display: block;
+	padding: 2px 5px 2px 5px;
+	margin: 1px 0 0px 0;
+	font-weight: bold;
+	border-top: dotted 1px #000;
+	color: #000;
+}
+
+#categorymenu ul li div a:hover {
+	background-color: #f50;
+	color: #fff;
+	border-radius: 3px;
+}
+
+#categorymenu ul ul li div {
+	font-weight: normal;
+}
+
+#categorymenu ul ul li div a {
+	font-weight: normal;
+	text-transform: none;
+	padding-left: 15px;
+	color: #444;
+	font-size: 90%;
+	border: none;
+	background-color: #eee;
+}
+
+#categorymenu ul ul ul li div a {
+	padding-left: 25px;
+}
+
+#categorymenu ul ul ul ul li div a {
+	padding-left: 35px;
+}
+
+/*
+------------------------------------------------------------------------
+FOOTER
+------------------------------------------------------------------------
+*/
+#footer {
+	margin: 0 auto;
+	padding: 0;
+	height: 142px; /*change this size depending on the height of the footer image you're using*/
+	width: 100%;
+	bottom: 0px;
+	background-color: #555;
+}
+
+#footerspacer
+{
+	height: 142px;
+}
+
+#footer .links {
+	margin: 0px;
+}
+
+#footer .links li {
+	list-style: none;
+	display: inline;
+}
+	
+#footer .links a {
+	padding: 2px;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+/* T&Cs text */
+#terms 
+{
+	width: 830px;
+	margin: 0 auto;
+	padding: 10px;
+	color: #ccc;
+	font-size: 90%;
+}

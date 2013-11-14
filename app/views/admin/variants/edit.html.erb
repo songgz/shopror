@@ -1,0 +1,10 @@
+<%= render :partial => "admin/products/tabs", :locals => {:tab => :variant} %>
+<%= render 'form' %>
+<hr>
+<table class="displaytable">
+  <body>
+  <tr bgcolor="#EEEEEE">
+    <td align="right"><%= link_to t('shopror.views.variant.delete'), admin_product_variant_path(@product, @variant), method: :delete, data: {confirm: t('shopror.views.variant.confirm')}, class: 'buttonstyle' %></td>
+  </tr>
+  </body>
+</table>

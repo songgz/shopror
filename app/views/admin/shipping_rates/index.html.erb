@@ -1,0 +1,303 @@
+<table class="displaytable">
+<tbody>
+<tr>
+  <td><h1>Shipping Rates - <%= @shipping_method.try(:name) %></h1></td>
+</tr>
+<tr>
+  <td><%= link_to 'Back To Shipping', admin_shipping_methods_path %></td>
+</tr>
+</tbody>
+</table>
+
+<table class="formatted">
+<tbody>
+<tr class="header">
+  <td colspan="3" class="bold">
+    United
+    Kingdom&nbsp;<a href="_update_shippingrate.asp?strCallMode=zd&amp;SM_ID=2&amp;SZ_ID=1"><img src="images/delete.gif" border="0" alt="Delete This Shipping Method" title="Delete This Shipping Method"></a>
+  </td>
+</tr>
+
+<tr bgcolor="#dddddd">
+  <td width="40%">
+    upto £5.00
+  </td>
+  <td width="40%">£1.95</td>
+  <td align="right" width="10%">
+    <a href="_update_shippingrate.asp?strCallMode=rd&amp;SM_ID=2&amp;S_ID=16"><img src="images/delete.gif" border="0" alt="Delete This Shipping Rate" title="Delete This Shipping Rate"></a>
+  </td>
+</tr>
+
+<tr bgcolor="#eeeeee">
+  <td width="40%">
+    upto £10.00
+  </td>
+  <td width="40%">£2.95</td>
+  <td align="right" width="10%">
+    <a href="_update_shippingrate.asp?strCallMode=rd&amp;SM_ID=2&amp;S_ID=17"><img src="images/delete.gif" border="0" alt="Delete This Shipping Rate" title="Delete This Shipping Rate"></a>
+  </td>
+</tr>
+
+<tr bgcolor="#dddddd">
+  <td width="40%">
+    upto £50.00
+  </td>
+  <td width="40%">£3.95</td>
+  <td align="right" width="10%">
+    <a href="_update_shippingrate.asp?strCallMode=rd&amp;SM_ID=2&amp;S_ID=18"><img src="images/delete.gif" border="0" alt="Delete This Shipping Rate" title="Delete This Shipping Rate"></a>
+  </td>
+</tr>
+
+<tr bgcolor="#eeeeee">
+  <td width="40%">
+    upto £100.00
+  </td>
+  <td width="40%">£4.95</td>
+  <td align="right" width="10%">
+    <a href="_update_shippingrate.asp?strCallMode=rd&amp;SM_ID=2&amp;S_ID=19"><img src="images/delete.gif" border="0" alt="Delete This Shipping Rate" title="Delete This Shipping Rate"></a>
+  </td>
+</tr>
+
+<form method="GET" action="_update_shippingrate.asp"></form>
+
+<input type="hidden" name="strCallMode" value="rm">
+<input type="hidden" name="SM_ID" value="2">
+<input type="hidden" name="S_ID" value="20">
+<tr bgcolor="#dddddd">
+  <td width="40%">All Higher Orders</td>
+  <td width="40%">£ <input type="text" name="S_ShippingRate" size="5" value="5.95"></td>
+  <td align="right" width="10%"><input type="submit" value="Update"></td>
+</tr>
+
+
+<form method="GET" action="_update_shippingrate.asp"></form>
+
+<input type="hidden" name="strCallMode" value="ra">
+<input type="hidden" name="SM_ID" value="2">
+<input type="hidden" name="SZ_ID" value="1">
+
+<tr>
+  <td>
+    upto £
+    <input type="text" name="S_Boundary" size="5">
+
+  </td>
+  <td>£&nbsp;<input type="text" size="5" name="S_ShippingRate"></td>
+  <td align="right"><input type="submit" value="Add"></td>
+</tr>
+
+<tr>
+  <td colspan="3">&nbsp;</td>
+</tr>
+
+<tr class="header">
+  <td colspan="3" class="bold">
+    European Union, excl.
+    UK&nbsp;<a href="_update_shippingrate.asp?strCallMode=zd&amp;SM_ID=2&amp;SZ_ID=2"><img src="images/delete.gif" border="0" alt="Delete This Shipping Method" title="Delete This Shipping Method"></a>
+  </td>
+</tr>
+
+
+<tr bgcolor="#dddddd">
+  <td width="40%">
+    upto £5.00
+  </td>
+  <td width="40%">£1.95</td>
+  <td align="right" width="10%">
+    <a href="_update_shippingrate.asp?strCallMode=rd&amp;SM_ID=2&amp;S_ID=21"><img src="images/delete.gif" border="0" alt="Delete This Shipping Rate" title="Delete This Shipping Rate"></a>
+  </td>
+</tr>
+
+<tr bgcolor="#eeeeee">
+  <td width="40%">
+    upto £10.00
+  </td>
+  <td width="40%">£2.95</td>
+  <td align="right" width="10%">
+    <a href="_update_shippingrate.asp?strCallMode=rd&amp;SM_ID=2&amp;S_ID=22"><img src="images/delete.gif" border="0" alt="Delete This Shipping Rate" title="Delete This Shipping Rate"></a>
+  </td>
+</tr>
+
+<tr bgcolor="#dddddd">
+  <td width="40%">
+    upto £50.00
+  </td>
+  <td width="40%">£3.95</td>
+  <td align="right" width="10%">
+    <a href="_update_shippingrate.asp?strCallMode=rd&amp;SM_ID=2&amp;S_ID=23"><img src="images/delete.gif" border="0" alt="Delete This Shipping Rate" title="Delete This Shipping Rate"></a>
+  </td>
+</tr>
+
+<tr bgcolor="#eeeeee">
+  <td width="40%">
+    upto £100.00
+  </td>
+  <td width="40%">£4.95</td>
+  <td align="right" width="10%">
+    <a href="_update_shippingrate.asp?strCallMode=rd&amp;SM_ID=2&amp;S_ID=24"><img src="images/delete.gif" border="0" alt="Delete This Shipping Rate" title="Delete This Shipping Rate"></a>
+  </td>
+</tr>
+
+<form method="GET" action="_update_shippingrate.asp"></form>
+
+<input type="hidden" name="strCallMode" value="rm">
+<input type="hidden" name="SM_ID" value="2">
+<input type="hidden" name="S_ID" value="25">
+<tr bgcolor="#dddddd">
+  <td width="40%">All Higher Orders</td>
+  <td width="40%">£ <input type="text" name="S_ShippingRate" size="5" value="5.95"></td>
+  <td align="right" width="10%"><input type="submit" value="Update"></td>
+</tr>
+
+
+<form method="GET" action="_update_shippingrate.asp"></form>
+
+<input type="hidden" name="strCallMode" value="ra">
+<input type="hidden" name="SM_ID" value="2">
+<input type="hidden" name="SZ_ID" value="2">
+
+<tr>
+  <td>
+    upto £
+    <input type="text" name="S_Boundary" size="5">
+
+  </td>
+  <td>£&nbsp;<input type="text" size="5" name="S_ShippingRate"></td>
+  <td align="right"><input type="submit" value="Add"></td>
+</tr>
+
+<tr>
+  <td colspan="3">&nbsp;</td>
+</tr>
+
+<tr class="header">
+  <td colspan="3" class="bold">
+    Other Europe, excl.
+    EU&nbsp;<a href="_update_shippingrate.asp?strCallMode=zd&amp;SM_ID=2&amp;SZ_ID=3"><img src="images/delete.gif" border="0" alt="Delete This Shipping Method" title="Delete This Shipping Method"></a>
+  </td>
+</tr>
+
+
+<tr bgcolor="#dddddd">
+  <td width="40%">
+    upto £5.00
+  </td>
+  <td width="40%">£4.95</td>
+  <td align="right" width="10%">
+    <a href="_update_shippingrate.asp?strCallMode=rd&amp;SM_ID=2&amp;S_ID=26"><img src="images/delete.gif" border="0" alt="Delete This Shipping Rate" title="Delete This Shipping Rate"></a>
+  </td>
+</tr>
+
+<tr bgcolor="#eeeeee">
+  <td width="40%">
+    upto £10.00
+  </td>
+  <td width="40%">£6.95</td>
+  <td align="right" width="10%">
+    <a href="_update_shippingrate.asp?strCallMode=rd&amp;SM_ID=2&amp;S_ID=27"><img src="images/delete.gif" border="0" alt="Delete This Shipping Rate" title="Delete This Shipping Rate"></a>
+  </td>
+</tr>
+
+<tr bgcolor="#dddddd">
+  <td width="40%">
+    upto £50.00
+  </td>
+  <td width="40%">£9.95</td>
+  <td align="right" width="10%">
+    <a href="_update_shippingrate.asp?strCallMode=rd&amp;SM_ID=2&amp;S_ID=28"><img src="images/delete.gif" border="0" alt="Delete This Shipping Rate" title="Delete This Shipping Rate"></a>
+  </td>
+</tr>
+
+<tr bgcolor="#eeeeee">
+  <td width="40%">
+    upto £100.00
+  </td>
+  <td width="40%">£12.95</td>
+  <td align="right" width="10%">
+    <a href="_update_shippingrate.asp?strCallMode=rd&amp;SM_ID=2&amp;S_ID=29"><img src="images/delete.gif" border="0" alt="Delete This Shipping Rate" title="Delete This Shipping Rate"></a>
+  </td>
+</tr>
+
+<form method="GET" action="_update_shippingrate.asp"></form>
+
+<input type="hidden" name="strCallMode" value="rm">
+<input type="hidden" name="SM_ID" value="2">
+<input type="hidden" name="S_ID" value="30">
+<tr bgcolor="#dddddd">
+  <td width="40%">All Higher Orders</td>
+  <td width="40%">£ <input type="text" name="S_ShippingRate" size="5" value="0.00"></td>
+  <td align="right" width="10%"><input type="submit" value="Update"></td>
+</tr>
+
+
+<form method="GET" action="_update_shippingrate.asp"></form>
+
+<input type="hidden" name="strCallMode" value="ra">
+<input type="hidden" name="SM_ID" value="2">
+<input type="hidden" name="SZ_ID" value="3">
+
+<tr>
+  <td>
+    upto £
+    <input type="text" name="S_Boundary" size="5">
+
+  </td>
+  <td>£&nbsp;<input type="text" size="5" name="S_ShippingRate"></td>
+  <td align="right"><input type="submit" value="Add"></td>
+</tr>
+
+<tr>
+  <td colspan="3">&nbsp;</td>
+</tr>
+
+
+</tbody>
+</table>
+
+<form method="GET" action="_update_shippingrate.asp">
+
+  <input type="hidden" name="strCallMode" value="za">
+  <input type="hidden" name="SM_ID" value="2">
+
+  <h2>Add Shipping Zone</h2>
+
+  <p>Select a zone to add to this shipping method. To clone an existing zone's rates, select it in the second list.</p>
+  <table cellpadding="0" cellspacing="0" bgcolor="0" width="100%" class="formatted">
+    <tbody>
+    <tr bgcolor="#eeeeee">
+      <td width="180">
+        Zone To Add:
+      </td>
+      <td>
+        <select name="numNewZone">
+          <option value="4">North America</option>
+          <option value="5">Rest of the World</option>
+        </select>
+      </td>
+    </tr>
+
+    <tr bgcolor="#eeeeee">
+      <td>
+        Zone To copy:
+      </td>
+      <td>
+        <select name="numCopyZone">
+          <option value="0">
+            None
+          </option>
+          <option value="1">United Kingdom</option>
+          <option value="2">European Union, excl. UK</option>
+          <option value="3">Other Europe, excl. EU</option>
+        </select>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+  <input type="submit" name="btnSubmit" id="submit" value="Submit">
+</form>
+
+
+
+
+<%= link_to 'New Shipping rate', new_admin_shipping_rate_path %>

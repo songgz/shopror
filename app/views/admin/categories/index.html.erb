@@ -1,0 +1,25 @@
+<h1>Listing admin_categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_categories.each do |admin_category| %>
+      <tr>
+        <td><%= link_to 'Show', admin_category %></td>
+        <td><%= link_to 'Edit', edit_admin_category_path(admin_category) %></td>
+        <td><%= link_to 'Destroy', admin_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Category', new_admin_category_path %>

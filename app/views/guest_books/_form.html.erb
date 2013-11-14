@@ -1,0 +1,25 @@
+<%= form_for(@guest_book) do |f| %>
+  <% if @guest_book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@guest_book.errors.count, "error") %> prohibited this guest_book from being saved:</h2>
+
+      <ul>
+      <% @guest_book.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="box inputform">
+      <%= f.label :name %>
+      <div><%= f.text_field :name%></div><br>
+
+      <%= f.label :email %>
+      <div><%= f.text_field :email,size:10 %></div><br>
+
+      <%= f.label :message %>
+      <div><%= f.text_area :message,cols:60,rows:10 %></div><br>
+
+      <%= f.submit t('shopror.views.guest_book.add.submit'),class:"submit" %>
+    </div>
+<% end %>

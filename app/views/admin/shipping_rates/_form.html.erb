@@ -1,0 +1,43 @@
+<%= form_for([:admin,@shipping_rate]) do |f| %>
+  <% if @shipping_rate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shipping_rate.errors.count, "error") %> prohibited this shipping_rate from being saved:</h2>
+
+      <ul>
+      <% @shipping_rate.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <table class="displaytable">
+      <tbody>
+      <tr>
+        <td width="180"><%= f.label :shipping_method %></td>
+        <td><%= f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :shipping_zone %></td>
+        <td><%= f.collection_select :shipping_zone_id, ShippingZone.all, :id, :name %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><hr></td>
+      </tr>
+      <tr>
+        <td><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :upto %></td>
+        <td><%= f.number_field :upto, step:'any'%></td>
+      </tr>
+      <tr>
+        <td><%= f.label :rate %></td>
+        <td><%= f.number_field :rate, step:'any' %></td>
+      </tr>
+      </tbody>
+    </table>
+    <%= f.submit class: 'submit' %>
+
+<% end %>

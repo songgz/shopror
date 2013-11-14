@@ -1,0 +1,17 @@
+<table class="displaytable">
+  <tbody><tr>
+    <td><h1><%=  t("shopror.views.shipping_method.edit")  %></h1></td>
+  </tr>
+  </tbody>
+</table>
+
+<%= render 'form' %>
+
+<hr>
+
+<table class="displaytable">
+  <tbody><tr bgcolor="#EEEEEE">
+    <td align="right"><%= link_to  t("shopror.views.shipping_method.delete"), admin_shipping_method_path(@shipping_method), method: :delete, data: { confirm: t("shopror.views.shipping_method.confirm") }, class: 'buttonstyle' %></td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,4 @@
+<option value="">请选择</option>
+<% @city_areas.each do |area| %>
+    <option value="<%= area.code %>"><%= area.name %></option>
+<% end %>

@@ -1,0 +1,191 @@
+/*
+------------------------------------------------------------------------
+v7 Extra styles
+
+Add this file to your skin if you're upgrading from v6 to v7... it
+provides a simple way to add in some of the new CSS for the tabbed
+product page, etc.
+
+This file is not used by the v7 skin itself, as it incorporates these
+into cactushop.css from the start. We just put the file here so it is
+easy to find for anything upgrading a v6 skin.
+------------------------------------------------------------------------
+*/
+
+
+/*
+------------------------------------------------------------------------
+IMAGEHOLDER
+------------------------------------------------------------------------
+*/
+img 
+{
+	border: none;
+}
+
+div.imageholder 
+{
+	padding: 4px 0 0 0;
+	text-align: center;
+	clear: both;
+	margin: 0 15px 0 0;
+}
+
+div.imageholder img {
+	float: none;
+}
+
+div.smallimageholder 
+{
+	display: block;
+	margin: 0 3px 3px 0;
+	vertical-align: middle;
+	text-align: center;
+	float: left;
+	background-color: #fff;
+}
+
+div.smallimageholder img {
+	float: none;
+}
+
+span.imagelegend 
+{
+	display: inline-block;
+	background-color: #fff;
+	font-size: 85%;
+	padding: 2px 3px 2px 3px;
+	text-transform: uppercase;
+	color: #03C;
+	z-index: 2;
+}
+
+/*
+------------------------------------------------------------------------
+OTHER
+------------------------------------------------------------------------
+*/
+.product .main table td .imageholder {
+	margin: 0 0 0 15px;
+}
+
+.products_shortened .product .pad .imageholder {
+	float: left;
+}
+
+.category .maincategory .imageholder {
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+.products_shortened .product .moredetails, .hide {
+	display: none;
+	visibility: hidden;
+}
+
+.versions .prices .extax {
+	display: inline-block;
+	float: right;
+	width: auto;
+	white-space: nowrap;
+	border: none;
+	overflow: visible;
+	background-color: transparent;
+	margin: 0;
+	text-align: right;
+	font-weight: normal;
+	padding: 2px;
+}
+
+.versions .prices .inctax 
+{
+	display: inline-block;
+	width: auto;
+	border: none;
+	overflow: visible;
+	margin: 0;
+	text-align: right;
+	font-weight: bold;
+	padding: 2px;
+}
+
+.versions .prices .inctax .inctax_input 
+{
+	display: inline-block;
+	width: 50px;
+	float: none;
+	background-color: transparent;
+	color: #f00;
+	font-weight: bold;
+	border: none;
+}
+
+.versions .prices .extax .extax_input 
+{
+	display: inline-block;
+	width: 50px;
+	float: none;
+	background-color: transparent;
+	color: #f00;
+	font-weight: bold;
+	border: none;
+}
+
+/*
+------------------------------------------------------------------------
+PRODUCT TABS 
+------------------------------------------------------------------------
+*/
+ul.tabs {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 20px; /*--Set height of tabs--*/
+	border-left: 1px solid #fff;
+	width: 100%;
+	font-size: 90%;
+}
+
+ul.tabs li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #000;
+	margin: 0 0 -1px -2px; /*--Pull the list item down 1px--*/
+	overflow: hidden;
+	position: relative;
+	background: #e0e0e0;
+}
+
+ul.tabs li a {
+	text-decoration: none;
+	color: #000;
+	display: block;
+	height: 17px;
+	padding: 2px 15px 0 10px;
+	text-transform: uppercase;
+}
+
+ul.tabs li a:hover {
+	background: #ccc;
+}
+
+html ul.tabs li.active,
+html ul.tabs li.active a:hover  { /*--Makes sure that the active tab does not listen to the hover properties--*/
+	background: #fff;
+	border-bottom: 1px solid #fff; /*--Makes the active tab look like it's connected with its content--*/
+}
+
+.tab_container {
+	border-top: 1px solid #000;
+	overflow: hidden;
+	clear: both;
+	float: left;
+	width: 100%;
+	background: #fff;
+	margin: 0 0 15px 0;
+}
+.tab_content {
+	padding: 5px 0 10px 0;
+}

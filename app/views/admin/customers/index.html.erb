@@ -1,0 +1,59 @@
+  <table class="displaytable">
+    <tbody>
+    <tr>
+      <td><h1><%= t('mongoid.models.customer') %></h1></td>
+    </tr>
+    <tr>
+      <form method="get" action="/admin/customers">
+      <td><span>客户姓名:</span> <input type="text" name="keywords" >
+        <input type="submit" name="btnSubmit" value="搜 索"></td>
+      </form>
+    </tr>
+    </tbody>
+  </table>
+<% if @customers.blank? %>
+    <table class="displaytable" ID="Table1">
+      <tr>
+        <td><br/>
+          <% t("shopror.views.customer.no_customers") %>
+          <br/><br/></td>
+      </tr>
+    </table>
+<% else %>
+    <table class="displaytable">
+      <tbody>
+      <tr>
+        <td>
+          <table class="formatted">
+            <tbody>
+            <tr class="header">
+              <td width="25%"><%= t('mongoid.attributes.customer.name') %></td>
+              <td width="45%"><%= t('mongoid.attributes.customer.email') %></td>
+              <td width="30%">&nbsp;</td>
+            </tr>
+            <% @customers.each_with_index do |customer, index| %>
+                <tr bgcolor="<%= index % 2 == 0 ? '#eeeeee' : '#dddddd' %>">
+                  <td><%= customer.name %></td>
+                  <td><a href="mailto:<%= customer.email %>"><%= customer.email %></a></td>
+                  <td align="right">
+                      <%= link_to image_tag('/assets/admin/b_order.gif'), admin_orders_path(customer_id: customer.id) %>
+                      &nbsp;
+                      <%= link_to image_tag('/assets/admin/b_customer.gif'), edit_admin_customer_path(customer) %>
+                  </td>
+                </tr>
+            <% end %>
+
+
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+      <!-- Paging -->
+      <tr>
+        <td class="paging">« Previous 1 Next »
+        </td>
+      </tr>
+      </tbody>
+    </table>
+<% end %>

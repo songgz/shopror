@@ -1,0 +1,75 @@
+<div id="invoice">
+
+  <h1><%= t("shopror.views.order.invoice")%></h1>
+
+  <div id="topinfo">
+    <div class="box">
+      <div class="pad">
+        <strong><%= t("shopror.views.order.billing_address")%></strong>
+        <%=@invoice.customer.address %>
+      </div>
+    </div>
+    <div class="box">
+      <div class="pad">
+        <strong><%= t("shopror.views.order.delivery_address")%></strong>
+        <%=@invoice.ship_address %>
+      </div>
+    </div>
+    <div class="box">
+      <div class="pad">
+        <strong><%= t("shopror.views.order.invoice_details")%></strong>
+        <div class="label"><%=t("shopror.views.order.order_number") %>:<%=@invoice.order_no %></div>
+        <div class="label"><%=t("shopror.views.order.customer_name") %>:<%=@invoice.customer.name %></div>
+        <div class="label"><%=t("shopror.views.order.order_date") %>:<%=@invoice.created_at.strftime("%Y-%m-%d %H:%M:%S")%></div>
+
+      </div>
+    </div><div class="spacer"></div>
+  </div>
+  <br><br><br><br><br><br><br><br>
+  <div id="midinfo">
+
+
+    <table id="invoiceitems">
+      <tbody><tr>
+        <th></th>
+        <th><%= t("shopror.views.order.qty")%></th>
+        <th><%= t("shopror.views.order.price")%></th>
+        <!--<th><%#= t("shopror.views.order.tax")%>&nbsp;</th>-->
+        <th colspan="2"><%= t("shopror.views.order.total")%></th>
+      </tr>
+      <% @invoice.order_items.each do |item| %>
+          <tr class="subheader">
+            <td colspan="5" class="versioname"><strong><%= item.product.try(:name) %> - <%= item.name %></strong></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="quantity"><%= item.qty %></td>
+            <td class="price" colspan="2"><%= item.price %></td>
+            <td class="total"><%= item.sum %></td>
+          </tr>
+      <% end %>
+      <tr>
+        <td colspan="6" class="fullline section"><%= t("shopror.views.order.shipping")%></td>
+      </tr>
+      <tr>
+        <td class="col1"></td>
+
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="bold"><%= @invoice.shipping %></td>
+      </tr>
+      <tr id="total">
+        <td class="col1"><%= t("shopror.views.order.total")%></td>
+        <td></td>
+
+        <td></td>
+        <td></td>
+        <td><%= @invoice.total %></td>
+      </tr>
+
+      </tbody></table>
+
+  </div>
+
+</div>

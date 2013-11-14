@@ -1,0 +1,45 @@
+<h1><%= t('shopror.views.site.my_account') %></h1>
+<div class="customer">
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <div class="box inputform">
+
+        <%= f.label :email %>
+        <div><%= f.email_field :email, :autofocus => true %></div>
+        <br>
+
+        <%= f.label :password %>
+        <div><%= f.password_field :password %></div>
+        <br>
+
+        <% if devise_mapping.rememberable? %>
+            <%= f.label :remember_me %>
+            <div><%= f.check_box :remember_me %> </div>
+        <% end %>
+
+        <%= f.submit t('devise.views.sessions.new.submit'), class: 'submit' %>
+      </div>
+  <% end %>
+
+  <div class="emailreminder">
+    <h2><%= t('devise.views.passwords.new.title') %></h2>
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:method => :post}) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="box inputform">
+          <%= f.label :email %>
+          <div><%= f.email_field :email, :autofocus => true %></div>
+          <br>
+          <%= f.submit t('devise.views.passwords.new.submit'), class: 'submit' %>
+        </div>
+    <% end %>
+  </div>
+
+  <div class="section">
+    <h2><%= t('devise.views.registrations.new.title') %></h2>
+    <p>
+      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+          <%= link_to t('devise.views.registrations.new.submit'), new_registration_path(resource_name) %><br/>
+      <% end -%>
+    </p>
+
+  </div>
+</div>

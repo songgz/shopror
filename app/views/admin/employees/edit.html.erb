@@ -1,0 +1,17 @@
+<table class="displaytable">
+  <tbody>
+  <tr>
+    <td colspan="2"><h1>员工详细信息</h1></td>
+  </tr>
+  </tbody>
+</table>
+
+<%= render 'form' %>
+
+<hr>
+<table class="displaytable">
+  <tbody><tr bgcolor="#EEEEEE">
+    <td align="right"><%= link_to '删除员工', admin_employee_path(@employee), method: :delete, data: { confirm: t('shopror.views.employee.confirm') }, class:'buttonstyle' %></td>
+  </tr>
+  </tbody>
+</table>

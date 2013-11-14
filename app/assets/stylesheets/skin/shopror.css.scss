@@ -1,0 +1,1858 @@
+/* 
+========================================================================
+CACTUSHOP.CSS
+========================================================================
+*/
+
+/*
+------------------------------------------------------------------------
+MAIN ELEMENTS
+------------------------------------------------------------------------
+*/
+body, td, select, input {
+	font-family: Tahoma, Geneva, sans-serif; 
+	font-size: 9pt;
+	font-weight: normal; 
+	color: #444;
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	font-size: 180%;
+	font-weight: bold;
+	color: #f50;
+	margin: 20px 0 0 0;
+	padding: 1px 10px 10px 0;
+	width: auto;
+	display: block;
+	line-height: 25px;
+	letter-spacing: -1px;
+}
+
+h2 {
+	font-size: 100%;
+	font-weight: bold;
+	color: #000;
+	margin: 3px 0 3px 0;
+}
+
+h3 {
+	font-size: 100%;
+	font-weight: bold;
+	color: #000;
+}
+
+h4 span {
+	font-size: 100%;
+	font-weight: bold;
+	color: #000;
+	margin: 0;
+}
+
+h4 {
+	margin: 0;
+}
+
+h5 span {
+	font-size: 100%;
+	font-weight: normal;
+	color: #fff;
+	margin: 10px 0 5px 0;
+	text-transform: uppercase;
+	padding: 1px 10px 1px 5px;
+	background-color: #f50;
+}
+
+h5 {
+	border-bottom: solid 2px #f50;
+}
+
+pre {
+	color: #000;
+	font-size: 95%;
+}
+
+/*
+------------------------------------------------------------------------
+HYPERLINKS
+------------------------------------------------------------------------
+*/
+a:link, a:visited {
+	text-decoration: none; 
+	color: #f50;
+}
+
+a:hover	{
+	color: #f50;
+}
+
+/*
+------------------------------------------------------------------------
+IMAGEHOLDER
+------------------------------------------------------------------------
+*/
+img 
+{
+	border: none;
+}
+
+div.imageholder 
+{
+	padding: 4px 0 0 0;
+	text-align: center;
+	clear: both;
+	margin: 0 15px 0 0;
+}
+
+div.imageholder img {
+	float: none;
+}
+
+div.smallimageholder 
+{
+	display: block;
+	margin: 0 3px 3px 0;
+	vertical-align: middle;
+	text-align: center;
+	float: left;
+	background-color: #fff;
+}
+
+div.smallimageholder img {
+	float: none;
+}
+
+span.imagelegend 
+{
+	display: inline-block;
+	background-color: #fff;
+	font-size: 85%;
+	padding: 2px 3px 2px 3px;
+	text-transform: uppercase;
+	color: #03C;
+	z-index: 2;
+}
+
+/*
+------------------------------------------------------------------------
+BREADCRUMB TRAIL
+------------------------------------------------------------------------
+*/
+.breadcrumbtrail {
+	color: #000;
+	font-weight: normal;
+	font-size: 90%;
+	padding: 5px 0 5px 5px;
+	margin: -2px 0 10px 0;
+	width: 100%;
+	background-color: #eee;
+}
+
+.breadcrumbtrail ul {
+	margin-left: 0;
+	padding-left: 0;
+	display: inline;
+	border: none;
+} 
+
+.breadcrumbtrail ul li {
+	margin-left: 0;
+	border: none;
+	list-style: none;
+	display: inline;
+}
+
+.breadcrumbtrail a:link, .breadcrumbtrail a:visited {
+	color: #888;
+	font-weight: normal;
+}
+
+/*
+------------------------------------------------------------------------
+PAGING LINKS
+------------------------------------------------------------------------
+*/
+.paging { 
+	font-size: 80%;
+	padding: 5px 5px;
+	margin: 0px 0 10px 0;
+	text-transform: uppercase;
+}
+
+.paging a { 
+	font-weight: normal;
+	background-color: #eee;
+	border: solid 1px #333;
+	border-radius: 2px;
+	color: #000;
+	padding: 1px 5px;
+}
+
+.paging a:hover { 
+	background-color: #f50;
+	color: #fff;
+	border: solid 1px #333;
+	border-radius: 2px;
+}
+
+.paging strong { 
+	background-color: #f50;
+	color: #fff;
+	border: solid 1px #333;
+	border-radius: 2px;
+	padding: 1px 3px;
+}
+
+.paging_footer {
+
+}
+
+/*
+------------------------------------------------------------------------
+ERRORS & WARNINGS
+------------------------------------------------------------------------
+*/
+.errors {
+	display: block;
+	width: auto;
+	color: #c00;
+	background-color: #fdd;
+	border: dotted 1px red;
+	padding: 12px;
+	margin: 9px 0 5px 0;
+}
+
+.errors label {
+	border-bottom: dotted 1px red;
+}
+
+.warning {
+	background-color: #fdd;
+	font-weight: normal;
+	color: #c00;
+	padding: 10px;
+	border-radius: 3px;
+}
+
+/*
+------------------------------------------------------------------------
+TABLES
+------------------------------------------------------------------------
+*/
+table {
+	border-collapse: collapse;
+	width: 100%;
+	padding: 1px;
+}
+
+table tr td {
+	border-bottom: solid 2px #fff;
+	vertical-align: top;
+	background-color: #eee;
+	padding: 3px 3px 5px 3px;
+}
+
+table tr.alt {
+	background-color: #fff;
+}
+
+table tr.highlight {
+	background-color: #FFF522;
+	background-image: none;
+}
+
+table tr.subheader td {
+	border-bottom: none;
+}
+
+table tr.subheader td strong {
+	color: #000;
+}
+
+table th {
+	font-weight: normal;
+	color: #777;
+	text-align: left;
+	text-transform: uppercase;
+	border-bottom: solid 1px #000;
+	font-size: smaller;
+}
+
+table.displaytable
+{
+	border: none;
+	border-collapse: collapse;
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+}
+
+table.displaytable tr,
+table.displaytable td
+{
+	background: none;
+	padding: 0;
+	margin: 0;
+	border: none;
+	background-color: transparent;
+}
+
+table.displaytable td.imagecell
+{
+	width: 1%;
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+/*
+------------------------------------------------------------------------
+FORMS
+------------------------------------------------------------------------
+*/
+form { 
+	margin: 0; 
+	display: inline;
+	padding: 0;
+}
+
+.column2 {
+	padding-left: 180px;
+	margin-bottom: 20px;
+	width: auto;
+}
+
+textarea { 
+	width: auto; 
+}
+
+select, input, textarea {
+	font-weight: normal;
+	color: #111;
+	background-color: #ddd;
+	border: solid 1px #eee;
+	border-top: solid 1px #888;
+	border-left: solid 1px #888;
+	margin: 0 0 3px 0;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+	color: #000;
+	background-color: #fff;
+	border: solid 1px #f00;
+}
+
+input.submit {
+	border-radius: 3px;
+	background-color: #eee;
+	border: solid 1px #333;
+	color: #000;
+	padding: 1px 5px 1px 5px;
+	font-weight: normal;
+	font-size: 7.5pt;
+	text-transform: uppercase;
+	margin: 1px 0px 1px 2px;
+	width: auto;
+	font-family: Tahoma,Verdana,Arial,Helvetica;
+	display: inline-block;
+}
+
+a.buttonstyle {
+	border-radius: 3px;
+	background-color: #eee;
+	border: solid 1px #333;
+	color: #000;
+	padding: 1px 5px 1px 5px;
+	font-weight: normal;
+	font-size: 7.5pt;
+	text-transform: uppercase;
+	margin: 1px 0px 1px 2px;
+	width: auto;
+	font-family: Tahoma,Verdana,Arial,Helvetica;
+	display: inline-block;
+}
+
+input.smallsubmit {
+	border-radius: 3px;
+	background-color: #eee;
+	border: solid 1px #333;
+	color: #000;
+	padding: 1px 5px 1px 5px;
+	font-weight: normal;
+	font-size: 7.5pt;
+	text-transform: uppercase;
+	margin: 1px 0px 1px 2px;
+	width: auto;
+	font-family: Tahoma,Verdana,Arial,Helvetica;
+	display: inline-block;
+}
+
+.inputform {
+	margin-bottom: 12px;
+	zoom: 100%; /* To fix IE 'invisible text' rendering bug (http://archivist.incutio.com/viewlist/css-discuss/57305) */
+}
+
+.inputform label {
+	width: 180px;
+	float: left;
+}
+
+.inputform div {
+	float: left;
+	margin-bottom: 5px;
+}
+
+.inputform br {
+	display: block;
+	clear: both;
+}
+
+.inputform input {
+	width: 280px;
+}
+
+.inputform input.submit {
+	margin-left: 180px;
+	width: auto;
+}
+
+.inputform input.smallsubmit {
+	width: auto;
+}
+
+
+input.radio,
+input.checkbox {
+	border-style: none;
+	background-color: transparent;
+	display: inline;
+	width: 20px;
+}
+
+.inputform label.checklabel 
+{
+	display: inline-block;
+	width: auto;
+	float: none;
+	font-weight: bold;
+	color: #000;
+	padding: 0 0 5px 0;
+}
+
+/*
+------------------------------------------------------------------------
+MAIN BASKET
+------------------------------------------------------------------------
+*/
+.basket .baskettable {
+	width: 100%;
+}
+
+.basket tr.separate {
+	height: 20px;
+	background-color: white;
+	background-image: none;
+}
+
+.basket .baskettable tr.subheader strong a {
+	color: #000;
+	margin-right: 10px;
+}
+
+.basket .baskettable tr.subheader span.codenumber {
+	color: #666;
+}
+
+.basket .baskettable tr td.details {
+	color: #666;
+}
+
+.basket .baskettable tr td.image {
+	width: 50px;
+	padding: 5px;
+}
+
+.basket .baskettable tr td.remove {
+	width: 30px;
+}
+
+.basket .baskettable tr td.quantity {
+	width: 50px;
+}
+
+.basket .baskettable tr td.remove a {
+	display: inline-block;
+	background-image: image-url('skin/trashcan.png');
+	background-position: top left;
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 16px;
+}
+
+.basket .section {
+	width: 100%;
+	padding-top: 10px;
+	border-top: solid 2px #ddd;
+}
+
+.basket .totals {
+	border-top: solid 2px #ddd;
+	text-align: right;
+	margin-top: 18px;
+	padding-top: 5px;
+	margin-bottom: 8px;
+	color: #f00;
+}
+
+.basket .totals .amount {
+	font-weight: bold;
+}
+
+.basket .applycoupon {
+	border-top: solid 1px #000;
+	border-bottom: solid 2px #fff;
+	vertical-align: top;
+	background-color: #eee;
+	padding: 3px;
+	margin: 20px 0 0 0;
+}
+
+.basket .applycoupon strong {
+	color: #000;
+}
+
+.basket .price_1, .basket .price_2, .basket .price, .basket .quantity, .basket .remove, .basket .tax, .basket .total {
+	padding-left: 10px;
+	text-align: right;
+	white-space: nowrap;
+}
+
+.basket td.price,
+.basket td.total {
+	color: #f00;
+	font-weight: bold;
+	width: 40px;
+}
+
+.basket .quantity input {
+	text-align: right;
+	width: 30px;
+}
+
+.basket .totals .controls {
+	margin-top: 8px;
+}
+
+.basket .links {
+	margin-top: 3px;
+	overflow: hidden;
+	width: 100%;
+	text-align: left;
+}
+
+.basket .links div {
+	width: 50%;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+.basket .links div p {
+	margin: 0;
+	padding: 4px 24px 0 0px;
+}
+
+.basket .links img {
+	margin-right: 4px;
+}
+
+.basket .continueshopping {
+	margin-top: 8px;
+	text-align: right;
+}
+
+.basket .continueshopping .submit {
+	float: left;
+	text-align: center;
+}
+
+/*
+------------------------------------------------------------------------
+CHECKOUT
+------------------------------------------------------------------------
+*/
+.checkout .section {
+	width: 99%;
+	padding-top: 3px;
+	border-top: solid 2px #ddd;
+}
+
+.step4 .inputform .section {
+	border-top: none;
+}
+
+#fieldsrequired {
+	color: #888888;
+}
+
+.shippingmethodstable .subheader .name {
+	font-weight: bold;
+	color: #000;
+	padding-bottom: 0px;
+}
+
+.shippingmethodstable td.price {
+	font-weight: bold;
+	color: #f00;
+}
+
+.basket .carddetails {
+	background-color: #FFFFFF;
+	border: none;
+}
+
+.basket .shippingmethodline {
+	padding:  1px 0 4px 0;
+}
+
+.basket .shippingmethodline strong {
+	padding-right: 16px;
+}
+
+.emailreminder {
+	width: 100%;
+	padding-top: 15px;
+border-top: solid 2px #ddd;
+}
+
+.shippingmethodstable {
+	width: 100%;
+	padding-bottom: 8px;
+}
+
+.shippingmethodstable .price_1, .shippingmethodstable .price_2, .shippingmethodstable .price {
+	text-align: right;
+	white-space: nowrap;
+	padding-right: 30px;
+}
+
+.euvat {
+	padding-bottom: 8px;
+}
+
+.checkout textarea {
+	width: 100%;
+}
+
+.carddetails {
+	width: 100%;
+}
+
+.carddetails .inside {
+	padding: 0px;
+}
+
+.step4 input.submit {
+	margin-left: 0px;
+}
+
+#strMailingListHTML {
+	display: block;
+	margin: 10px 0 5px 0;
+}
+
+.billtotal {
+	font-weight: bold;
+	color: #000;
+	padding: 0 0 10px 0;
+}
+
+.billtotal, .gatewaymessage {
+	margin: 15px 0 30px 0;
+}
+
+#termspopup {
+	
+}
+
+/*
+------------------------------------------------------------------------
+CUSTOMER / MY ACCOUNT
+------------------------------------------------------------------------
+*/
+.customer .section {
+border-top: solid 2px #ddd;
+	width: 100%;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	margin-bottom: 5px;
+}
+
+.vieworder {
+	margin-bottom: 15px;
+}
+
+/*
+------------------------------------------------------------------------
+CATEGORIES & SUBCATEGORIES
+------------------------------------------------------------------------
+*/
+.category h2 {
+	margin: 0px 0px 8px 0px;
+}
+
+.category .maincategory {
+	padding: 10px 0 0 0;
+	width: 100%;
+	border: 0;
+	overflow: hidden;
+}
+
+.category .maincategory .imageholder {
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+.subcategories {
+	margin-bottom: 0px;
+}
+
+.subcategory {
+	margin: 0;
+	padding: 0px 0px 1px 0px;
+}
+
+.subcategory p {
+	margin: 0 0 5px 0;
+}
+
+.subcategories .subcategory .pad, .maincategory .pad {
+	margin: 0 0 0 0;
+	zoom: 100%; /* To fix IE 'invisible text' rendering bug (http://archivist.incutio.com/viewlist/css-discuss/57305) */
+	overflow: hidden; /* To fix image flow in extended view, mozz/opera */
+}
+
+/* SHORTENTED */
+.subcategories_shortened {
+	margin: 10px 0 0 0;
+}
+
+.subcategories_shortened .box {
+	width: 170px;
+	height: 220px;
+	margin: 0px 25px 15px 0px;
+}
+
+.subcategories_shortened .subcategory {
+	display: block;
+	float: left;
+	margin-bottom: 0px;
+}
+
+.subcategories_shortened .subcategory .pad {
+	padding: 0;
+}
+
+.subcategories_shortened .subcategory h2 {
+	padding: 5px 0 5px 0;
+	margin: 0;
+	line-height: 13px;
+}
+
+.subcategories_shortened .subcategory h2 a {
+	color: #000;
+}
+
+/* NORMAL & EXTENDED */
+.subcategories_normal .subcategory,
+.subcategories_extended .subcategory {
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+}
+
+.subcategories_normal .subcategory h2,
+.subcategories_extended .subcategory h2 {
+	padding: 5px 0 5px 0;
+	margin: 0;
+}
+
+.subcategories_normal .subcategory h2 a,
+.subcategories_extended .subcategory h2 a  {
+	color: #000;
+}
+
+/*
+------------------------------------------------------------------------
+PRODUCTS
+------------------------------------------------------------------------
+*/
+.product .main table td .imageholder {
+	margin: 0 0 0 15px;
+}
+
+.generalspace {
+	display: block;
+	height: 1px;
+}
+
+.product .main .strapline 
+{
+	display: block;
+	font-style: normal;
+	font-weight: bold;
+	margin: 0 0 10px 0;
+	font-size: 110%;
+	color: #000;
+}
+
+.product p {
+	margin: 0 0 5px 0;
+}
+
+.product .main 
+{
+	padding: 10px 0 0 0;
+	overflow: hidden;
+}
+
+.extrainfolinks {
+	margin: 8px 0px 10px 0px;
+	overflow: hidden;
+}
+
+.extrainfolinks a {
+	white-space: nowrap;
+}
+
+.extrainfolinks .largeview {
+	margin: 5px 0px 0px 0px;
+	display: inline;
+}
+
+.extrainfolinks .compare a,
+.extrainfolinks .moreinfo a {
+	border-radius: 3px;
+	background-color: #eee;
+	border: solid 1px #333;
+	color: #000;
+	padding: 3px 8px 3px 8px;
+	font-weight: normal;
+	text-transform: uppercase;
+	margin: 5px 0px 1px 2px;
+	width: auto;
+	font-size: 7.5pt;
+	font-family: Tahoma,Verdana,Arial,Helvetica;
+	display: inline-block;
+	float: left;
+}
+
+/* QUANTITY DISCOUNTS */
+.product .quantitydiscount {
+	padding: 0;
+	margin: 0 0 15px 0;
+}
+
+.product .quantitydiscounts h3 {
+	padding: 0;
+	margin: 0;
+}
+
+.product .quantitydiscounts td {
+
+}
+
+.product .quantitydiscounts .price {
+	text-align: right;
+}
+
+.product .quantitydiscounts td.price {
+	color: #f00;
+	font-weight: bold;
+}
+
+/* PRODUCTS */
+.products {
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+	overflow: hidden;
+}
+
+.products .minprice {
+	color: #f00;
+	display: block;
+	font-weight: bold;
+	padding-top: 10px;
+}
+
+.products .product .pad {
+	margin-bottom: 8px;
+	padding: 0px;
+	zoom: 100%; /* To fix IE 'invisible text' rendering bug (http://archivist.incutio.com/viewlist/css-discuss/57305) */
+	overflow: hidden; /* To fix image flow in extended view, mozz/opera */	
+}
+
+.products .product .product_end {
+	clear: both;
+}
+
+.products_end {
+	clear: both;
+}
+
+/* SHORTENTED */
+.products_shortened {
+	margin: 10px 0 0 0;
+}
+
+.products_shortened .box {
+	width: 170px;
+	height: 220px;
+	margin: 0px 25px 15px 0px;
+}
+
+.products_shortened .product {
+	display: block;
+	float: left;
+	margin-bottom: 0px;
+}
+
+.products_shortened .product .pad {
+}
+
+.products_shortened .product .pad .imageholder {
+	float: left;
+}
+
+.products_shortened .product h2 {
+	padding: 5px 0 5px 0;
+	margin: 0;
+	line-height: 13px;
+}
+
+.products_shortened .product h2 a {
+	font-size: 110%;
+}
+
+.products_shortened .product em.strapline 
+{
+	display: block;
+	font-style: normal;
+	font-weight: bold;
+	color: #000;
+	padding: 0 0 3px 0;
+	line-height: 12px;
+	font-size: 90%;
+}
+
+.products_shortened .product .moredetails, .hide {
+	display: none;
+	visibility: hidden;
+}
+
+.products_shortened .minprice {
+
+}
+
+
+/* CLASSIC SEARCH LAYOUT */
+.products_classicsearch .product .pad {
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+.products_classicsearch .product .pad p {
+	margin: 4px 0 8px 0;
+}
+
+/* NORMAL & EXTENDED */
+.products_normal .product,
+.products_extended .product {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	background-image: image-url('skin/back_dots.png');
+	background-position: bottom left;
+	background-repeat: repeat-x;
+}
+
+.products_normal .product h2,
+.products_extended .product h2 {
+	padding: 1px 0 5px 0;
+	margin: 0;
+}
+
+.products_normal .product h2 a,
+.products_extended .product h2 a  {
+	font-size: 130%;
+}
+
+.products_normal .product em.strapline,
+.products_extended .product em.strapline 
+{
+	display: block;
+	font-style: normal;
+	font-weight: bold;
+	color: #000;
+	padding: 2px 0 4px 0;
+}
+
+/*
+------------------------------------------------------------------------
+VERSIONS
+------------------------------------------------------------------------
+*/
+.versions 
+{
+	clear: both;
+	margin-bottom: 10px;
+}
+
+.products_shortenened .versions { /* don't want to clear if we're doing things in shortened format */
+	clear: none;
+}
+
+/* Versions displayed in options may first have a price line */
+.versions .prices 
+{
+	padding: 5px 0 2px 0;
+	text-align: right;
+	color: #f00;
+}
+
+.versions .prices span {
+	white-space: nowrap;
+	display: inline-block;
+	text-align: right;
+	padding: 0 0 0 20px;
+}
+
+.versions .prices span.rrp,
+.versions table td.rrp {
+	color: #090;
+}
+
+.versions .prices .extax {
+	display: inline-block;
+	float: right;
+	width: auto;
+	white-space: nowrap;
+	border: none;
+	overflow: visible;
+	background-color: transparent;
+	margin: 0;
+	text-align: right;
+	font-weight: normal;
+	padding: 2px;
+}
+
+.versions .prices .inctax 
+{
+	display: inline-block;
+	width: auto;
+	border: none;
+	overflow: visible;
+	margin: 0;
+	text-align: right;
+	font-weight: bold;
+	padding: 2px;
+}
+
+.versions .prices .inctax .inctax_input 
+{
+	display: inline-block;
+	width: 50px;
+	float: none;
+	background-color: transparent;
+	color: #f00;
+	font-weight: bold;
+	border: none;
+}
+
+.versions .prices .extax .extax_input 
+{
+	display: inline-block;
+	width: 50px;
+	float: none;
+	background-color: transparent;
+	color: #f00;
+	font-weight: bold;
+	border: none;
+}
+
+.versions .prices .weight {
+	width: 40px;
+	border: none;
+	background-color: transparent;
+	margin: 0;
+	text-align: left;
+	font-weight: normal;
+	margin-right: 20px;
+	padding: 2px;
+}
+
+.versions .line {
+	text-align: right;
+	padding: 5px;
+}
+
+.versions .line img {
+	float: none;
+}
+
+/* Version Table */
+.versions table {
+	width: 100%;
+	border: none;
+	border-collapse: collapse;
+}
+
+.versions div.versionstable {
+	width: 100%;
+}
+
+.versions th, .versions td {
+	text-align: right;
+}
+
+.versions tr.highlight td {
+	background-image: none;
+	background-color: #FFF522;
+}
+
+.versions tr.toprowstyle td {
+	border-bottom: none;
+}
+
+.versions td td {
+	text-align: left;
+	padding: 0;
+	margin: 0;
+}
+
+.versions table .stock {
+	text-align: center;
+}
+
+.versions table .name {
+	padding-left: 5px;
+}
+
+.versions table .name strong {
+	padding: 0 10px 3px 0;
+	color: #000;
+}
+
+.versions table td.price {
+	color: #f00;
+	font-weight: bold;
+}
+
+.versions table .name span {
+	color: #666;
+}
+
+.versions table .addtobasket {
+	padding-right: 5px;
+}
+
+.versions table .addtobasket img {
+	float: none;
+}
+
+.versions table .textcell {
+	color: #222;
+	padding: 2px 90px 0 0;
+}
+	
+.versions table .name, .versions table .name, .versions table .description {
+	text-align: left;
+}
+
+/*
+------------------------------------------------------------------------
+OPTIONS
+------------------------------------------------------------------------
+*/
+.optiongroups_block .options {
+	padding: 10px;
+	margin: 10px 0px 5px 0px;
+}	
+
+.optiongroups_block .addtobasket {
+	text-align: right;
+	padding: 5px;
+	clear: both;
+}
+
+.outofstockmessage em {
+	display: block;
+	margin-top: 10px;
+}
+
+.optiongroups_block .option {
+	clear: both;
+}
+
+.optiongroups_block .option label.optiontitle {
+	display: block;
+	width: 190px;
+	float: left;
+	margin-right: 5px;
+	font-size: 96%;
+}
+
+.optiongroups_block .option label.optiontitle strong {
+	display: block;
+	color: #000;
+	font-size: 105%;
+}
+
+.versions .option {
+	margin: 0px 23px 0 0;
+}
+
+.versions .option label.optiontitle {
+	margin: 1px 3px 5px 0;
+	color: #000;
+}
+
+.optiongroups_block .option div {
+	display: inline-block;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+.optiongroups_block .option select,
+.optiongroups_block .option div label {
+
+}
+
+.optiongroups_block .option div .radiooptions {
+	display: block;
+}
+
+.optiongroups_block .addtobasket img {
+	float: none;
+	text-align: right;
+}
+
+/* Inline groups */
+.optiongroups_line {
+	padding: 5px;
+	margin-bottom: 5px;
+	text-align: right;
+	zoom: 100%;
+	overflow: hidden;
+}
+
+.optiongroups_line .options, .optiongroups_line .option div, .optiongroups_line .option, .optiongroups_line strong, .optiongroups_line label, .optiongroups_line select, .optiongroups_line .addtobasket {
+	display: inline;
+}
+
+.optiongroups_line label {
+	margin-left: 10px;
+}
+
+.optiongroups_line .addtobasket {
+	display: block;
+	float: right;
+	width: 100px;
+	text-align: right;
+	margin-left: 20px;
+
+}
+.optiongroups_line .addtobasket img {
+	float: none;
+}
+
+/*
+------------------------------------------------------------------------
+SEARCH
+------------------------------------------------------------------------
+*/
+.search .paging_header
+{
+	margin: 5px 0 10px 0;
+}
+
+/* Search keyword highlight */
+em.highlight {
+	background-color: #FFF522;
+	font-style: normal;
+}
+
+#resultsheader 
+{
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	background-image: image-url('skin/back_dots.png');
+	background-position: bottom left;
+	background-repeat: repeat-x;
+}
+
+#resultsheader strong 
+{
+	display: block;
+	margin: 8px 0 8px 0;
+	color: #666;
+	font-weight: normal;
+}
+
+.search .pricefields input {
+	width: 4em;
+}
+
+.trythesecategories 
+{
+	margin: 8px 0px 18px 0px;
+}
+
+.trythesecategories ul {
+	list-style: none;
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+.trythesecategories ul li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	text-indent: 0;
+}
+
+/*
+------------------------------------------------------------------------
+PROMOTIONS
+------------------------------------------------------------------------
+*/
+.promotions {
+	padding: 0 0 10px 0;
+}
+
+.promotions table {
+	border-top: solid 1px #000;
+}
+
+.promotions td {
+}
+
+.promotions .promotionfooter {
+	color: #666;
+	padding: 5px 0 10px 3px;
+}
+
+/*
+------------------------------------------------------------------------
+REVIEWS
+------------------------------------------------------------------------
+*/
+.reviews {
+	margin: 0 0 10px 0;
+}
+
+.reviews .box {
+	background-color: #eee;
+	margin: 0 0 2px 0;
+}
+
+.reviews h2 {
+	margin-bottom: 8px;
+}
+
+#review_1 {
+	border-top: solid 1px #000;
+}
+
+.review .pad {
+	padding: 5px 10px 5px 10px;
+}
+
+.review .stars {
+	display: inline;
+	margin-left: 2px;
+}
+
+.review strong {
+	display: inline;
+}
+
+.review .reviewer {
+	font-style: italic;
+}
+
+.review blockquote {
+	margin: 10px 15px 15px 20px;
+}
+
+.review .date {
+	float: right;
+	color: #090;	
+}
+
+.review .appliesto {
+	color: #777;	
+}
+
+/*
+------------------------------------------------------------------------
+ADD REVIEW PAGE
+------------------------------------------------------------------------
+*/
+.addreview form strong {
+	display: block;
+}
+
+.addreview form p {
+	margin: 0px 0px 20px 180px;
+}
+
+.addreview textarea {
+	width: 340px;
+	height: 100px;
+}
+
+/*
+------------------------------------------------------------------------
+ATTRIBUTES
+------------------------------------------------------------------------
+*/
+.attributes {
+	margin: 0 0 10px 0;
+	padding: 0;
+	width: 100%;
+}
+
+.attributes table {
+	border-top: solid 1px #000;
+}
+
+.attributes table td {
+
+}
+
+.attributes strong {
+	color: #000;
+}
+
+/*
+------------------------------------------------------------------------
+COMPARE PRODUCTS
+------------------------------------------------------------------------
+*/
+.compare .propertyheader {
+	font-weight: bold;
+}
+
+.compare .lastrow td {
+	background-color: transparent;
+	padding-bottom: 20px;
+}
+
+.compare span.price {
+	color: #f00;
+}
+
+/*
+------------------------------------------------------------------------
+SITE MAP
+------------------------------------------------------------------------
+*/
+.sitemap .sitemap_column {
+	display: block;
+	float: left;
+	width: 260px;
+	margin: 5px 0 0 0;
+	padding: 0 20px 20px 0;
+
+}
+
+.sitemap ul {
+	padding: 0;
+	margin: 0;
+}
+
+.sitemap ul li {
+	float: none;
+	width: 100%;
+	width: 100%;
+	padding: 2px 10px 3px 0;
+	margin: 0;
+	border: 0;
+	list-style-position: inside;	
+	list-style-type: none;
+	border-top: dotted 1px #000;
+}
+
+.sitemap h2 {
+	padding: 2px 0 3px 0;
+}
+
+
+.sitemap ul li li {
+	padding: 2px 0 3px 10px;
+	border: none;
+}
+
+.sitemap ul li li li {
+	padding-left: 20px;
+}
+
+.sitemap ul li li li li {
+	padding-left: 30px;
+}
+
+
+/*
+------------------------------------------------------------------------
+PRODUCT TABS 
+------------------------------------------------------------------------
+*/
+ul.tabs {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 20px; /*--Set height of tabs--*/
+	border-left: 1px solid #fff;
+	width: 100%;
+	font-size: 90%;
+}
+
+ul.tabs li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #000;
+	margin: 0 0 -1px -2px; /*--Pull the list item down 1px--*/
+	overflow: hidden;
+	position: relative;
+	background: #e0e0e0;
+}
+
+ul.tabs li a {
+	text-decoration: none;
+	color: #000;
+	display: block;
+	height: 17px;
+	padding: 2px 15px 0 10px;
+	text-transform: uppercase;
+}
+
+ul.tabs li a:hover {
+	background: #ccc;
+}
+
+html ul.tabs li.active,
+html ul.tabs li.active a:hover  { /*--Makes sure that the active tab does not listen to the hover properties--*/
+	background: #fff;
+	border-bottom: 1px solid #fff; /*--Makes the active tab look like it's connected with its content--*/
+}
+
+.tab_container {
+	border-top: 1px solid #000;
+	overflow: hidden;
+	clear: both;
+	float: left;
+	width: 100%;
+	background: #fff;
+	margin: 0 0 15px 0;
+}
+.tab_content {
+	padding: 5px 0 10px 0;
+}
+
+/*
+------------------------------------------------------------------------
+MISCELLANEOUS
+------------------------------------------------------------------------
+*/
+.boxheader {
+	margin: 15px 0px 0px 0px;
+}
+
+.box {
+	border: none;
+}
+
+.boxinset {
+	border-top: solid 2px #eee;
+}
+
+.pad_shortformat {
+	padding: 20px;
+}
+
+div.spacer {
+	clear: both;
+}
+
+/* 'Top items' boxes on home page */
+#toplists ul li div a:hover {
+	color: red;
+}
+
+#popup .pad {
+	padding: 10px;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+/*
+------------------------------------------------------------------------
+SPEED-ORDER
+------------------------------------------------------------------------
+*/
+.speedordertable {
+
+}
+
+.speedorder table {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.speedorder .productcode input {
+	width: 100%;
+}
+
+.speedorder .quantity input {
+	width: 50px;
+	text-align: right;
+}
+
+/*
+------------------------------------------------------------------------
+SHIPPING RATES PAGE
+------------------------------------------------------------------------
+*/
+.shippingtable {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.shippingtable .price, .shippingtable .price_1, .shippingtable .price_2 {
+	text-align: right;
+	white-space: nowrap;
+}
+
+/*
+------------------------------------------------------------------------
+MY ACCOUNT / CUSTOMER SECTION
+------------------------------------------------------------------------
+*/
+.savebasketstable .date, .wishliststable .date {
+	width: 130px;
+}
+
+.savebasketstable .actions, .wishliststable .actions, .orderhistory .view {
+	text-align: right;
+	width: 130px;
+}
+
+.orderdetails label {
+	width: 30%;
+	float: left;
+}
+
+.orderdetails div {
+	float: left;
+	margin-bottom: 4px;
+}
+
+.orderdetails br {
+	display: block;
+	clear: both;
+}
+
+.orderdetails div.tick {
+	float: none;
+	margin-bottom: 0;
+}
+
+.orderdetails div.tick img {
+	margin-right: 8px;
+}
+
+.downloadableproductstable .codenumber, .downloadableproductstable .orderdate {
+	white-space: nowrap;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.customer .links div {
+	width: 48%;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+.wishlist #chkUpdateItems {
+	margin: 0;
+	width: 20px;
+	text-align: left;
+	float: left;
+	padding: 0;
+}
+
+.affiliatestatstable {
+	width: 100%;
+}
+
+.affiliatestats .total {
+	text-align: right;
+	padding-right: 12px;
+}
+
+.affiliatestats .graph {
+	text-align: center;
+}
+
+.affiliatestats h2 {
+	margin-top: 16px;
+}
+
+.wishlist .section {
+	margin-bottom: 25px;
+}
+
+.wishlist .explanation {
+	margin: 0px 0px 15px 0px;
+	display: block;
+	width: 90%;
+}
+
+/*
+------------------------------------------------------------------------
+CROSS-SELLING 
+------------------------------------------------------------------------
+*/
+.carryonshopping {
+}
+
+.carryonshopping a {
+	font-weight: normal;
+}
+
+.carryonshopping h2 {
+	margin-bottom: 8px
+}
+
+.carryonshopping h3 {
+	margin-top: 5px;
+}
+
+.carryonshopping ul {
+	margin: 2px 0px 10px 40px;
+	list-style-type: none;
+	padding: 0;
+}
+
+
+/* ------------ Homepage Layout Divs --------------------------------- */
+.home_region {
+	width: 100%;
+}
+
+
+/* ------------ Homepage News ---------------------------------------- */
+/* Controls specifically the first news item */
+#newsitem1 {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	clear: both;
+}
+
+#newsitem1 .pad {
+	margin: 0;
+	padding: 0px 20px 20px 0px;
+}
+
+#newsitem1 h1 {
+	padding-top: 0px;
+}
+
+
+#newsitem1 img {
+	float: right;
+}
+
+/* Other news items */
+
+#newsitems div {
+	padding: 0;
+	margin: 0;
+}
+
+#newsitems {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+#newsitems .newsitem {
+	width: 33%;
+	float: left;
+}
+
+#newsitems .newsitem .pad {
+	margin: 0px 15px 10px 0px;
+}
+
+#newsitems strong {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+
+
+/* ------------ Top lists -------------------------------------------- */
+#toplists {
+	padding: 0;
+	width: 100%;
+	clear: both;
+}
+
+#toplists .box {
+	width: 33%;
+	float: left;
+}
+
+#toplists .pad {
+	margin: 0px 15px 10px 0px;
+}
+
+#toplists ul {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#toplists ul li {
+	list-style: none;
+	float: none;
+	clear: both;
+	padding-bottom: 2px;
+}
+
+#toplists ul li div {
+	display: block;	
+}
+
+/* ------------ Homepage Specials ------------------------------------ */
+.specials {
+	clear: both;
+}
+
+.specials h2 {
+	display: block;
+	margin-bottom: 12px;
+}
+

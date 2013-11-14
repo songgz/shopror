@@ -1,0 +1,40 @@
+<h1>ShopRoR管理</h1>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <table class="displaytable">
+      <tbody><tr>
+        <td colspan="2">
+
+        </td>
+      </tr><tr>
+        <td colspan="2">
+          <p>请在下面输入您的登录名和密码：</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <strong><%= f.label :email, '用户:' %></strong>
+        </td>
+        <td>
+          <%= f.email_field :email, :autofocus => true %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong><%= f.label :password, '密码:' %></strong>
+        </td>
+        <td>
+          <%= f.password_field :password %>
+        </td>
+      </tr>
+      </tbody></table>
+
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %> <%= f.label :remember_me, '记住我吗？' %></div>
+  <% end -%>
+
+  <div><%= f.submit "登录" %></div>
+<% end %>
+
+<%#= render "admin/devise/shared/links" %>

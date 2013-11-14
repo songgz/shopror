@@ -1,0 +1,72 @@
+<h1><%= t("mongoid.models.cart")  %></h1>
+<div class="basket">
+  <% if @cart.cart_items.blank?  %>
+      <div class="errors"><strong><%= t("shopror.views.cart.empty") %></strong></div>
+  <% else %>
+  <%= form_for(@cart) do |f| %>
+    <div class="form">
+    <div class="baskettable"><table summary="Details of your shopping basket">
+      <thead>
+      <tr class="header">
+        <th class="image">&nbsp;</th>
+        <th class="name" colspan="2"></th>
+        <th class="price" colspan="2"><%= t("mongoid.attributes.cart_item.price") %></th>
+        <th class="quantity"><%= t("mongoid.attributes.cart_item.qty")  %></th>
+        <th class="remove"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- BASKET ROWS -->
+      <% @cart.cart_items.each do |item| %>
+      <tr class="subheader">
+        <td class="image" rowspan="2">
+          <div class="smallimageholder" style="width:50px;height:50px">
+            <%= link_to image_tag(item.product.img_url(:thumb),width:50,height:50), item.product.img_url, rel: "lightbox" if item.product%>
+          </div>
+        </td>
+        <td class="name" colspan="6">
+          <strong><%= link_to item.product.try(:name), item.product, 'data-no-turbolink' => true %></strong>
+          <span class="codenumber"><%= item.sku %></span></td>
+      </tr>
+      <tr>
+        <td class="details" colspan="2"></td>
+        <td class="price" colspan="2"><%= item.price %></td>
+        <td class="quantity"><input type="number" value="<%= item.qty  %>" name="cart[cart_items][<%= item.id %>][qty]" size="4"></td>
+        <td class="remove"><%= link_to ' ', [@cart, item], method: :delete, data: { confirm: t("shopror.views.cart.del_confirm")} %></td>
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
+    </div>
+
+
+    <div class="totals">
+      <span class="inctax"><%= t("shopror.views.cart.total") %> = <span class="amount"><%= @cart.total %></span></span><br>
+      <div class="controls">
+        <%= submit_tag t("shopror.views.cart.recalculate"),class:"submit",name:'btn_recalculate' %>
+        <%= submit_tag t("shopror.views.cart.empty_cart"),class:"submit",name:'btn_empty_cart' %>
+        <%= submit_tag t("shopror.views.cart.place"), class:"submit",name:'btn_checkout' %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+
+  <% end %>
+
+  <div class="section">
+    <% if customer_signed_in? %>
+    <div class="links">
+      <div>
+        <%= link_to image_tag('skin/iSaveRecoverBasket.gif') +  t('shopror.views.cart.store'), store_carts_path %>
+        <p></p>
+      </div>
+      <div>
+        <%= link_to image_tag('skin/iCustomerLogin.gif') + t('shopror.views.customer.account'), current_customer %>
+        <p></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+</div>

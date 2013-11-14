@@ -1,0 +1,6 @@
+<% if @page  %>
+<h1><%= @page.try(:title) %></h1>
+<p>
+  <%= @page.try(:content).html_safe %>
+</p>
+<% end %>

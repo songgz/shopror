@@ -1,0 +1,116 @@
+development:
+  # Configure available database sessions. (required)
+  sessions:
+    # Defines the default session. (required)
+    default:
+      # Defines the name of the default database that Mongoid can connect to.
+      # (required).
+      database: shopror_development
+      # Provides the hosts the default session can connect to. Must be an array
+      # of host:port pairs. (required)
+      hosts:
+        - localhost:27017
+      options:
+        # Change whether the session persists in safe mode by default.
+        # (default: false)
+        # safe: false
+
+        # Change the default consistency model to :eventual or :strong.
+        # :eventual will send reads to secondaries, :strong sends everything
+        # to master. (default: :eventual)
+        # consistency: :eventual
+
+        # How many times Moped should attempt to retry an operation after
+        # failure. (default: 30)
+        # max_retries: 30
+
+        # The time in seconds that Moped should wait before retrying an
+        # operation on failure. (default: 1)
+        # retry_interval: 1
+  # Configure Mongoid specific options. (optional)
+  options:
+    # Enable the identity map, needed for eager loading. (default: false)
+    # identity_map_enabled: false
+
+    # Includes the root model name in json serialization. (default: false)
+    # include_root_in_json: false
+
+    # Include the _type field in serializaion. (default: false)
+    # include_type_for_serialization: false
+
+    # Preload all models in development, needed when models use
+    # inheritance. (default: false)
+    # preload_models: false
+
+    # Protect id and type from mass assignment. (default: true)
+    # protect_sensitive_fields: true
+
+    # Raise an error when performing a #find and the document is not found.
+    # (default: true)
+    # raise_not_found_error: true
+    #raise_not_found_error: false
+
+    # Raise an error when defining a scope with the same name as an
+    # existing method. (default: false)
+    # scope_overwrite_exception: false
+
+    # Skip the database version check, used when connecting to a db without
+    # admin access. (default: false)
+    # skip_version_check: false
+
+    # Use Active Support's time zone in conversions. (default: true)
+    # use_activesupport_time_zone: true
+
+    # Ensure all times are UTC in the app side. (default: false)
+    # use_utc: false
+test:
+  sessions:
+    default:
+      database: shopror_test
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+        # In the test environment we lower the retries and retry interval to
+        # low amounts for fast failures.
+        max_retries: 1
+        retry_interval: 0
+
+# Tell Mongoid which environment this configuration is for.
+production:
+  # This starts the session configuration settings. You may have as
+  # many sessions as you like, but you must have at least 1 named
+  # 'default'.
+  sessions:
+    # Define the default session.
+    default:
+      # A session can have any number of hosts. Usually 1 for a single
+      # server setup, and at least 3 for a replica set. Hosts must be
+      # an array of host:port pairs. This session is single server.
+      hosts:
+        - localhost:27017
+      # Define the default database name.
+      database: shopror_production
+      # Since this database points at a session connected to MongoHQ, we must
+      # provide the authentication details.
+      #username: user
+      #password: password
+
+  # Here we put the Mongoid specific configuration options. These are explained
+  # in more detail next.
+  options:
+#    allow_dynamic_fields: false
+#    identity_map_enabled: true
+#    include_root_in_json: true
+#    include_type_for_serialization: true
+    # Note this can also be true if you want to preload everything, but this is
+    # almost never necessary. Most of the time set this to false.
+#    preload_models:
+#      - Canvas
+#      - Browser
+#      - Firefox
+#    scope_overwrite_exception: true
+#    raise_not_found_error: false
+#    skip_version_check: false
+#    use_activesupport_time_zone: false
+#    use_utc: true

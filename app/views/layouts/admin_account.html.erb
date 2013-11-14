@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="Bookmark" href="favicon.ico" />
+  <link rel="SHORTCUT ICON" href="favicon.ico" />
+  <meta name="GENERATOR" content="www.shopror.com" />
+  <title>ShopRoR Login Page</title>
+  <%= stylesheet_link_tag "admin", media: "all" %>
+  <style type="text/css">
+      #loginbox
+      {
+          width: 350px;
+          height: 610px;
+          margin: 30px auto;
+          background-image: url(<%= image_path('admin/install_back.png')%>);
+          background-position: top left;
+          background-repeat: no-repeat;
+          padding: 19px 70px 0 100px;
+      }
+
+      #loginbox table
+      {
+          margin: 1px 0 10px 0;
+      }
+
+      .errors strong
+      {
+          color: #f00;
+      }
+  </style>
+</head>
+<body>
+<div id="loginbox">
+<%= yield %>
+</div>
+</body>
+</html>

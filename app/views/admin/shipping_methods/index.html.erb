@@ -1,0 +1,48 @@
+<table class="displaytable">
+  <tbody>
+  <tr>
+    <td><h1><%= t("shopror.views.shipping.management") %></h1></td>
+  </tr>
+  <tr>
+    <td><h2><%= t("mongoid.models.shipping_method") %></h2></td>
+  </tr>
+  <tr>
+    <td>
+      <table class="formatted">
+        <tbody><tr class="header">
+          <td width="90%">&nbsp;</td>
+          <td width="5%"><%= t("mongoid.attributes.shipping_method.actived")  %></td>
+          <td width="5%" align="right">&nbsp;</td>
+        </tr>
+        <% @shipping_methods.each_with_index do |shipping_method, index| %>
+        <tr bgcolor="<%= index % 2 == 0 ? '#eeeeee' : '#dddddd' %>">
+          <td><%= link_to shipping_method.name, admin_shipping_method_path(shipping_method) %></td>
+          <td><%= shipping_method.actived ? image_tag('admin/tick.gif') : image_tag('admin/tick_empty.gif')  %></td>
+          <td align="right"><%= link_to image_tag('admin/modify.gif'), edit_admin_shipping_method_path(shipping_method)  %></td>
+        </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="right"><%= link_to t("shopror.views.shipping_method.add"), new_admin_shipping_method_path  %></td>
+  </tr>
+
+  <tr>
+    <td><h2><%= t("mongoid.models.shipping_zone")  %></h2></td>
+  </tr>
+  <tr>
+    <td>
+      <%= render :partial => "/admin/shipping_zones/list", :locals => {:shipping_zones => @shipping_zones}  %>
+    </td>
+  </tr>
+  <tr>
+    <td align="right"><%= link_to t("shopror.views.shipping_zone.add"), new_admin_shipping_zone_path %></td>
+  </tr>
+
+  </tbody>
+</table>
+
+
+

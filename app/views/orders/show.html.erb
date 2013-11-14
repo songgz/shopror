@@ -1,0 +1,54 @@
+<h1><%= t("shopror.views.order.order_status")%></h1>
+<div class="vieworder">
+  <h2><%= t("shopror.views.order.details")%></h2>
+  <div class="orderdetails">
+
+    <label><%= t("shopror.views.order.order_number")%></label>
+    <div><%= @order.order_no %></div><br>
+
+    <label><%= t("shopror.views.order.order_date") %></label>
+    <div><%= @order.created_at.strftime("%Y-%m-%d %H:%M:%S") %></div><br>
+
+    <label><%= t("shopror.views.order.total")%></label>
+    <div><%= @order.total %></div><br>
+    <label><%= t("shopror.views.order.last_update")%></label>
+    <div><%= @order.updated_at.strftime("%Y-%m-%d %H:%M:%S") %></div><br>
+
+    <label><%= t("shopror.views.order.status")%></label>
+    <div>
+      <div class="tick"><%= image_tag 'skin/tick.gif', class:"tick" %><%= t("shopror.views.order.sent_order")%></div>
+      <div class="tick"><%= image_tag 'skin/tick_empty.gif', class:"tick" %><%= t("shopror.views.order.order_payment")%></div>
+      <div class="tick"><%= image_tag 'skin/tick_empty.gif', class:"tick" %><%= t("shopror.views.order.order_invoice")%></div>
+      <div class="tick"><%= image_tag 'skin/tick_empty.gif', class:"tick" %><%= t("shopror.views.order.order_dispatched")%></div>
+    </div><br>
+
+  </div>
+</div>
+
+<div class="basket">
+  <div class="baskettable"><table summary="">
+    <thead>
+    <tr class="header">
+      <th class="name"></th>
+      <th class="price" colspan="2"><%= t("shopror.views.order.price")%></th>
+      <th class="quantity"><%= t("shopror.views.order.qty")%></th>
+      <th class="total"><%= t("shopror.views.order.total")%></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @order.order_items.each do |item| %>
+    <tr class="subheader">
+      <td colspan="5" class="versioname"><strong><%= item.product.try(:name) %> - <%= item.name %></strong></td>
+    </tr>
+    <tr>
+      <td class="name"><%= item.name %></td>
+      <td class="price" colspan="2"><%= item.price %></td>
+      <td class="quantity"><%= item.qty %></td>
+      <td class="total"><%= item.sum %></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table></div><div class="totals"><%= t("shopror.views.order.total_order_value")%> = <%= @order.total %><br><%= t("shopror.views.order.shipping")%> = <%= @order.shipping %><br><br><em><%= t("shopror.views.order.order_total")%> = <%= @order.total %></em><br>
+</div>
+  <p><%= link_to t("shopror.views.order.back"), current_customer %></p>
+</div>

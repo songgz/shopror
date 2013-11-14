@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>ShopRoR -A Shopping Cart</title>
+  <%= stylesheet_link_tag "admin", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "admin", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="backend_body">
+<div id="header">
+  <!-- top bar -->
+  <div id="adminbar" title="ShopRoR v0.8 (c)2013-2014 SGZ.">
+    <div id="col1">
+      <a id="frontbacklink" title="Front of Site" href="/homes"></a>
+      <a class="shopstatus state1" title="Close the Shop" href="/_update_lockshop?lockshopstatus=lock"></a>
+    </div>
+    <div>
+      <div id="col2">
+        <% if employee_signed_in? %>
+            <strong><%= current_employee.email %></strong>
+            <%= link_to('Logout', destroy_employee_session_path, :method=>'delete',class:"adminbuttonstyle", title:"Logout") %>
+        <% end %>
+        <%= image_tag('admin/tick_empty.gif')  %>
+        <!--<img src= "<%= image_path("admin/tick.gif") %>" alt="Permissions : Orders" title="Permissions : Orders"/>-->
+        <!--<img src="/assets/admin/tick.gif" alt="Permissions : Products" title="Permissions : Products"/><img src="/assets/admin/tick.gif" alt="Permissions : Configuration" title="Permissions : Configuration"/>-->
+      </div>
+    </div>
+  </div>
+  <div id="adminbar_spacer"></div>
+
+
+  <div class="dropdownmenu" id="backendmenu">
+    <div class="CactuShopMenu-Horizontal">
+      <%= admin_menu.html_safe%>
+    </div>
+  </div>
+
+
+  <div class="buttonbar2">
+    <div id="section_searchbox">
+      <form method="get" name="form1" action="_back_search">
+
+        <input type="text" name="strKeyword" size="30" class="searchtextbox">
+        <select name="strSearchTarget">
+          <option value="all">- All -</option>
+          <option value="categories">Categories</option>
+          <option value="products">Products</option>
+          <option value="versions">Versions</option>
+          <option value="customers">Customers</option>
+          <option value="orders">Orders</option>
+          <option value="lstrings">Site Text</option>
+          <option value="config">Config Settings</option>
+        </select>
+        <input type="submit" name="btnSubmit" value="Search">
+      </form>
+    </div>
+  </div>
+
+</div>
+<div id="leftcolumn">
+  <!-- category menu -->
+  <div id="menucats">
+  <%= admin_category_menu.html_safe%>
+  </div>
+
+</div>
+<div id="middlecolumn">
+  <!-- page content -->
+  <%= yield %>
+
+</div>
+<div id="rightcolumn">
+  <!-- task list -->
+  xxxBREAKPOINTxxx
+</div>
+
+<div id="footer">
+  <!-- footer -->
+  xxxFOOTERINFOxxx
+</div>
+</body>
+</html>

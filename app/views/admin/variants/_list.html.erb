@@ -1,0 +1,27 @@
+<table class="formatted">
+  <caption style="text-align:right"><%= link_to  (t("shopror.views.variant.add")+image_tag('admin/b_version.gif')).html_safe, new_admin_product_variant_path(product) %></caption>
+  <thead>
+  <tr class="header">
+    <td width="30%"><%= t("mongoid.attributes.variant.name")  %></td>
+    <td width="20%"><%= t("mongoid.attributes.variant.sku") %></td>
+    <td width="10%"><%= t("mongoid.attributes.variant.qty") %></td>
+    <td width="15%" align="right"><%= t("mongoid.attributes.variant.price") %></td>
+    <td width="15%" align="right"><%= t("mongoid.attributes.variant.weight") %></td>
+    <td width="10%">&nbsp;</td>
+  </tr>
+  </thead>
+  <tbody>
+  <% product.variants.each_with_index do |variant, index| %>
+      <tr bgcolor="<%= index % 2 == 0 ? '#eeeeee' : '#dddddd' %>">
+        <td width="168"><%= variant.name %></td>
+        <td width="100"><%= variant.sku %></td>
+        <td width="46"><%= variant.qty %></td>
+        <td width="44" align="right"><%= variant.price %></td>
+        <td width="44" align="right"><%= variant.weight %></td>
+        <td width="47" align="right">
+          <%= link_to image_tag('admin/b_version.gif', title:t("shopror.views.variant.edit")), edit_admin_product_variant_path(product,variant) %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

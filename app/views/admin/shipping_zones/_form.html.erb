@@ -1,0 +1,101 @@
+<%= form_for([:admin, @shipping_zone]) do |f| %>
+    <% if @shipping_zone.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@shipping_zone.errors.count, "error") %> prohibited this admin_shipping_zone from being
+            saved:</h2>
+
+          <ul>
+            <% @shipping_zone.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <table class="displaytable">
+      <tbody>
+      <tr>
+        <td width="180"><%= f.label :actived %></td>
+        <td><%= f.check_box :actived %></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <hr>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :code %></td>
+        <td><%= f.text_field :code %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :area_codes %></td>
+        <td id='myarea'>
+          <% @shipping_zone.area_codes.each do |code| %>
+              <span><%= check_box_tag 'shipping_zone[area_codes][]', code, true %><%= CityArea.get(code).name %></span>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top"></td>
+        <td>
+          <%= select_tag(:province, options_from_collection_for_select(CityArea.roots, :code, :name), prompt: "请选择") %>
+          <%= select_tag(:city, options_from_collection_for_select([], :code, :name), prompt: "请选择") %>
+          <%= select_tag(:district, options_from_collection_for_select([], :code, :name), prompt: "请选择") %>
+          <a onclick="add_city();return false" href="#" class='buttonstyle'>添加</a>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <hr>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :seq %></td>
+        <td><%= f.number_field :seq %></td>
+      </tr>
+
+      </tbody>
+    </table>
+    <%= f.submit class: 'submit' %>
+
+<% end %>
+
+<script type="text/javascript">
+    cities_select(['province', 'city', 'district']);
+    function add_city() {
+        code = '';
+        name = '';
+
+        if ($('#district option:selected').text() != '请选择') {
+            name = $('#district option:selected').text();
+            code = $('#district').val();
+        }
+        else if ($('#city option:selected').text() != '请选择') {
+            name = $('#city option:selected').text();
+            code = $('#city').val();
+        }
+        else if ($('#province option:selected').text() != '请选择') {
+            name = $('#province option:selected').text();
+            code = $('#province').val();
+        }
+
+        if (name != '') {
+            // 获取myarea下已存在的checkbox code 如果已经存在则无法再添加
+            var myarea_codes = [];
+            $('#myarea :checked').each(function() {
+                myarea_codes.push($(this).val());
+            });
+            if(($.inArray(code, myarea_codes) > -1)){
+                alert("无法添加，添加项已经存在！")
+            }else{
+                box = "<span><input checked='checked'  name='shipping_zone[area_codes][]' type='checkbox' value='" + code + "'>" + name + "</span>";
+                $("#myarea").append(box);
+            }
+        }
+//      $("#myarea").html(box);
+    }
+</script>

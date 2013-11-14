@@ -1,0 +1,40 @@
+<%= form_for([:admin, @customer_group], :html => {:multipart => true}) do |f| %>
+    <% if @customer_group.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@customer_group.errors.count, "error") %> prohibited this customer_group from
+            being saved:</h2>
+
+          <ul>
+            <% @customer_group.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <table class="displaytable">
+      <tbody>
+      <tr>
+        <td class="bold"><%= f.label :actived %></td>
+        <td><%= f.check_box :actived %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :discount %></td>
+        <td><%= f.text_field :discount %></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <hr/>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

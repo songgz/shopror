@@ -1,0 +1,39 @@
+<h1><%= t("shopror.views.cart.checkout") %></h1>
+<div class="checkout step3">
+
+  <div class="section">
+    <%= form_tag(new_checkout_path, method: :get ) do %>
+      <div>
+      <input type="hidden" name="strPaymentSystem" value="po">
+      <p>请选择配送方式</p>
+      <div class="shippingmethodstable">
+        <table summary="Available shipping methods for your order." class="box">
+        <thead>
+        <tr class="header">
+          <th class="radio"></th>
+          <th class="price" colspan="2">价格</th>
+          <th class="name" colspan="2">配送方式</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @shipping_methods.each do |ship| %>
+        <tr class="subheader">
+          <td class="radio"><input class="radio" type="radio" name="shipping_method_id" value="<%= ship.id %>"></td>
+          <td class="price" colspan="2"><%= ship.fee(current_customer, session_cart) %></td>
+          <td class="name"><label for="shipping_method"><%= ship.name %></label></td>
+        </tr>
+        <tr>
+          <td class="radio"></td>
+          <td class="price" colspan="2"></td>
+          <td class="description"><%= ship.desc %></td>
+        </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+      <input class="submit" type="submit" name="submitforward" id="Submit2" value="继续">
+    </div>
+    <% end %>
+  </div>
+</div>

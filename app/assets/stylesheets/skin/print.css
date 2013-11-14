@@ -1,0 +1,32 @@
+/* 
+========================================================================
+CACTUSHOP.CSS
+========================================================================
+*/
+
+
+/*
+------------------------------------------------------------------------
+COMMON ELEMENTS
+------------------------------------------------------------------------
+*/
+#topbar, #header, #right, #footer {
+	display: none;
+	visibility: hidden;
+	width: 0;
+}
+
+#container {
+	display: block;
+	background: none;
+	margin: 0 auto;
+}
+
+#centrecontainer, #pagecontent {
+	width: 100%;
+}
+
+#terms {
+	background: none;
+	color: Black;
+}

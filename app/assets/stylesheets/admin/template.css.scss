@@ -1,0 +1,144 @@
+/* 
+========================================================================
+TEMPLATE.CSS
+========================================================================
+*/
+html 
+{
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #eee;
+}
+
+#mainpagetable
+{
+	width: 100%;
+	height: 100%;
+}
+
+#header
+{
+	position: fixed;
+	width: 100%;
+	height: 53px;
+	border-bottom: solid 8px #eee;
+	background-image: image-url("admin/bar_back.png");
+	background-position: left 10px;
+	background-repeat: repeat-x;
+	z-index: 100;
+}
+
+#leftcolumn
+{
+	position: fixed;
+	top: 65px;
+	left: 0px;
+	bottom: 20px;
+	background-color: #fff;
+	overflow-y: auto;
+	overflow-x: auto;
+	width: 200px;
+}
+
+#middlecolumn 
+{
+	vertical-align: top;
+	padding: 10px 250px 20px 20px;
+	background-color: #fff;
+	float: right;
+	width: auto;
+	position: fixed;
+	top: 65px;
+	right: 0px;
+	bottom: 20px;
+	left: 206px;
+	overflow-y: auto;
+	overflow-x: none;
+}
+
+#rightcolumn
+{
+	width: 190px;
+	vertical-align: top;
+	position: fixed;
+	top: 65px;
+	right: 30px;
+}
+
+.buttonbar2
+{
+	width: 100%;
+	border-top: solid 1px #fff;
+	border-bottom: solid 1px #aaa;
+	height: 27px;
+}
+
+/* 
+========================================================================
+SEARCH BOX
+========================================================================
+*/
+#section_searchbox 
+{
+	padding: 2px 3px 0 10px;
+}
+
+#section_searchbox input.searchtextbox
+{
+	border: solid 1px #fff;
+	background-color: transparent;
+	color: #000;
+	width: 190px;
+	padding: 1px;
+	margin-top: 1px;
+}
+
+#section_searchbox select
+{
+	width: auto;
+	border: solid 1px #fff;
+	background-color: transparent;
+	color: #000;
+	margin-top: 1px;
+}
+
+#section_searchbox select:focus,
+#section_searchbox input.searchtextbox:focus
+{
+	background-color: #fff;
+	border: solid 1px #c05;
+}
+
+#section_searchbox input.searchtextbox:hover,
+#section_searchbox select:hover
+{
+	border: solid 1px #c05;
+}
+
+/* 
+========================================================================
+TO DO LIST
+========================================================================
+*/
+#todolist
+{
+	width: 100%;
+}
+
+#todolist td
+{
+	padding: 2px 3px 10px 0;
+	border-bottom: solid 1px #f50;
+}
+
+#todolist tr.header td
+{
+	font-weight: bold;
+	padding: 15px 0 10px 0;
+}
