@@ -3,7 +3,7 @@
   <tr><td><h1><%= @product.name  %></h1></td></tr>
   <tr><td>
     <div class="producttabs">
-      <%= link_to t("mongoid.models.product"), edit_admin_product_path(@product), 'data-no-turbolink' => true, class: tab == :product ? 'tablive': nil %>
+      <%= link_to t("mongoid.models.product"), edit_admin_product_path(@product), class: tab == :product ? 'tablive': nil %>
       <%= link_to t("mongoid.models.variant"), admin_product_variants_path(@product), class: tab == :variant ? 'tablive': nil %>
       <a href="#">Reviews</a>
       <a href="#">Attributes</a>

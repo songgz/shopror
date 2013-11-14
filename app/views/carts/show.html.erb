@@ -25,7 +25,7 @@
           </div>
         </td>
         <td class="name" colspan="6">
-          <strong><%= link_to item.product.try(:name), item.product, 'data-no-turbolink' => true %></strong>
+          <strong><%= link_to item.product.try(:name), item.product %></strong>
           <span class="codenumber"><%= item.sku %></span></td>
       </tr>
       <tr>

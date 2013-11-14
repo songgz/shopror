@@ -16,7 +16,7 @@
     <!-- BASKET ROWS -->
     <% session_cart.cart_items.each do |item| %>
     <tr class="subheader">
-      <td class="name" colspan="6"><strong><%= link_to item.product.name, item.product, 'data-no-turbolink' => true %></strong>
+      <td class="name" colspan="6"><strong><%= link_to item.product.name, item.product %></strong>
         <span class="codenumber"><%= item.sku %></span></td>
     </tr>
     <tr>
