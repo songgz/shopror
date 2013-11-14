@@ -67,7 +67,7 @@
         </div>
         <div id="newestproducts">
           <h4><span>最新商品</span></h4>
-          <div><%= render :partial => "parts/newest_product", :locals => {:products => Product.recent.limit(3)} %></div>
+          <div><%= render :partial => "parts/newest_product", :locals => {:products => Product.recent.limit(3).cache} %></div>
         </div>
         <div id="topsellers">
           <h4><span>热销商品</span></h4>
