@@ -6,8 +6,16 @@
             <div class="imageholder" style="width:100px;height:100px"><%= link_to image_tag(product.img_url(:thumb), height: 100, width: 100), product %></div>
             <div class="spacer"></div>
             <h2><%= link_to product.name, product %></h2>
-               <em class="strapline"><%= product.strapline %></em>
-            <div class="minprice"><%= product.variants.first.try(:price) %></div>
+            <em class="strapline"><%= product.strapline %></em>
+
+            <div class="minprice">
+              <% if product.variants.first && (product.variants.first.weight != 0) %>
+                  <%= (product.variants.first.try(:price)/product.variants.first.weight * 1000).to_f.round(2) %>
+              <% else %>
+                  <%= 0.0 %>
+              <% end %>
+              <%= 'RMB/kg' %>
+            </div>
           </div>
         </div>
       </div>
