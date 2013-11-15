@@ -29,7 +29,7 @@ zh-CN:
           name: "商品名称"
           strapline: "副标题"
           desc: "商品描述"
-          url: "商品媒体"
+          url: "下载"
           img: "商品图片"
           featured: "推荐"
           customer_group: "客户组"
