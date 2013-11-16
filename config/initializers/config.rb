@@ -1,10 +1,16 @@
 # encoding: utf-8
-require 'singleton'
 
 module Shopror
-  class Config
-    include Singleton
 
+  def self.setup(&block)
+    block.call(@conf ||= Shopror::Config.new) if block_given?
+  end
+
+  def self.config
+    @conf
+  end
+
+  class Config
     attr_accessor :site_name, :site_url, :site_email, :site_icp, :site_logo, :version, :copyright
 
     def initialize
@@ -17,8 +23,5 @@ module Shopror
       @copyright = 'Copyright 2013-2014 ShopRoR.'
     end
 
-    def setup(&block)
-      block.call(self) if block_given?
-    end
   end
 end

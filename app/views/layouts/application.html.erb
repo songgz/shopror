@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'>
-  <title><%= Shopror::Config.instance.site_name %></title>
+  <title><%= Shopror.config.site_name %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -42,7 +42,7 @@
       </div>
       <div id="header">
         <div id="title">
-          <div><a href="/"><%= image_tag(Shopror::Config.instance.site_logo) %></a></div>
+          <div><a href="/"><%= image_tag(Shopror.config.site_logo) %></a></div>
         </div>
         <div id="mainbar">
           <div class="links">
@@ -83,9 +83,9 @@
 </div>
 <div id="footer">
   <div id="terms">
-    <a style="color:#ccc;" href="#"><%= Shopror::Config.instance.version %></a><br />
-    <%= Shopror::Config.instance.copyright %><br />
-    <%= Shopror::Config.instance.site_icp %><br />
+    <a style="color:#ccc;" href="#"><%= Shopror.config.version %></a><br />
+    <%= Shopror.config.copyright %><br />
+    <%= Shopror.config.site_icp %><br />
   </div>
 </div>
 </body>

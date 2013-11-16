@@ -1,4 +1,4 @@
 # encoding: utf-8
-Shopror::Config.instance.setup do |conf|
+Shopror.setup do |conf|
 
 end
