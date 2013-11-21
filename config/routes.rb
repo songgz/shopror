@@ -10,6 +10,11 @@ Shopror::Application.routes.draw do
       get :featured
     end
   end
+  resources :suppliers do
+    collection do
+      get :origin
+    end
+  end
   resources :carts do
     resources :cart_items
     collection do
