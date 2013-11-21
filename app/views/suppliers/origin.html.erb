@@ -1,0 +1,24 @@
+<div class="home_region" id="home_region2">
+  <div class="products specials ">
+    <h5><span><%= t('shopror.views.supplier.country_of_origin') %></span></h5>
+
+    <%#= render :partial => "list", :locals => {:products => @products}  %>
+    <div class="products products_shortened">
+      <% @suppliers.each do |supplier| %>
+          <div class="product" id="product1">
+            <div class="box">
+              <div class="pad">
+                <%= supplier.desc.html_safe %>
+                <div class="spacer"></div>
+                <h2><%=supplier.name %></h2>
+              </div>
+            </div>
+          </div>
+      <% end %>
+      </div>
+
+  <div class="spacer"></div>
+  <td class="paginate" colspan="9"><%= paginate @suppliers %></td>
+</div>
+<div class="products_end"></div>
+</div>

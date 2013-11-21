@@ -57,7 +57,14 @@
                           <h2><%= link_to product.name, product %></h2>
                           <em class="strapline"><%= product.strapline %></em>
                           <p><%= product.desc.html_safe %></p>
-                          <div class="minprice"><%= product.variants.first.try(:price) %></div>
+                          <div class="minprice">
+                            <% if product.variants.first && (product.variants.first.weight != 0) %>
+                                <%= (product.variants.first.try(:price)/product.variants.first.weight * 1000).to_f.round(2) %>
+                            <% else %>
+                                <%= 0.0 %>
+                            <% end %>
+                            <%= 'RMB/kg' %>
+                          </div>
                           <div class="extrainfolinks">
                             <div class="moreinfo"><%= link_to t("shopror.views.product.more"), product %></div>
                           </div>

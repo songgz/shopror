@@ -176,6 +176,8 @@ zh-CN:
           more: '更多...'
           large_view: '浏览大图'
           confirm: "确定删除商品吗？"
+        supplier:
+          country_of_origin: "原产地"
         customer:
           add: '新建客户'
           edit: '编辑客户'
@@ -299,7 +301,6 @@ zh-CN:
           speedorder: "快捷下单"
           guest_book: "客户留言"
           wiki_pages: "商品百科"
-          country_of_origin: "原产地"
           taobao: "淘宝店"
           about: "关于我们"
           my_account: "我的帐户"
