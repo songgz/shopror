@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 // require turbolinks
-//= require lightbox
+//= require lightbox-2.6.min
 // require foundation
 // require_tree .
 
