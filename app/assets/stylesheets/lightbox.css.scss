@@ -1,6 +1,6 @@
 /* line 7, ../sass/lightbox.sass */
 body:after {
-  content: url(close.png) url(loading.gif) url(../img/prev.png) url(../img/next.png);
+  content: image-url('lightbox/close.png') image-url('lightbox/loading.gif') image-url('lightbox/prev.png') image-url('lightbox/next.png');
   display: none;
 }
 
@@ -123,7 +123,7 @@ body:after {
 }
 /* line 87, ../sass/lightbox.sass */
 .lb-prev:hover {
-  background: url(../img/prev.png) left 48% no-repeat;
+  background: image-url('lightbox/prev.png') left 48% no-repeat;
 }
 
 /* line 90, ../sass/lightbox.sass */
@@ -133,7 +133,7 @@ body:after {
 }
 /* line 93, ../sass/lightbox.sass */
 .lb-next:hover {
-  background: url(../img/next.png) right 48% no-repeat;
+  background: image-url('lightbox/next.png') right 48% no-repeat;
 }
 
 /* line 96, ../sass/lightbox.sass */
