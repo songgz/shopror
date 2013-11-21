@@ -14,6 +14,7 @@
 //= require jquery_ujs
 // require turbolinks
 //= require lightbox
+// require foundation
 // require_tree .
 
 var cities_select = function (cities) {
@@ -30,3 +31,5 @@ var cities_select = function (cities) {
         })(index);
     }
 };
+
+$(document).foundation();

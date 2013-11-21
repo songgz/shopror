@@ -44,7 +44,7 @@ class Order
     })
   end
 
-  def self.sell
+  def self.sell()
     map = %Q{
       function() {
         this.order_items.forEach(function(item){
@@ -55,7 +55,7 @@ class Order
 
     reduce = %Q{
       function(key, values) {
-        var result = { count: 0 };
+        var result = { count: 0, years:[], };
         values.forEach(function(value) {
           result.count += value.count;
         });

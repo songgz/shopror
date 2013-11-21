@@ -45,6 +45,10 @@ Shopror::Application.routes.draw do
       resources :products
     end
     resources :products do
+      collection do
+        get :hit
+        get :sell
+      end
       resources :variants
     end
     resources :shipping_methods
