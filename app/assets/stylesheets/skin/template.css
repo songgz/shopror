@@ -117,11 +117,11 @@ HEADER
 }
 
 #header #title {
-	height: 40px;
+	height: 100px;
 }
 
 #header #mainbar {
-	margin: 30px 0 0 0;
+	margin: 10px 0 0 0;
 }
 
 #header .links 

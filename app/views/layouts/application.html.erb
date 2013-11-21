@@ -31,8 +31,7 @@
         <div id="minibasket_holder">
           <%= render 'parts/cart'  %>
         </div>
-        <div class="spacer">
-        </div>
+        <div class="spacer"></div>
         <div id="searchbox">
           <form method="get" action="/products">
             <div id="skinsearchboxback">
@@ -42,7 +41,7 @@
       </div>
       <div id="header">
         <div id="title">
-          <div><a href="/"><%= image_tag(Shopror.config.site_logo) %></a></div>
+          <div id='banner' ><a href="/"><%#= image_tag(Shopror.config.site_logo) %></a></div>
         </div>
         <div id="mainbar">
           <div class="links">
@@ -89,5 +88,8 @@
     <%= Shopror.config.site_icp %><br />
   </div>
 </div>
+<div id="adl">左侧内容</div>
+<div id="adr">右侧内容</div>
+<div id="ad">您的内容</div>
 </body>
 </html>

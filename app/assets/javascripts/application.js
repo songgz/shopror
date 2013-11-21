@@ -14,6 +14,7 @@
 //= require jquery_ujs
 // require turbolinks
 //= require lightbox-2.6.min
+//= require sidebox
 // require foundation
 // require_tree .
 
@@ -32,4 +33,30 @@ var cities_select = function (cities) {
     }
 };
 
-$(document).foundation();
+
+$(document).ready(function(){
+    $( "#adl").SideBox({
+        position: "left",
+        top: 0,
+        height: 200,
+        width: 100,
+        left: 20
+    });
+
+    $( "#adr").SideBox({
+        position: "right",
+        top: 0,
+        height: 200,
+        width: 100,
+        right: 20
+    });
+
+    $( "#ad").SideBox({
+        position: "left",
+        top: 260,
+        width: 100,
+        height: 50,
+        left: 20
+    });
+
+});

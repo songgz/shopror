@@ -1,6 +1,6 @@
 /* 
 ========================================================================
-CACTUSHOP.CSS
+SHOPROR.CSS
 ========================================================================
 */
 
@@ -9,6 +9,12 @@ CACTUSHOP.CSS
 MAIN ELEMENTS
 ------------------------------------------------------------------------
 */
+
+#title {
+  background-image: image-url('skin/mountain12.png');
+  background-repeat: no-repeat;
+}
+
 body, td, select, input {
 	font-family: Tahoma, Geneva, sans-serif; 
 	font-size: 9pt;
