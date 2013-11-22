@@ -36,9 +36,9 @@
                   <td><%= customer.name %></td>
                   <td><a href="mailto:<%= customer.email %>"><%= customer.email %></a></td>
                   <td align="right">
-                      <%= link_to image_tag('/assets/admin/b_order.gif'), admin_orders_path(customer_id: customer.id) %>
+                      <%= link_to image_tag('admin/b_order.gif'), admin_orders_path(customer_id: customer.id) %>
                       &nbsp;
-                      <%= link_to image_tag('/assets/admin/b_customer.gif'), edit_admin_customer_path(customer) %>
+                      <%= link_to image_tag('admin/b_customer.gif'), edit_admin_customer_path(customer) %>
                   </td>
                 </tr>
             <% end %>

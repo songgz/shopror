@@ -9,8 +9,8 @@
             <em class="strapline"><%= product.strapline %></em>
 
             <div class="minprice">
-              <% if product.variants.first && (product.variants.first.weight != 0) %>
-                  <%= (product.variants.first.try(:price)/product.variants.first.weight * 1000).to_f.round(2) %>
+              <% if product.variants.first && (product.variants.first.price!=nil) && (product.variants.first.weight!=nil)&& (product.variants.first.weight != 0) %>
+                  <%= (product.variants.first.try(:price)/ product.variants.first.weight * 1000).to_f.round(2) %>
               <% else %>
                   <%= 0.0 %>
               <% end %>
