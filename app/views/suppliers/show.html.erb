@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_admin_supplier_path(@supplier) %> |
-<%= link_to 'Back', admin_suppliers_path %>
+<h2><%= @supplier.name %></h2>
+<hr>
+<p>
+  <%= @supplier.desc.html_safe %>
+</p>

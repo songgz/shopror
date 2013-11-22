@@ -20,7 +20,7 @@
         }
         else{
             fDiv.css("display","block")
-            var closeHtml='<div style="background-color:#eee;border-bottom:1px solid #f1f1f1;height:20px;line-height:20px !important;"><h3 style="margin:0;padding:0;color:#444;text-align:center;">'+options.title+'</h3><span style="position: absolute;border:1px solid #000;right:3px;height:12px;width:12px;line-height:12px !important;top: 2px;cursor: pointer;font-size: 14px;" class="closeFloat">×</span></div>';
+            var closeHtml='<div style="background-color:#ffaa55;border-bottom:1px solid #f50;height:20px;line-height:20px !important;"><h3 style="margin:0;padding:0;text-align:center;">'+options.title+'</h3><span style="position: absolute;border:1px solid #000;right:3px;height:12px;width:12px;line-height:12px !important;top: 2px;cursor: pointer;font-size: 14px;" class="closeFloat">×</span></div>';
             switch(options.position){
                 case "left":
                     if(options.allowClose){
@@ -28,7 +28,7 @@
                         $(".closeFloat",fDiv).click(function(){$(this).hide();fDiv.hide();showAd=false;})
                         h += 20;
                     }
-                    fDiv.css({border:"#CCC solid 1px",position:"absolute",left:options.left+"px",top:options.top+"px",width:options.width+"px",height:h+"px",overflow:"hidden"});
+                    fDiv.css({border:"#f50 solid 1px",position:"absolute",left:options.left+"px",top:options.top+"px",width:options.width+"px",height:h+"px",overflow:"hidden"});
                     break;
                 case "right":
                     if(options.allowClose){
@@ -36,7 +36,7 @@
                         $(".closeFloat",fDiv).click(function(){$(this).hide();fDiv.hide();showAd=false;})
                         h+=20;
                     }
-                    fDiv.css({border:"#CCC solid 1px", position:"absolute",left:"auto",right:options.right+"px",top:options.top+"px",width:options.width+"px",height:h+"px",overflow:"hidden"});
+                    fDiv.css({border:"#f50 solid 1px", position:"absolute",left:"auto",right:options.right+"px",top:options.top+"px",width:options.width+"px",height:h+"px",overflow:"hidden"});
                     break;
             };
         };
