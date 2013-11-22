@@ -1,0 +1,5 @@
+<dl style="margin: 5px">
+  <% suppliers.each do |supplier| %>
+      <li><%= link_to supplier.name.truncate(6), supplier %></li>
+  <% end %>
+</dl>

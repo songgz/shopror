@@ -36,27 +36,39 @@ var cities_select = function (cities) {
 
 $(document).ready(function(){
     $( "#adl").SideBox({
+        title: '商品产地',
         position: "left",
-        top: 0,
+        top: 5,
         height: 200,
         width: 100,
         left: 20
     });
 
     $( "#adr").SideBox({
+        title: '林区特色',
         position: "right",
-        top: 0,
+        top: 5,
         height: 200,
         width: 100,
         right: 20
     });
 
     $( "#ad").SideBox({
+        title: '热销商品',
         position: "left",
         top: 260,
         width: 100,
-        height: 50,
+        height: 200,
         left: 20
+    });
+
+    $( "#ad1").SideBox({
+        title: '公司简介',
+        position: "right",
+        top: 260,
+        height: 200,
+        width: 100,
+        right: 20
     });
 
 });

@@ -1,0 +1,5 @@
+<dl style="margin: 5px">
+  <% products.each do |product| %>
+      <li><%= link_to product.name.truncate(6), product %></li>
+  <% end %>
+</dl>

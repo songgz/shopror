@@ -62,7 +62,7 @@ class PagesController < ApplicationController
   end
 
   def page
-    @page = Page.where(code:params[:code]).first
+    @page = Page.where(code:params[:code]).cache.first
   end
 
   private
