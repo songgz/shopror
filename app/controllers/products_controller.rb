@@ -2,11 +2,11 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def featured
-    @products = Product.featured.page(params[:page] || 1).per(12)
+    @products = Product.featured.cache.page(params[:page] || 1).per(12)
   end
 
   def recent
-    @products = Product.recent.page(params[:page] || 1).per(12)
+    @products = Product.recent.cache.page(params[:page] || 1).per(12)
   end
 
   # GET /products
