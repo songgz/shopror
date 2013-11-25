@@ -24,13 +24,13 @@
           <td><%= group.discount %></td>
           <td class="small">
             <% if group.actived==1 %>
-                <img hspace="1" src="/assets/admin/tick.gif">
+                <%= link_to image_tag('admin/tick.gif',hspace:'1') %>
             <% else %>
-                <img hspace="1" src="/assets/admin/tick_empty.gif">
+                <%= link_to image_tag('admin/tick_empty.gif',hspace:'1') %>
             <% end %>
           </td>
           <td align="right">
-            <%= link_to image_tag('/assets/admin/modify.gif', title: "编辑客户组"), edit_admin_customer_group_path(group) %>
+            <%= link_to image_tag('admin/modify.gif', title: "编辑客户组"), edit_admin_customer_group_path(group) %>
           </td>
         </tr>
         <% end %>

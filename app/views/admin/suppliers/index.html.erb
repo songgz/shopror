@@ -19,13 +19,13 @@
               <td><%= supplier.name %></td>
               <td class="small">
                 <% if supplier.actived == 1 %>
-                    <img hspace="1" src="/assets/admin/tick.gif">
+                    <%= link_to image_tag('admin/tick.gif',hspace:'1') %>
                 <% else %>
-                    <img hspace="1" src="/assets/admin/tick_empty.gif">
+                    <%= link_to image_tag('admin/tick_empty.gif',hspace:'1') %>
                 <% end %>
               </td>
               <td align="right">
-                <%= link_to image_tag('/assets/admin/modify.gif', title: "编辑供应商"), edit_admin_supplier_path(supplier) %>
+                <%= link_to image_tag('admin/modify.gif', title: "编辑供应商"), edit_admin_supplier_path(supplier) %>
               </td>
             </tr>
         <% end %>

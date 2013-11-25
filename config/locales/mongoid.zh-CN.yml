@@ -80,6 +80,10 @@ zh-CN:
           ship_address: "收货人地址"
           ship_postcode: "收货人邮编"
           telephone: "电话号码"
+        supplier:
+          name: "供应商名称"
+          desc: "描述"
+          actived: "激活"
         employee:
           name: "姓名"
           email: "电子邮箱"
