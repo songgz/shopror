@@ -19,7 +19,7 @@ gem 'rails_kindeditor', '~> 0.4.0'
 #gem 'activemerchant'
 #gem 'activemerchant_patch_for_china'
 
-
+gem 'truncate_html'
 gem 'ng-rails-csrf'
 
 
