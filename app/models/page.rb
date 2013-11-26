@@ -6,6 +6,7 @@ class Page
   field :code
   field :title
   field :content
+  field :summary
   field :meta_desc
   field :meta_key
 

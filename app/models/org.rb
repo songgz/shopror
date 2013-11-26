@@ -4,6 +4,7 @@ class Org
   field :code     #main
   field :name
   field :desc
+  field :summary
 
   has_many :people
 end
