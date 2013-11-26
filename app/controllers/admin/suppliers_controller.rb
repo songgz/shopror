@@ -4,7 +4,7 @@ class Admin::SuppliersController < Admin::AppController
   # GET /suppliers
   # GET /suppliers.json
   def index
-    @suppliers = Supplier.all
+    @suppliers = Supplier.all.page(params[:page] || 1).per(20)
   end
 
   # GET /suppliers/1

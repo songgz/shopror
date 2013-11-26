@@ -6,9 +6,9 @@ class Admin::EmployeesController < Admin::AppController
   def index
     keywords = /.*#{params[:keywords]}.*/
     if Employee.any_of({name: keywords}, {strapline: keywords}, {desc: keywords}).length ==0
-      @employees = Employee.all
+      @employees = Employee.all.page(params[:page] || 1).per(20)
     else
-      @employees = Employee.any_of({name: keywords}, {strapline: keywords}, {desc: keywords})
+      @employees = Employee.any_of({name: keywords}, {strapline: keywords}, {desc: keywords}).page(params[:page] || 1).per(20)
     end
   end
 
