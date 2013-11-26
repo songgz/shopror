@@ -137,7 +137,7 @@ zh-CN:
           upto: "上限"
           rate: "费用"
         customer_group:
-          name: "姓名"
+          name: "客户组名称"
           actived: "是否激活"
           discount: "折扣"
         page:
@@ -181,7 +181,13 @@ zh-CN:
           large_view: '浏览大图'
           confirm: "确定删除商品吗？"
         supplier:
+          supplier: '供应商'
           country_of_origin: "原产地"
+          origin_list: '产地列表'
+          add: '新建供应商'
+          edit: '编辑供应商'
+          delete: '删除供应商'
+          list: '供应商列表'
         customer:
           add: '新建客户'
           edit: '编辑客户'
@@ -193,6 +199,7 @@ zh-CN:
           change_detail: "修改个人信息"
           click_here: "单击这里"
           bill_info: "个人信息"
+          customer_detail: '客户/会员详细信息'
         employee:
            add: '新建员工'
            edit: '编辑员工'
@@ -204,6 +211,7 @@ zh-CN:
            change_detail: "修改个人信息"
            click_here: "单击这里"
            bill_info: "个人信息"
+           detail: '员工详细信息'
         order:
           key: "关键字"
           status: "订单状态"

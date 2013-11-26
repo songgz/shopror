@@ -6,9 +6,9 @@ class Admin::CustomersController < Admin::AppController
   def index
     keywords = /.*#{params[:keywords]}.*/
     if Customer.any_of({name: keywords}, {strapline: keywords}, {desc: keywords}).length == 0
-      @customers = Customer.all
+      @customers = Customer.all.page(params[:page] || 1).per(20)
     else
-      @customers = Customer.any_of({name: keywords}, {strapline: keywords}, {desc: keywords})
+      @customers = Customer.any_of({name: keywords}, {strapline: keywords}, {desc: keywords}).page(params[:page] || 1).per(20)
     end
   end
 

@@ -24,7 +24,7 @@
       </tr>
 
       <tr>
-        <td valign="top" ><%= f.label "供应商名称" %></td>
+        <td valign="top" ><%= f.label :name %></td>
         <td><%= f.text_field :name %></td>
       </tr>
       <tr>
@@ -32,7 +32,7 @@
         <td><%= f.kindeditor :desc %></td>
       </tr>
       <tr>
-        <td ><%= f.label "激活？" %></td>
+        <td ><%= f.label :actived %>?</td>
         <td><%= f.check_box :actived %></td>
       </tr>
       <tr>

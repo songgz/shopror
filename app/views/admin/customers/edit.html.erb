@@ -1,7 +1,7 @@
 <table class="displaytable">
   <tbody>
   <tr>
-    <td colspan="2"><h1>客户/会员详细信息</h1></td>
+    <td colspan="2"><h1><%= t('shopror.views.customer.customer_detail')%></h1></td>
   </tr>
   </tbody>
 </table>
@@ -11,7 +11,7 @@
 <hr>
 <table class="displaytable">
   <tbody><tr bgcolor="#EEEEEE">
-    <td align="right"><%= link_to '删除客户', admin_customer_path(@customer), method: :delete, data: { confirm: t('shopror.views.customer.confirm') }, class:'buttonstyle' %></td>
+    <td align="right"><%= link_to t('shopror.views.customer.delete'), admin_customer_path(@customer), method: :delete, data: { confirm: t('shopror.views.customer.confirm') }, class:'buttonstyle' %></td>
   </tr>
   </tbody>
 </table>

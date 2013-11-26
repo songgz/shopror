@@ -1,8 +1,8 @@
 <table class="displaytable">
   <tbody>
   <tr>
-    <td><h1>供应商列表</h1></td>
-    <td align="right"><%= link_to "新增供应商", new_admin_supplier_path %></td>
+    <td><h1><%=t('shopror.views.supplier.list') %></h1></td>
+    <td align="right"><%= link_to t('shopror.views.supplier.add'), new_admin_supplier_path %></td>
   </tr>
 
   <tr>
@@ -10,22 +10,18 @@
       <table class="formatted">
         <tbody>
         <tr class="header">
-          <td width="85%">供应商</td>
-          <td width="10%">激活?</td>
+          <td width="85%"><%=t('shopror.views.supplier.supplier') %></td>
+          <td width="10%"><%=t("mongoid.attributes.supplier.actived") %>?</td>
           <td width="5%">&nbsp;</td>
         </tr>
         <% @suppliers.each_with_index do |supplier, index| %>
             <tr bgcolor="<%= index % 2 == 0 ? '#eeeeee' : '#dddddd' %>">
               <td><%= supplier.name %></td>
               <td class="small">
-                <% if supplier.actived == 1 %>
-                    <%= link_to image_tag('admin/tick.gif',hspace:'1') %>
-                <% else %>
-                    <%= link_to image_tag('admin/tick_empty.gif',hspace:'1') %>
-                <% end %>
+                <%= link_to image_tag("admin/#{supplier.actived==1 ? 'tick' : 'tick_empty'}.gif", hspace: '1') %>
               </td>
               <td align="right">
-                <%= link_to image_tag('admin/modify.gif', title: "编辑供应商"), edit_admin_supplier_path(supplier) %>
+                <%= link_to image_tag('admin/modify.gif', title: t('shopror.views.supplier.edit')), edit_admin_supplier_path(supplier) %>
               </td>
             </tr>
         <% end %>
@@ -33,5 +29,6 @@
       </table>
     </td>
   </tr>
+  <td class="paging"><%= paginate @suppliers %></td>
   </tbody>
 </table>
