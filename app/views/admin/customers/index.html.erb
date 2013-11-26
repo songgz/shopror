@@ -5,7 +5,7 @@
     </tr>
     <tr>
       <form method="get" action="/admin/customers">
-      <td><span>客户姓名:</span> <input type="text" name="keywords" >
+      <td><span><%= t('mongoid.attributes.customer.name')%>:</span> <input type="text" name="keywords" >
         <input type="submit" name="btnSubmit" value="搜 索"></td>
       </form>
     </tr>
@@ -51,8 +51,8 @@
 
       <!-- Paging -->
       <tr>
-        <td class="paging">« Previous 1 Next »
-        </td>
+        <!--<td class="paging">« Previous 1 Next »-->
+        <!--</td>-->
       </tr>
       </tbody>
     </table>

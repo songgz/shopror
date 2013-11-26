@@ -13,9 +13,9 @@
 <table class="formatted">
   <tbody>
   <tr>
-    <td width="55%">客户组名称</td>
-    <td width="25%">折扣 (%)</td>
-    <td width="10%" align="right">是否激活?</td>
+    <td width="55%"><%= t('mongoid.attributes.customer_group.name')%></td>
+    <td width="25%"><%= t('mongoid.attributes.customer_group.discount')%> (%)</td>
+    <td width="10%" align="right"><%= t('mongoid.attributes.customer_group.actived')%>?</td>
     <td width="10%" align="right">&nbsp;</td>
   </tr>
 
@@ -27,7 +27,7 @@
             <%= link_to image_tag("admin/#{group.actived==1 ? 'tick' : 'tick_empty'}.gif", hspace: '1') %>
         </td>
         <td align="right">
-          <%= link_to image_tag('admin/modify.gif', title: "编辑客户组"), edit_admin_customer_group_path(group) %>
+          <%= link_to image_tag('admin/modify.gif', title: t("shopror.views.customer_group.edit")), edit_admin_customer_group_path(group) %>
         </td>
       </tr>
   <% end %>
