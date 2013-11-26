@@ -11,7 +11,8 @@
   <tbody>
   <tr class="header">
     <td width="10%"><%= t('mongoid.attributes.page.code') %></td>
-    <td width="80%"><%= t('mongoid.attributes.page.title') %></td>
+    <td width="30%"><%= t('mongoid.attributes.page.title') %></td>
+    <td width="50%"><%= t('mongoid.attributes.page.summary') %></td>
     <td width="5%"><%= t('mongoid.attributes.page.actived') %></td>
     <td width="5%">&nbsp;</td>
   </tr>
@@ -19,6 +20,7 @@
   <tr bgcolor="<%= index % 2 == 0 ? '#eeeeee' : '#dddddd' %>">
     <td><%= page.code %></td>
     <td><%= page.title %></td>
+    <td><%= page.summary %></td>
     <td><%= page.actived == 1 ? image_tag('admin/tick.gif') : image_tag('admin/tick_empty.gif') %></td>
     <td align="right">
       <%= link_to image_tag('admin/modify.gif'), edit_admin_page_path(page) %>
