@@ -89,8 +89,8 @@
   </div>
 </div>
 <div id="adl"><%= render :partial => "parts/ad_suppliers", :locals => {:suppliers => Supplier.all.limit(10).cache} %></div>
-<div id="adr"><%= render :partial => "parts/ad_hot_products", :locals => {:products => Product.recent.limit(10).cache} %></div>
-<div id="ad"><%= render :partial => "parts/ad_hot_products", :locals => {:products => Product.featured.limit(10).cache} %></div>
-<div id="ad1"><%= link_to Page.where(code:'about').cache.first.try(:html_safe).to_s.truncate(100), '/pages/page?code=about' %></div>
+<div id="adr"><%= render :partial => "parts/ad_hot_products", :locals => {:products => Product.sells.limit(10).cache} %></div>
+<div id="ad"><%= render :partial => "parts/ad_featured_products", :locals => {:products => Product.featured.limit(10).cache} %></div>
+<div id="ad1"><%= link_to Page.where(code:'about').cache.first.try(:content).to_s.html_safe.truncate(100), '/pages/page?code=about' %></div>
 </body>
 </html>

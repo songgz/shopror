@@ -14,6 +14,7 @@ class Product
   field :featured, type: Integer, default: 0
   field :reviewed, type: Integer, default: 1
   field :spec
+  field :sells, type: Integer, default: 0
   mount_uploader :img, ImgUploader
 
   has_and_belongs_to_many :categories, inverse_of: nil
@@ -25,6 +26,7 @@ class Product
 
   scope :recent, desc(:created_at)
   scope :featured, desc(:featured)
+  scope :sells, desc(:sells)
 
   def self.seller
     map = %Q{
