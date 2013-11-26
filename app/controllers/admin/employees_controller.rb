@@ -4,10 +4,10 @@ class Admin::EmployeesController < Admin::AppController
   # GET /employees
   # GET /employees.json
   def index
-    keywords = /.*#{params[:keywords]}.*/
-    if Employee.any_of({name: keywords}, {strapline: keywords}, {desc: keywords}).length ==0
+    if params[:keywords].blank?
       @employees = Employee.all.page(params[:page] || 1).per(20)
     else
+      keywords = /.*#{params[:keywords]}.*/
       @employees = Employee.any_of({name: keywords}, {strapline: keywords}, {desc: keywords}).page(params[:page] || 1).per(20)
     end
   end

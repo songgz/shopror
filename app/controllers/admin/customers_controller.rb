@@ -4,10 +4,10 @@ class Admin::CustomersController < Admin::AppController
   # GET /customers
   # GET /customers.json
   def index
-    keywords = /.*#{params[:keywords]}.*/
-    if Customer.any_of({name: keywords}, {strapline: keywords}, {desc: keywords}).length == 0
+    if params[:keywords].blank?
       @customers = Customer.all.page(params[:page] || 1).per(20)
     else
+      keywords = /.*#{params[:keywords]}.*/
       @customers = Customer.any_of({name: keywords}, {strapline: keywords}, {desc: keywords}).page(params[:page] || 1).per(20)
     end
   end
