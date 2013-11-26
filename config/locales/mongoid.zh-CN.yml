@@ -211,6 +211,7 @@ zh-CN:
            change_detail: "修改个人信息"
            click_here: "单击这里"
            bill_info: "个人信息"
+           detail: '员工详细信息'
         order:
           key: "关键字"
           status: "订单状态"
