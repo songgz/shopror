@@ -11,7 +11,7 @@ module Shopror
   end
 
   class Config
-    attr_accessor :site_name, :site_url, :site_email, :site_icp, :site_logo, :version, :copyright
+    attr_accessor :site_name, :site_url, :site_email, :site_icp, :site_logo, :copyright, :powered
 
     def initialize
       @site_name = 'ShopRoR'
@@ -19,8 +19,8 @@ module Shopror
       @site_email = 'sgzhe@163.com'
       @site_icp = ''
       @site_logo = 'skin/logo.png'
-      @version = 'Version 0.9.0'
-      @copyright = 'Copyright 2013-2014 ShopRoR.'
+      @powered = 'Powered by ShopRoR 0.9.5'
+      @copyright = '© 2013-2014 shopror.com'
     end
 
   end

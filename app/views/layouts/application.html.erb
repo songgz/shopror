@@ -71,7 +71,7 @@
         </div>
         <div id="topsellers">
           <h4><span>热销商品</span></h4>
-          <div>   </div>
+          <div><%= render :partial => "parts/newest_product", :locals => {:products => Product.sells.limit(3).cache} %></div>
         </div>
       </div>
     </div>
@@ -83,9 +83,10 @@
 </div>
 <div id="footer">
   <div id="terms">
-    <a style="color:#ccc;" href="#"><%= Shopror.config.version %></a><br />
+    <a style="color:#ccc;" href="#"><%= Shopror.config.powered %></a><br />
     <%= Shopror.config.copyright %><br />
     <%= Shopror.config.site_icp %><br />
+
   </div>
 </div>
 <div id="adl"><%= render :partial => "parts/ad_suppliers", :locals => {:suppliers => Supplier.all.limit(10).cache} %></div>
