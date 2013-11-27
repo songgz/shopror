@@ -56,7 +56,7 @@
                         <td class="textcell">
                           <h2><%= link_to product.name, product %></h2>
                           <em class="strapline"><%= product.strapline %></em>
-                          <p><%= product.desc.html_safe %></p>
+                          <p><%= product.summary.try(:html_safe) %></p>
                           <div class="minprice">
                             <% if product.variants.first && (product.variants.first.weight != 0) %>
                                 <%= (product.variants.first.try(:price)/product.variants.first.weight * 1000).to_f.round(2) %>

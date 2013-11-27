@@ -7,7 +7,7 @@
           <td class="textcell">
             <em class="strapline"><%= @product.strapline %></em>
 
-            <p><%= @product.desc.html_safe %></p>
+            <p><%= @product.summary.try(:html_safe) %></p>
 
             <div class="extrainfolinks">
               <div class="compare"></div>
@@ -80,13 +80,16 @@
         </div>
     <% end %>
     <ul class="tabs">
-      <li id="tab1_link" class="" style="display: none;"><a href="#tab1">Product Details</a></li>
-      <li id="tab2_link" class="active"><a href="#tab2"><%= t('mongoid.attributes.product.spec') %></a></li>
-      <li id="tab3_link" class="" style="display: none;"><a href="#tab3">Quantity Discounts</a></li>
-      <li id="tab4_link" class="" style="display: none;"><a href="#tab4">Customer Reviews</a></li>
+      <li id="tab1_link" class="active" ><a href="#">描述</a></li>
+      <li id="tab2_link" class=""><a href="#"><%= t('mongoid.attributes.product.spec') %></a></li>
+      <li id="tab3_link" class="" style="display: none;"><a href="#">Quantity Discounts</a></li>
+      <li id="tab4_link" class="" ><a href="#">评论</a></li>
     </ul>
     <div class="tab_container">
-      <div id="tab2" class="tab_content">
+      <div id="tab1" class="tab_content">
+        <p><%= @product.desc.html_safe %></p>
+      </div>
+      <div id="tab2" class="tab_content" style="display: none;">
         <pre><%= @product.spec %></pre>
       </div>
 
@@ -94,13 +97,36 @@
         <div class="reviews">
           <div class="pad">
 
-            <p>There are currently no reviews of this product.</p>
+            <div class="review" id="review_1">
+              <div class="box pad">
+                <strong>Test Review</strong>
+                <div class="stars"><%= image_tag('skin/reviewyes.gif')%><%= image_tag('skin/reviewyes.gif')%><%= image_tag('skin/reviewyes.gif')%></div>
+                <div class="reviewer">Reviewed by Test Person Name from Location</div>
+                <blockquote><p>Customers can submit reviews, if the feature is enabled for this product. You can control from the config settings whether reviews need to be approved before going live, and you can remove malicious or fake reviews.</p></blockquote>
+                <div class="date">February 2012</div>
 
-            <div class="writeyourown"><strong><a href="/v7/review?P_ID=408">Be the first to add a review!</a></strong>
-            </div>
+                <div class="spacer"></div>
+              </div></div>
+            <div class="writeyourown"><strong><a href="/v7/review.P_ID=415">Write your own review!</a></strong></div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+<script type="text/javascript">
+    $('#tab1_link,#tab2_link,#tab3_link,#tab4_link').click(function(event) {
+        event.preventDefault();
+        $('#tab1,#tab2,#tab3,#tab4').hide();
+        $("#tab1_link,#tab2_link,#tab3_link,#tab4_link").removeClass("active"); //Remove any "active" class
+        $(this).addClass("active"); //Add "active" class to selected tab
+        $('#'+this.id.slice(0,4)).show();
+
+
+    });
+
+
+
+</script>
