@@ -1,15 +1,15 @@
 <%= form_for([:admin, @product], :html => {:multipart => true}) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this admin_product from being saved:</h2>
+    <% if @product.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@product.errors.count, "error") %> prohibited this admin_product from being saved:</h2>
 
-      <ul>
-      <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% @product.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
 
     <table class="displaytable">
       <tr>
@@ -22,18 +22,20 @@
       </tr>
       <tr>
         <td valign="top"><%= f.label :featured %></td>
-        <td><%= f.select :featured, [0,1,2,3,4,5], {:prompt => true} %></td>
+        <td><%= f.select :featured, [0, 1, 2, 3, 4, 5], {:prompt => true} %></td>
       </tr>
       <tr>
-        <td><%= f.label :customer_group  %></td>
+        <td><%= f.label :customer_group %></td>
         <td><%= f.collection_select(:customer_group_id, CustomerGroup.all, :id, :name, prompt: "请选择") %></td>
       </tr>
       <tr>
-        <td><%= f.label :supplier  %></td>
+        <td><%= f.label :supplier %></td>
         <td><%= f.collection_select(:supplier_id, Supplier.all, :id, :name, prompt: "请选择") %></td>
       </tr>
       <tr>
-        <td colspan="2"><hr /></td>
+        <td colspan="2">
+          <hr/>
+        </td>
       </tr>
 
       <tr>
@@ -49,6 +51,10 @@
         <td><%= f.kindeditor :desc %></td>
       </tr>
       <tr>
+        <td><%= f.label :summary %></td>
+        <td><%= f.text_area :summary %></td>
+      </tr>
+      <tr>
         <td><%= f.label :spu %></td>
         <td><%= f.text_field :spu %></td>
       </tr>
@@ -57,10 +63,12 @@
         <td><%= f.text_field :url, size: 60 %></td>
       </tr>
       <tr>
-        <td colspan="2"><hr /></td>
+        <td colspan="2">
+          <hr/>
+        </td>
       </tr>
       <tr>
-        <td valign="top"><%= f.label :seq  %></td>
+        <td valign="top"><%= f.label :seq %></td>
         <td><%= f.number_field :seq %></td>
       </tr>
       <tr>
@@ -68,7 +76,9 @@
         <td><%= f.check_box :reviewed %></td>
       </tr>
       <tr>
-        <td colspan="2"><hr /></td>
+        <td colspan="2">
+          <hr/>
+        </td>
       </tr>
       <tr>
         <td><%= f.label :img %></td>
@@ -78,10 +88,13 @@
         <td valign="top"><%= f.label :spec %></td>
         <td><%= f.text_area :spec, rows: 7, cols: 60 %></td>
       </tr>
+
       <tr>
-        <td colspan="2"><hr /></td>
+        <td colspan="2">
+          <hr/>
+        </td>
       </tr>
     </table>
-   <%= f.submit %>
+    <%= f.submit %>
 
 <% end %>

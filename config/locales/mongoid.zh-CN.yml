@@ -29,6 +29,7 @@ zh-CN:
           name: "商品名称"
           strapline: "副标题"
           desc: "商品描述"
+          summary: '摘要'
           url: "下载"
           img: "商品图片"
           featured: "推荐"
@@ -83,6 +84,7 @@ zh-CN:
         supplier:
           name: "供应商名称"
           desc: "描述"
+          summary: '摘要'
           actived: "激活"
         employee:
           name: "姓名"
@@ -145,6 +147,7 @@ zh-CN:
           code: "标识码"
           title: "标题"
           content: "内容"
+          summary: '摘要'
           meta_desc: "页面描述"
           meta_key: "页面关键字"
         article:
