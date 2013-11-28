@@ -80,10 +80,10 @@
         </div>
     <% end %>
     <ul class="tabs">
-      <li id="tab1_link" class="active" ><a href="#">描述</a></li>
+      <li id="tab1_link" class="active"><a href="#"><%= t('mongoid.attributes.product.desc') %></a></li>
       <li id="tab2_link" class=""><a href="#"><%= t('mongoid.attributes.product.spec') %></a></li>
       <li id="tab3_link" class="" style="display: none;"><a href="#">Quantity Discounts</a></li>
-      <li id="tab4_link" class="" ><a href="#">评论</a></li>
+      <li id="tab4_link" class=""><a href="#"><%= t('mongoid.attributes.product.comment') %></a></li>
     </ul>
     <div class="tab_container">
       <div id="tab1" class="tab_content">
@@ -97,17 +97,30 @@
         <div class="reviews">
           <div class="pad">
 
-            <div class="review" id="review_1">
-              <div class="box pad">
-                <strong>Test Review</strong>
-                <div class="stars"><%= image_tag('skin/reviewyes.gif')%><%= image_tag('skin/reviewyes.gif')%><%= image_tag('skin/reviewyes.gif')%></div>
-                <div class="reviewer">Reviewed by Test Person Name from Location</div>
-                <blockquote><p>Customers can submit reviews, if the feature is enabled for this product. You can control from the config settings whether reviews need to be approved before going live, and you can remove malicious or fake reviews.</p></blockquote>
-                <div class="date">February 2012</div>
+            <% @reviews.each_with_index do |review, index| %>
+                <div class="review" id="review_<%= index %>">
+                  <div class="box pad">
+                    <strong><%= review.title %></strong>
 
-                <div class="spacer"></div>
-              </div></div>
-            <div class="writeyourown"><strong><a href="/v7/review.P_ID=415">Write your own review!</a></strong></div>
+                    <div class="stars">
+                      <% review.rating.times do |star| %>
+                          <%= image_tag('skin/reviewyes.gif') %>
+                      <% end %>
+                    </div>
+                    <div class="reviewer">【<%= review.reviewer_location %>】<%= review.reviewer_name %><%= t('mongoid.models.review')%></div>
+                    <blockquote><p><%= review.content %></p></blockquote>
+                    <div class="date"><%= review.updated_at.strftime("%Y-%m-%d") %></div>
+                    <div class="spacer"></div>
+                  </div>
+                </div>
+            <% end %>
+            <div class="writeyourown"><strong>
+              <% if @reviews.length != 0 %>
+                  <%= link_to t('mongoid.attributes.product.write_comment'), new_product_review_path(@product) %>
+              <% else %>
+                  <%= link_to t('mongoid.attributes.product.write_first'), new_product_review_path(@product) %>
+              <% end %>
+            </strong></div>
           </div>
         </div>
       </div>
@@ -117,16 +130,15 @@
 
 
 <script type="text/javascript">
-    $('#tab1_link,#tab2_link,#tab3_link,#tab4_link').click(function(event) {
+    $('#tab1_link,#tab2_link,#tab3_link,#tab4_link').click(function (event) {
         event.preventDefault();
         $('#tab1,#tab2,#tab3,#tab4').hide();
         $("#tab1_link,#tab2_link,#tab3_link,#tab4_link").removeClass("active"); //Remove any "active" class
         $(this).addClass("active"); //Add "active" class to selected tab
-        $('#'+this.id.slice(0,4)).show();
+        $('#' + this.id.slice(0, 4)).show();
 
 
     });
-
 
 
 </script>

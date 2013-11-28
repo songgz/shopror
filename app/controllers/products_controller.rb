@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @cart_item = CartItem.new( )
+    @reviews = @product.reviews.where(actived:1)
   end
 
   # GET /products/new

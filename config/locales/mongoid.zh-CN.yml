@@ -16,6 +16,7 @@ zh-CN:
         page: "网店页面"
         article: "网店内容"
         guest_book: "网店留言"
+        review: "评论"
       attributes:
         category:
           actived: '是否激活'
@@ -38,6 +39,10 @@ zh-CN:
           seq: "排序"
           reviewed: "可否评论"
           spec: "规格"
+          desc: "描述"
+          comment: "评论"
+          write_first: "成为第一个评论的人!"
+          write_comment: "写下您的评论!"
         variant:
           actived: "是否激活"
           customer_group: "客户组"
@@ -161,6 +166,17 @@ zh-CN:
           name: "姓名"
           email: "邮箱"
           message: "留言"
+        review:
+          title: "标题"
+          content: "评论"
+          rating: "等级"
+          actived: "状态"
+          updated_at: "更新时间"
+          reviewer_name: "姓名"
+          reviewer_email: "邮箱"
+          reviewer_location: "位置"
+          product: "产品"
+          variant: "版本"
 
 
   shopror:
@@ -311,6 +327,15 @@ zh-CN:
           confirm: "确定删除网店留言吗？"
           add:
             submit: "提交"
+        review:
+          your_review: "您的评论"
+          your_detail: "您的详细信息"
+          add: "新增评论"
+          edit: "编辑评论"
+          delete: "删除评论"
+          submit: "提交"
+          confirm: "确定删除商品评论吗？"
+
         site:
           home: "首页"
           speedorder: "快捷下单"

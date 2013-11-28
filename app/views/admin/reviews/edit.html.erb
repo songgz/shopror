@@ -1,0 +1,10 @@
+<%= render :partial => "admin/products/tabs", :locals => {:tab => :review} %>
+<%= render 'form' %>
+<hr>
+<table class="displaytable">
+  <body>
+  <tr bgcolor="#EEEEEE">
+    <td align="right"><%= link_to t('shopror.views.review.delete'), admin_product_review_path(@product, @review), method: :delete, data: {confirm: t('shopror.views.review.confirm')}, class: 'buttonstyle' %></td>
+  </tr>
+  </body>
+</table>

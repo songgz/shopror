@@ -5,7 +5,7 @@ class Review
 
   field :title
   field :content
-  field :actived, type: Integer, default: 1
+  field :actived, type: Integer, default: 0   # 1激活 0不可用 2待处理
   field :rating, type: Integer
   field :reviewer_name
   field :reviewer_email

@@ -9,7 +9,9 @@ Shopror::Application.routes.draw do
       get :recent
       get :featured
     end
+    resources :reviews
   end
+  resources :reviews
   resources :suppliers
   resources :carts do
     resources :cart_items
@@ -51,6 +53,7 @@ Shopror::Application.routes.draw do
         get :sell
       end
       resources :variants
+      resources :reviews
     end
     resources :shipping_methods
     resources :shipping_zones

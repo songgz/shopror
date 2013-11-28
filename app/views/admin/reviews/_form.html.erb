@@ -1,0 +1,68 @@
+<%= form_for([:admin,@product,@review]) do |f| %>
+    <% if @review.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+          <ul>
+            <% @review.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <table class="displaytable">
+      <tr>
+        <td valign="top" width="180" class="bold"><%= f.label :actived %></td>
+        <td valign="top">
+          <%= f.radio_button :actived, 0,:checked => @review.actived ==0 ? true : false %>待处理 <br>
+          <%= f.radio_button :actived, 1,:checked => @review.actived ==1 ? true : false %>激活   <br>
+          <%= f.radio_button :actived, 2,:checked => @review.actived ==2 ? true : false %>不可用 <br>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <hr/>
+        </td>
+      </tr>
+      <tr>
+        <td ><%= f.label :product %></td>
+        <td><%= @product.name %></td>
+      </tr>
+      <tr>
+        <td ><%= f.label :variant %></td>
+        <td><%= f.collection_select(:variant_id, @product.variants, :id, :name, include_blank: "全部版本") %></td>
+      </tr>
+      <tr>
+        <td ><%= f.label :title %></td>
+        <td><%= f.text_field :title %></td>
+      </tr>
+      <tr>
+        <td class="bold"><%= f.label :rating %></td>
+        <td><%= f.select(:rating, [['没有等级', 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5]], {:selected => @review.rating}) %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :content %></td>
+        <td><%= f.text_field :content %></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <hr/>
+        </td>
+      </tr>
+      <tr>
+        <td><%= f.label :reviewer_name %></td>
+        <td><%= f.text_field :reviewer_name %></td>
+      </tr>
+      <tr>
+        <td valign="top"><%= f.label :reviewer_location %></td>
+        <td><%= f.text_field :reviewer_location %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :reviewer_email %></td>
+        <td><%= f.text_field :reviewer_email %></td>
+      </tr>
+    </table>
+    <%= f.submit %>
+
+
+<% end %>
