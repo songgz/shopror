@@ -335,7 +335,11 @@ zh-CN:
           delete: "删除评论"
           submit: "提交"
           confirm: "确定删除商品评论吗？"
-
+          waiting_authorisation: "待处理"
+          live: "激活"
+          diabled: "不可用"
+          all_variants: "全部版本"
+          no_rating: "没有等级"
         site:
           home: "首页"
           speedorder: "快捷下单"
