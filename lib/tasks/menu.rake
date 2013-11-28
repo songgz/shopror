@@ -28,6 +28,7 @@ namespace :shopror do
       m1.children.build(name: '新增分类', url: '/admin/categories/new')
       m1.children.build(name: '供应商列表', url: '/admin/suppliers')
       m1.children.build(name: '库存级别', url: '/admin/products')
+      m1.children.build(name: '客户评论', url: '/admin/products/customer_review')
     end
 
     MenuItem.create(name: '区域设置', url: '/admin') do |m1|

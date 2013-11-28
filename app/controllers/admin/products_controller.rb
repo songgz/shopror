@@ -11,6 +11,10 @@ class Admin::ProductsController < Admin::AppController
   # GET /admin/products/1.json
   def show
   end
+  # 客户评论
+  def customer_review
+    @products = Product.all
+  end
 
   # GET /admin/products/new
   def new

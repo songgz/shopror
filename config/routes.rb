@@ -51,6 +51,7 @@ Shopror::Application.routes.draw do
       collection do
         get :hit
         get :sell
+        get :customer_review
       end
       resources :variants
       resources :reviews

@@ -1,0 +1,30 @@
+<table class="formatted">
+  <thead>
+  <tr class="header">
+    <td width="30%"><%= t("mongoid.attributes.review.product") %></td>
+    <td width="20%"><%= t("mongoid.attributes.review.rating") %></td>
+    <td width="40%"><%= t("mongoid.attributes.review.updated_at") %></td>
+    <td width="10%">&nbsp;</td>
+  </tr>
+  </thead>
+  <tbody>
+  <% @products.each do |product|%>
+  <% product.reviews.each_with_index do |review, index| %>
+      <% if review.actived == 0 %>
+          <tr bgcolor="#99DD99">
+      <% elsif review.actived == 2 %>
+          <tr bgcolor="#FFAAAA">
+      <% else %>
+          <tr bgcolor="<%= index % 2 == 0 ? '#eeeeee' : '#dddddd' %>">
+      <% end %>
+      <td><%= review.product.name %></td>
+      <td><%= review.rating %></td>
+      <td><%= review.updated_at.strftime("%Y-%m-%d") %></td>
+      <td width="47" align="right">
+        <%= link_to image_tag('admin/modify.gif', title: t("shopror.views.review.edit")), edit_admin_product_review_path(product, review) %>
+      </td>
+      </tr>
+  <% end %>
+      <% end %>
+  </tbody>
+</table>
