@@ -21,7 +21,7 @@
       <td><%= review.rating %></td>
       <td><%= review.updated_at.strftime("%Y-%m-%d") %></td>
       <td width="47" align="right">
-        <%= link_to image_tag('admin/modify.gif', title: t("shopror.views.review.edit")), edit_admin_product_review_path(product, review) %>
+        <%= link_to image_tag('admin/modify.gif', title: t("shopror.views.review.edit")), edit_admin_product_review_path(product, review,customer_review:1) %>
       </td>
       </tr>
   <% end %>

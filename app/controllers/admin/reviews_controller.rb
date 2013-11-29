@@ -20,6 +20,7 @@ class Admin::ReviewsController < Admin::AppController
 
   # GET /reviews/1/edit
   def edit
+    @customer_review = params[:customer_review]
   end
 
   # POST /reviews
@@ -41,9 +42,12 @@ class Admin::ReviewsController < Admin::AppController
   # PATCH/PUT /reviews/1
   # PATCH/PUT /reviews/1.json
   def update
+    url= params[:customer_review].blank? ? admin_product_review_path(@product, @review): '/admin/products/customer_review'
+
+
     respond_to do |format|
       if @review.update(review_params)
-        format.html { redirect_to admin_product_review_path(@product, @review), notice: 'Review was successfully updated.' }
+        format.html { redirect_to url, notice: 'Review was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -55,9 +59,10 @@ class Admin::ReviewsController < Admin::AppController
   # DELETE /reviews/1
   # DELETE /reviews/1.json
   def destroy
+    url = params[:customer_review].blank? ? admin_product_reviews_url: '/admin/products/customer_review'
     @review.destroy
     respond_to do |format|
-      format.html { redirect_to admin_product_reviews_url }
+      format.html { redirect_to url }
       format.json { head :no_content }
     end
   end

@@ -1,4 +1,4 @@
-<%= form_for([:admin,@product,@review]) do |f| %>
+<%= form_for([:admin, @product, @review]) do |f| %>
     <% if @review.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -11,12 +11,18 @@
         </div>
     <% end %>
     <table class="displaytable">
+      <% if !@customer_review.blank? %>
+          <%= hidden_field_tag 'customer_review', @customer_review %>
+      <% end %>
       <tr>
         <td valign="top" width="180" class="bold"><%= f.label :actived %></td>
         <td valign="top">
-          <%= f.radio_button :actived, 0,:checked => @review.actived ==0 ? true : false %><%= t('shopror.views.review.waiting_authorisation')%><br>
-          <%= f.radio_button :actived, 1,:checked => @review.actived ==1 ? true : false %><%= t('shopror.views.review.live')%><br>
-          <%= f.radio_button :actived, 2,:checked => @review.actived ==2 ? true : false %><%= t('shopror.views.review.diabled')%><br>
+          <%= f.radio_button :actived, 0, :checked => @review.actived ==0 ? true : false %><%= t('shopror.views.review.waiting_authorisation') %>
+          <br>
+          <%= f.radio_button :actived, 1, :checked => @review.actived ==1 ? true : false %><%= t('shopror.views.review.live') %>
+          <br>
+          <%= f.radio_button :actived, 2, :checked => @review.actived ==2 ? true : false %><%= t('shopror.views.review.diabled') %>
+          <br>
         </td>
       </tr>
       <tr>
@@ -25,15 +31,15 @@
         </td>
       </tr>
       <tr>
-        <td ><%= f.label :product %></td>
+        <td><%= f.label :product %></td>
         <td><%= @product.name %></td>
       </tr>
       <tr>
-        <td ><%= f.label :variant %></td>
+        <td><%= f.label :variant %></td>
         <td><%= f.collection_select(:variant_id, @product.variants, :id, :name, include_blank: t('shopror.views.review.all_variants')) %></td>
       </tr>
       <tr>
-        <td ><%= f.label :title %></td>
+        <td><%= f.label :title %></td>
         <td><%= f.text_field :title %></td>
       </tr>
       <tr>
