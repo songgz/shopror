@@ -20,6 +20,7 @@
         <% if employee_signed_in? %>
             <strong><%= current_employee.email %></strong>
             <%= link_to('Logout', destroy_employee_session_path, :method=>'delete',class:"adminbuttonstyle", title:"Logout") %>
+            <%= link_to "Password", edit_employee_registration_path %>
         <% end %>
         <%= image_tag('admin/tick_empty.gif')  %>
         <!--<img src= "<%= image_path("admin/tick.gif") %>" alt="Permissions : Orders" title="Permissions : Orders"/>-->
