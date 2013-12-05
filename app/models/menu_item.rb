@@ -5,7 +5,7 @@ class MenuItem
 
   field :name
   field :url
-  field :cls
+  #field :cls
   field :icon
   field :desc
 
