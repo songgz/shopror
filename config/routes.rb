@@ -66,6 +66,7 @@ Shopror::Application.routes.draw do
     resources :guest_books
   end
 
+
   devise_for :employees, module: 'admin/devise',path: 'admin/account'
   devise_for :customers, path: 'account'
   # get '/uploads/grid/*path' => 'gridfs#serve'
