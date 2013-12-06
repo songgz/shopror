@@ -16,15 +16,15 @@ Please feel free to [contact me](mailto:sgzhe@163.com) if you have any questions
 *Installation*
 
     $ bundle install
-    $ bundle exec rake db:setup
+    $ rake db:setup
 
 ### Usage
 
 *Start the server*
 
-    $bundle exec unicorn_rails -c config/development.unicorn.conf.rb
+    $unicorn_rails -c config/development.unicorn.conf.rb
     Or
-    $bundle exec rails s
+    $rails s
 
 
 ## 中文说明(Chinese README)
@@ -56,16 +56,16 @@ ShopRoR 是基于 Rails4.0 和 MongoDB 开发的电子商务平台, 覆盖电子
 *安装*
 
     $ bundle install
-    $ bundle exec rake db:setup
+    $ rake db:setup
 
 
 ### 使用
 
 *启动应用服务器*
 
-    $ bundle exec unicorn_rails -c config/development.unicorn.conf.rb
+    $ unicorn_rails -c config/development.unicorn.conf.rb
     或者
-    $ bundle exec rails s
+    $ rails s
 
 ## License
 
