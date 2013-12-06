@@ -109,7 +109,7 @@ HEADER
 ------------------------------------------------------------------------
 */
 #header {
-	height: 100px;
+	height: 60px;
 }
 
 #header #logo {
@@ -117,7 +117,7 @@ HEADER
 }
 
 #header #title {
-	height: 100px;
+	height: 60px;
 }
 
 #header #mainbar {
