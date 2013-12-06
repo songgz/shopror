@@ -70,3 +70,6 @@ ShopRoR 是基于 Rails4.0 和 MongoDB 开发的电子商务平台, 覆盖电子
 ## License
 
 [GNU  Affero GPL 3](http://www.gnu.org/licenses/agpl-3.0.html)
+
+## 交流
+*QQ群：* 178663593
