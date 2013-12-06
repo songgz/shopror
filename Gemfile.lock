@@ -92,7 +92,6 @@ GEM
       mongoid (>= 3.0, <= 4.0)
     moped (1.5.1)
     multi_json (1.8.0)
-    ng-rails-csrf (0.1.0)
     origin (1.1.0)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
@@ -164,7 +163,6 @@ DEPENDENCIES
   mongoid!
   mongoid-grid_fs!
   mongoid-tree (~> 1.0.0)
-  ng-rails-csrf
   rails (~> 4.0.0)
   rails_kindeditor (~> 0.4.0)
   sass-rails (~> 4.0.0)

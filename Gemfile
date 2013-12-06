@@ -19,7 +19,7 @@ gem 'rails_kindeditor', '~> 0.4.0'
 #gem 'activemerchant'
 #gem 'activemerchant_patch_for_china'
 
-gem 'ng-rails-csrf'
+#gem 'ng-rails-csrf'
 
 
 # Use mysql as the database for Active Record
