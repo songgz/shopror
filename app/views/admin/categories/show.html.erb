@@ -5,9 +5,9 @@
 
   <tr>
     <td class="pagetoplinks">
-      <%= link_to "#{t('shopror.views.category.add')}#{image_tag('admin/b_category.gif', title:t('shopror.views.category.add'))}".html_safe, new_admin_category_path %>
-      <%= link_to "#{t('shopror.views.product.add')}#{image_tag('admin/b_product.gif', title:t('shopror.views.product.add'))}".html_safe, new_admin_category_product_path(@category) %>
-      <%= link_to "#{t('shopror.views.category.edit')}#{image_tag('admin/b_category.gif', title:t('shopror.views.category.edit'))}".html_safe, edit_admin_category_path(@category) %>
+      <%= link_to image_tag('admin/b_category.gif') + t('shopror.views.category.add'),  new_admin_category_path %>
+      <%= link_to image_tag('admin/b_product.gif') + t('shopror.views.product.add'), new_admin_category_product_path(@category) %>
+      <%= link_to image_tag('admin/b_category.gif') + t('shopror.views.category.edit'), edit_admin_category_path(@category) %>
     </td>
   </tr>
 

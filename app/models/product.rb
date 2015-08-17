@@ -24,9 +24,9 @@ class Product
   embeds_many :variants
   embeds_many :reviews
 
-  scope :recent, desc(:created_at)
-  scope :featured, desc(:featured)
-  scope :sells, desc(:sells)
+  scope :recent, ->{ desc(:created_at) }
+  scope :featured, ->{ desc(:featured) }
+  scope :sells, ->{ desc(:sells) }
 
   def self.seller
     map = %Q{

@@ -2,7 +2,7 @@
 
 ## English README
 
-ShopRoR is based on Rails4.0, include normal the features of e-commerce.
+ShopRoR is based on Rails 4.2, include normal the features of e-commerce.
 
 Please feel free to [contact me](mailto:sgzhe@163.com) if you have any questions.
 
