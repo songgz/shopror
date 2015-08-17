@@ -29,7 +29,7 @@ Please feel free to [contact me](mailto:sgzhe@163.com) if you have any questions
 
 ## 中文说明(Chinese README)
 
-ShopRoR 是基于 Rails4.0 和 MongoDB 开发的电子商务平台, 覆盖电子商务常用功能，支持大数据网店。
+ShopRoR 是基于 Rails4.2 和 MongoDB 开发的电子商务平台, 覆盖电子商务常用功能，支持大数据网店。
 
 有任何问题或建议请[联系我](mailto:sgzhe@163.com).
 
