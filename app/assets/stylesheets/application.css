@@ -9,11 +9,11 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  * require_self
+
  * require_tree .
  *= require skin/template
  *= require skin/shopror
  *= require lightbox
- * require foundation_and_overrides
  * require skin/print
  */
 

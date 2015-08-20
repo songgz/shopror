@@ -1,4 +1,4 @@
 class Admin::AppController < ApplicationController
-  layout 'admin'
-  before_filter :authenticate_employee!
+  layout 'admin_zurb'
+  #before_filter :authenticate_employee!
 end

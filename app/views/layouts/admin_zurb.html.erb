@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopRoR -A Shopping Cart</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <%= stylesheet_link_tag "admin_zurb", media: "all" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= javascript_include_tag "admin_zurb" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav class="top-bar" role="navigation" data-topbar="">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="/"><i class="fa fa-home"></i><!--ShopRoR--></a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+  </ul>
+  <section class="top-bar-section" style="left: 0%;">
+    <!-- This is where the main menu links render-->
+    <%= admin_menu.html_safe%>
+
+    <!-- This is where the search and cart total live in the default setup -->
+    <ul class="right">
+      <li class="divider"></li>
+      <li>
+        <a href="/cart" data-tooltip="" data-options="disable_for_touch:true" class="has-tip tip-bottom noradius" title="$0.00" style="border-bottom:0;">
+          <i class="fi-shopping-cart white"></i> 0 items
+        </a>
+      </li>
+      <li class="divider"></li>
+      <!-- You can use the next li to add a checkout button if you like -->
+      <!--  -->
+
+      <!-- Search Form -->
+      <li class="has-form">
+        <form action="/search" method="get" class="search-form" role="search">
+          <div class="row collapse">
+            <div class="large-8 small-9 columns">
+              <input name="q" type="text" id="search-field" placeholder="Search store..." class="hint">
+            </div>
+            <div class="large-4 small-3 columns">
+              <input class="alert button expand" type="submit" id="search-submit" value="Search">
+            </div>
+          </div>
+        </form>
+      </li>
+      <!-- End Search Form -->
+
+    </ul>
+
+  </section>
+</nav>
+
+<div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
+
+      <section class="middle tab-bar-section">
+        <h1 class="title">ShopRoR</h1>
+      </section>
+
+      <section class="right-small">
+        <a class="right-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
+    </nav>
+
+    <aside class="left-off-canvas-menu">
+      <%= admin_category_menu.html_safe%>
+    </aside>
+
+    <aside class="right-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <li><label>Users</label></li>
+        <li><a href="#">Hari Seldon</a></li>
+        <li><a href="#">...</a></li>
+      </ul>
+    </aside>
+
+    <div class="content">
+      <!-- content goes here -->
+      <%= yield %>
+    </div>
+
+    <a class="exit-off-canvas"></a>
+
+  </div>
+</div>
+
+
+</body>
+</html>
