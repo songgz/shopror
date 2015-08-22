@@ -44,4 +44,3 @@ var cities_select = function (cities) {
 
 
 
-

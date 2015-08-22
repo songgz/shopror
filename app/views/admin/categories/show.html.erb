@@ -6,7 +6,7 @@
         <span class="icon-sun"></span>
       </div>
       <div class="weather-icon">
-        <span class="icon-sun"> <%= link_to image_tag('admin/b_category.gif') + t('shopror.views.category.edit'), edit_admin_category_path(@category) %></span>
+        <span class="icon-sun"> <%= link_to content_tag(:i, nil, class:'zurb-icon  icon-pencil'), edit_admin_category_path(@category), title:t('shopror.views.category.edit') %></span>
       </div>
     </header>
   </div>
@@ -14,10 +14,11 @@
     <div class="box">
       <div class="box-header bg-transparent">
         <div class="pull-right box-tools">
-          <span class="box-btn" data-widget="collapse"><i class="icon-minus"></i></span>
-          <span class="box-btn" data-widget="remove"><i class="icon-cross"></i></span>
+          <%= link_to content_tag(:i, nil, class:'zurb-icon icon-doc-text-inv'),  new_admin_category_path, title:t('shopror.views.category.add'), class:"box-btn" %>
+          <span class="box-btn" data-widget="collapse" href="#"><i class="zurb-icon icon-minus-circled"></i></span>
+          <span class="box-btn" data-widget="remove" href="#"><i class="zurb-icon icon-cancel-circled"></i></span>
         </div>
-        <h3 class="box-title"><i class="fontello-th-list"></i>
+        <h3 class="box-title"><i class="zurb-icon icon-th-list"></i>
           <span><%= t('shopror.views.category.sub_categories') %></span>
         </h3>
       </div>
@@ -28,9 +29,8 @@
                 <li>
                   <img alt="" class="img-circle star" src="http://api.randomuser.me/portraits/thumb/men/22.jpg">
                   <b><%= link_to category.name, admin_category_path(category) %></b><i class="icon-attachment"></i><i class="text-orange fontello-record"></i>
-                  <small><%= link_to image_tag('admin/b_category.gif') + t('shopror.views.category.edit'), edit_admin_category_path(category) %></small>
+                  <small><%= link_to content_tag(:i, nil, class:'zurb-icon  icon-pencil'), edit_admin_category_path(category), title:t('shopror.views.category.edit') %></small>
                   <h5></h5>
-                  <p></p>
                 </li>
             <% end %>
           </ul>
@@ -40,10 +40,11 @@
     <div class="box">
       <div class="box-header bg-transparent">
         <div class="pull-right box-tools">
-          <span class="box-btn" data-widget="collapse"><i class="icon-minus"></i></span>
-          <span class="box-btn" data-widget="remove"><i class="icon-cross"></i></span>
+          <%= link_to content_tag(:i, nil, class:'zurb-icon icon-doc-text-inv'), new_admin_category_product_path(@category), title:t('shopror.views.product.add') %>
+          <span class="box-btn" data-widget="collapse"><i class="zurb-icon icon-minus-circled"></i></span>
+          <span class="box-btn" data-widget="remove"><i class="zurb-icon icon-cancel-circled"></i></span>
         </div>
-        <h3 class="box-title"><i class="fontello-th-list"></i>
+        <h3 class="box-title"><i class="zurb-icon icon-th-1"></i>
           <span><%= t("shopror.views.product.products") %></span>
         </h3>
       </div>
@@ -55,9 +56,12 @@
                 <li>
                   <img alt="" class="img-circle star" src="http://api.randomuser.me/portraits/thumb/men/22.jpg">
                   <b><%= product.name %></b><i class="icon-attachment"></i><i class="text-orange fontello-record"></i>
-                  <small><%= link_to image_tag('admin/b_reviews.gif'), "#" %>
-                  <%= link_to image_tag('admin/b_related.gif'), "#" %>
-                  <%= link_to image_tag('admin/b_product.gif', title:t('shopror.views.product.edit')), edit_admin_product_path(product) %>
+                  <small>
+                    <%= link_to content_tag(:i, nil, class:'zurb-icon icon-cog-alt'), "#" %>
+                    <%= link_to content_tag(:i, nil, class:'zurb-icon  icon-doc-text-inv-1'), "#" %>
+                    <%= link_to content_tag(:i, nil, class:'zurb-icon icon-eye'), "#" %>
+                    <%= link_to content_tag(:i, nil, class:'zurb-icon icon-th'), "#" %>
+                    <%= link_to content_tag(:i, nil, class:'zurb-icon icon-pencil'), edit_admin_product_path(product), title:t('shopror.views.product.edit') %>
                   </small>
                   <h5></h5>
                   <p><%= render :partial => "/admin/variants/list", :locals => {:product => product}  %></p>
@@ -70,78 +74,3 @@
   </div>
 </div>
 
-
-
-<div class="row">
-  <div class="small-9 medium-5 small-centered columns">
-
-    <table class="displaytable" id="prodtypeback">
-  <tr>
-    <td><h1><%= @category.name %></h1></td>
-  </tr>
-
-  <tr>
-    <td class="pagetoplinks">
-      <%= link_to image_tag('admin/b_category.gif') + t('shopror.views.category.add'),  new_admin_category_path %>
-      <%= link_to image_tag('admin/b_product.gif') + t('shopror.views.product.add'), new_admin_category_product_path(@category) %>
-      <%= link_to image_tag('admin/b_category.gif') + t('shopror.views.category.edit'), edit_admin_category_path(@category) %>
-    </td>
-  </tr>
-
-  <tr>
-    <td><h2><%= t('shopror.views.category.sub_categories') %></h2></td>
-  </tr>
-
-  <% if @category.leaf? %>
-      <tr>
-        <td><%= t("shopror.views.category.no_sub_categories") %></td>
-      </tr>
-  <% else %>
-      <tr>
-        <td>
-          <table class="formatted">
-            <% @category.children.each_with_index do |category, index| %>
-                <tr bgcolor="<%= index % 2 == 0 ? '#eeeeee' : '#dddddd' %>">
-                  <td width="400"><%= category.name %></td>
-                  <td align="right">
-                    <%= link_to image_tag('admin/b_category.gif', title:t('shopror.views.category.sub_categories')), admin_category_path(category) %>
-                  </td>
-                </tr>
-            <% end %>
-          </table>
-        </td>
-      </tr>
-  <% end %>
-
-
-  <tr>
-    <td><h2><%= t("shopror.views.product.products") %></h2></td>
-  </tr>
-  <% if @category.products.empty? %>
-      <tr>
-        <td>
-          <%= t("shopror.views.product.no_products") %></td>
-      </tr>
-  <% else %>
-      <% @category.products.each do |product| %>
-          <tr>
-            <td>
-              <table class="displaytable">
-                <tr>
-                  <td width="300" class="subheader"><%= product.name %></td>
-                  <td align="right">
-                    <%= link_to image_tag('admin/b_attributes.gif'), "#" %>
-                    <%= link_to image_tag('admin/b_reviews.gif'), "#" %>
-                    <%= link_to image_tag('admin/b_related.gif'), "#" %>
-                    <%= link_to image_tag('admin/b_product.gif', title:t('shopror.views.product.edit')), edit_admin_product_path(product) %>
-                  </td>
-                </tr>
-              </table>
-              <%= render :partial => "/admin/variants/list", :locals => {:product => product}  %>
-            </td>
-          </tr>
-      <% end %>
-  <% end %>
-</table>
-</div>
-    </div>

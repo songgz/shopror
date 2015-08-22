@@ -10,8 +10,49 @@
  *
 
  *= require foundation_and_overrides
-
+ *= require zurb/css/fontello
  */
+
+
+
+.zurb-icon
+{
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* You can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+
+
 /*
 Foundation Coustom
  */
@@ -34,6 +75,103 @@ Foundation Coustom
   padding: 0 15px 85px;
   position: relative;
 }
+
+/*
+Master Background Color
+ */
+.bg-light-green, .bg-dark-blue, .bg-red, .bg-yellow, .bg-aqua, .bg-blue, .bg-light-blue, .bg-green, .bg-navy, .bg-teal, .bg-olive, .bg-lime, .bg-orange, .bg-fuchsia, .bg-purple, .bg-maroon, .bg-black {
+  color: #f9f9f9 !important; }
+
+.bg-white {
+  background: #fff !important; }
+
+.bg-gray {
+  background: #777 !important; }
+
+.bg-gray-blue {
+  background: #EEF1F7 !important; }
+
+.bg-black {
+  background: #222A38 !important; }
+
+.bg-black-solid {
+  background: #000000 !important; }
+
+.bg-red {
+  background: #F20556 !important; }
+
+.bg-yellow {
+  background: #f39c12 !important; }
+
+.bg-aqua {
+  background-color: #0ABAEF !important; }
+
+.bg-blue {
+  background-color: #5C9DF5 !important; }
+
+.bg-light-blue {
+  background-color: #3c8dbc !important; }
+
+.bg-dark-blue {
+  background-color: #0F5593 !important; }
+
+.bg-green {
+  background-color: #92CD18 !important; }
+
+.bg-light-green {
+  background-color: #45B6B0 !important; }
+
+.bg-navy {
+  background-color: #001f3f !important; }
+
+.bg-teal {
+  background-color: #B5AB8A !important; }
+
+.bg-olive {
+  background-color: #3d9970 !important; }
+
+.bg-lime {
+  background-color: #01ff70 !important; }
+
+.bg-orange {
+  background-color: #FF884D !important; }
+
+.bg-red-orange {
+  background-color: #e83922 !important; }
+
+.bg-fuchsia {
+  background-color: #f012be !important; }
+
+.bg-purple {
+  background-color: #932ab6 !important; }
+
+.bg-maroon {
+  background-color: #85144b !important; }
+
+.bg-transparent {
+  background: transparent !important; }
+
+.bg-opacity {
+  background: rgba(0, 0, 0, 0.5) !important; }
+
+.bg-opacity-one {
+  background: rgba(0, 0, 0, 0.3) !important; }
+
+.bg-opacity-white {
+  background: rgba(255, 255, 255, 0.5) !important; }
+
+.bg-opacity-white-btn {
+  background: rgba(255, 255, 255, 0.2) !important; }
+
+.bg-opacity-white-btn:hover {
+  background: rgba(255, 255, 255, 0.4) !important;
+  color: white !important; }
+
+.border-gray {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important; }
+
+
+
 /*
 Boxes
 */
@@ -152,8 +290,8 @@ Boxes
   font-family: "Montserrat", sans-serif;
   font-size: 11px;
   font-weight: lighter; }
-.box .box-header a {
-  color: #444; }
+//.box .box-header a {
+//  color: #444; }
 .box .box-header > .box-tools {
   padding: 15px 15px 5px 5px; }
 

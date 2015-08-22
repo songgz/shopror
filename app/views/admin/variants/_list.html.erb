@@ -1,5 +1,5 @@
 <table style="width:100%;">
-  <caption style="text-align:right"><%= link_to  (t("shopror.views.variant.add")+image_tag('admin/b_version.gif')).html_safe, new_admin_product_variant_path(product) %></caption>
+  <caption style="text-align:right"><%= link_to content_tag(:i, nil, class:'zurb-icon icon-doc-text-inv'), new_admin_product_variant_path(product), title:t("shopror.views.variant.add") %></caption>
   <thead>
   <tr>
     <td width="30%"><%= t("mongoid.attributes.variant.name")  %></td>
@@ -19,7 +19,7 @@
         <td width="44" align="right"><%= variant.price %></td>
         <td width="44" align="right"><%= variant.weight %></td>
         <td width="47" align="right">
-          <%= link_to image_tag('admin/b_version.gif', title:t("shopror.views.variant.edit")), edit_admin_product_variant_path(product,variant) %>
+          <%= link_to content_tag(:i, nil, class:'zurb-icon  icon-pencil'), edit_admin_product_variant_path(product,variant), title:t("shopror.views.variant.edit") %>
         </td>
       </tr>
   <% end %>
