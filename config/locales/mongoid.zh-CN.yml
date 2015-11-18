@@ -419,7 +419,7 @@ zh-CN:
             invalid_config_option:
               message: "Invalid configuration option: %{name}."
               summary: "A invalid configuration option was provided in your
-                mongoid.yml, or a typo is potentially present. The valid configuration
+                mongoid1.yml, or a typo is potentially present. The valid configuration
                 options are: %{options}."
               resolution: "Remove the invalid option or fix the typo. If you were
                 expecting the option to be there, please consult the following page
@@ -619,7 +619,7 @@ zh-CN:
               message: "No default session configuration is defined."
               summary: "The configuration provided settings for: %{keys}, but
                 Mongoid requires a :default to be defined at minimum."
-              resolution: "If configuring via a mongoid.yml, ensure that within
+              resolution: "If configuring via a mongoid1.yml, ensure that within
                 your :sessions section a :default session is defined.\n\n
                 Example:\n
                 \_\_development:\n
@@ -684,7 +684,7 @@ zh-CN:
                 not find a session configuration for the name: '%{name}'. This is
                 necessary in order to know the host, port, and options needed
                 to connect."
-              resolution: "Double check your mongoid.yml to make sure under the
+              resolution: "Double check your mongoid1.yml to make sure under the
                 sessions key that a configuration exists for '%{name}'. If you
                 have set the configuration programatically, ensure that '%{name}'
                 exists in the configuration hash."
@@ -693,9 +693,9 @@ zh-CN:
               summary: "Mongoid's configuration requires that you provide details
                 about each session that can be connected to, and requires in
                 the sessions config at least 1 default session to exist."
-              resolution: "Double check your mongoid.yml to make sure that you
+              resolution: "Double check your mongoid1.yml to make sure that you
                 have a top-level sessions key with at least 1 default session
-                configuration for it. You can regenerate a new mongoid.yml for
+                configuration for it. You can regenerate a new mongoid1.yml for
                 assistance via `rails g mongoid:config`.\n\n
                 Example:\n
                 \_\_development:\n
@@ -709,7 +709,7 @@ zh-CN:
               summary: "Each session configuration must provide a database so Mongoid
                 knows where the default database to persist to. What was provided
                 was: %{config}."
-              resolution: "If configuring via a mongoid.yml, ensure that within
+              resolution: "If configuring via a mongoid1.yml, ensure that within
                 your :%{name} section a :database value for the session's default
                 database is defined.\n\n
                 Example:\n
@@ -724,7 +724,7 @@ zh-CN:
               summary: "Each session configuration must provide hosts so Mongoid
                 knows where the database server is located. What was provided
                 was: %{config}."
-              resolution: "If configuring via a mongoid.yml, ensure that within
+              resolution: "If configuring via a mongoid1.yml, ensure that within
                 your :%{name} section a :hosts value for the session hosts is
                 defined.\n\n
                 Example:\n
