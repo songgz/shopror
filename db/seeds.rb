@@ -12,5 +12,7 @@ Rake::Task["shopror:category"].invoke
 Rake::Task["shopror:menu"].invoke
 Rake::Task["shopror:init"].invoke
 Rake::Task["shopror:page"].invoke
+Rake::Task["shopror:product_variants"].invoke
+Rake::Task["shopror:delivery"].invoke
 
 
