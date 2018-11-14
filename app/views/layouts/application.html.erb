@@ -1,93 +1,19 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset='utf-8'>
-  <title><%= Shopror.config.site_name %></title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head><body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<div id="container">
-  <div id="centrecontainer">
-    <div id="pagebody">
-      <div id="topbar">
-        <div id="topleft">
-          <div id="loginbar">
-            <% if customer_signed_in? %>
-                <strong><%= current_customer.email %></strong>
-                <%= link_to t('devise.navigation.sign_out'), destroy_customer_session_path, :method=>'delete' %>
-                <%= link_to t('shopror.views.customer.account'), current_customer %>
-            <% else %>
-                <%= link_to t('devise.navigation.sign_in'), new_customer_session_path %>
-                <%= link_to t('devise.navigation.sign_up'), new_customer_registration_path %>
-            <% end %>
-          </div>
-          <div id="loginlinks">
-            <%= link_to t('shopror.views.site.about'),'/pages/page?code=about' %>
-            <%= link_to t('shopror.views.site.guest_book'),'/guest_books/new' %>
-          </div>
-        </div>
-        <div id="minibasket_holder">
-          <%= render 'parts/cart'  %>
-        </div>
-        <div class="spacer"></div>
-        <div id="searchbox">
-          <form method="get" action="/products">
-            <div id="skinsearchboxback">
-              <input id="skinsearchbox" type="text" name="keywords" /><input type="submit"  value="搜索" id="searchbutton" class="smallsubmit" /></div>
-          </form>
-        </div>
-      </div>
-      <div id="header">
-        <div id="title">
-          <div id='banner' ><a href="/"><%= image_tag(Shopror.config.site_logo) %></a></div>
-        </div>
-        <div id="mainbar">
-          <div class="links">
-            <%= link_to t('shopror.views.site.home'),homes_path %>
-            <%= link_to t('shopror.views.product.recent'), recent_products_path %>
-            <%= link_to t('shopror.views.product.featured'),featured_products_path %>
-            <%= link_to t('shopror.views.supplier.country_of_origin'),suppliers_path %>
-            <%= link_to t('shopror.views.site.taobao'),'#'  %>
-          </div>
-        </div>
-      </div>
-      <div id="pagecontent">
-        <div id="pagecontent_pad">
-          <%= render 'parts/notice'  %>
-          <p class="alert"><%= alert %></p>
-          <%= yield %>
-        </div>
-      </div>
-      <div id="right">
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-        <div id="categorymenu">
-          <%= category_menu.html_safe%>
-        </div>
-        <div id="newestproducts">
-          <h4><span>最新商品</span></h4>
-          <div><%= render :partial => "parts/newest_product", :locals => {:products => Product.recent.limit(3).cache} %></div>
-        </div>
-        <div id="topsellers">
-          <h4><span>热销商品</span></h4>
-          <div><%= render :partial => "parts/newest_product", :locals => {:products => Product.sells.limit(3).cache} %></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="spacer">
-  </div>
-  <div id="footerspacer">
-  </div>
-</div>
-<div id="footer">
-  <div id="terms">
-    <a style="color:#ccc;" href="#"><%= Shopror.config.powered %></a><br />
-    <%= Shopror.config.copyright %><br />
-    <%= Shopror.config.site_icp %><br />
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-  </div>
-</div>
-</body>
+  <body>
+
+    <%= yield %>
+
+  </body>
 </html>

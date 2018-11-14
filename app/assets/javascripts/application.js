@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require kindeditor
 // require turbolinks
 //= require lightbox-2.6.min
 // require_tree .
@@ -32,3 +33,5 @@ var cities_select = function (cities) {
 };
 
 
+
+$(function(){ $(document).foundation(); });

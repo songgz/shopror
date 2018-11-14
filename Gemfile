@@ -8,6 +8,7 @@ gem 'mongoid', '~>4.0.2'
 gem 'mongoid-tree', '~>2.0.0'
 gem 'mongoid-grid_fs'
 gem 'kaminari' #paginate
+gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem "mini_magick", '3.5.0'
 gem 'devise'
